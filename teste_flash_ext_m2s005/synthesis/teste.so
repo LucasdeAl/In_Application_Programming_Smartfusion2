@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<SynplifyOutput>
+	<result>Success</result>
+	<design>teste</design>
+	<target_verilog>C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\synthesis\teste.vm</target_verilog>
+</SynplifyOutput>

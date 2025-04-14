@@ -1,0 +1,44 @@
+Resource Usage Report for teste 
+
+Mapping to part: m2s005vf400std
+Cell usage:
+CCC             1 use
+CLKINT          2 uses
+MSS_005         1 use
+RCOSC_25_50MHZ  1 use
+SYSRESET        1 use
+TAMPER          1 use
+CFG2           10 uses
+CFG3           16 uses
+CFG4           23 uses
+
+Carry cells:
+ARI1            35 uses - used for arithmetic functions
+
+
+Sequential Cells: 
+SLE            64 uses
+
+DSP Blocks:    0 of 11 (0%)
+
+I/O ports: 7
+I/O primitives: 6
+BIBUF          2 uses
+INBUF          2 uses
+OUTBUF         1 use
+TRIBUFF        1 use
+
+
+Global Clock Buffers: 2
+
+Total LUTs:    84
+
+Extra resources required for RAM and MACC interface logic during P&R:
+
+RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
+RAM1K18  Interface Logic : SLEs = 36; LUTs = 36;
+MACC     Interface Logic : SLEs = 0; LUTs = 0;
+
+Total number of SLEs after P&R:  64 + 0 + 36 + 0 = 100;
+Total number of LUTs after P&R:  84 + 0 + 36 + 0 = 120;
+

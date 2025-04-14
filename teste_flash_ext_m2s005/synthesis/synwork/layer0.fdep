@@ -1,0 +1,97 @@
+#OPTIONS:"|-layerid|0|-orig_srs|C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\synthesis\\synwork\\teste_comp.srs|-top|teste|-prodtype|synplify_pro|-infer_seqShift|-primux|-dspmac|-pqdpadd|-fixsmult|-sdff_counter|-divnmod|-nram|-actel|-I|C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\synthesis\\|-I|C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib|-sysv|-devicelib|C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\generic\\smartfusion2.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\bin64\\c_ver.exe":1704385142
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\generic\\smartfusion2.v":1704384662
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\hypermods.v":1704384280
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\umr_capim.v":1704384514
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\scemi_objects.v":1704384280
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\scemi_pipes.svh":1704384280
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\hdl\\Ram_interface.v":1744641345
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\SgCore\\TAMPER\\2.1.300\\tamper_comps.v":1744134279
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TAMPER_C0\\TAMPER_C0_0\\TAMPER_C0_TAMPER_C0_0_TAMPER.v":1744641183
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TAMPER_C0\\TAMPER_C0.v":1744641183
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TPSRAM_C0\\TPSRAM_C0_0\\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v":1744641427
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TPSRAM_C0\\TPSRAM_C0.v":1744641427
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\Dev_Restart_after_IAP_blk\\Dev_Restart_after_IAP_blk.v":1744641598
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vlog\\core\\coreresetp_pcie_hotreset.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vlog\\core\\coreresetp.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb\\CCC_0\\teste_sb_CCC_0_FCCC.v":1744300545
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\SgCore\\OSC\\2.0.101\\osc_comps.v":1725993872
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb\\FABOSC_0\\teste_sb_FABOSC_0_OSC.v":1744300546
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb_MSS\\teste_sb_MSS_syn.v":1744300543
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb_MSS\\teste_sb_MSS.v":1744300543
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb\\teste_sb.v":1744300546
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste\\teste.v":1744641603
+#numinternalfiles:5
+#defaultlanguage:verilog
+0			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\hdl\Ram_interface.v" verilog
+1			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\TAMPER\2.1.300\tamper_comps.v" verilog
+2			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0_0\TAMPER_C0_TAMPER_C0_0_TAMPER.v" verilog
+3			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0.v" verilog
+4			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0_0\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v" verilog
+5			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0.v" verilog
+6			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v" verilog
+7			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp_pcie_hotreset.v" verilog
+8			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp.v" verilog
+9			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\CCC_0\teste_sb_CCC_0_FCCC.v" verilog
+10			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\OSC\2.0.101\osc_comps.v" verilog
+11			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\FABOSC_0\teste_sb_FABOSC_0_OSC.v" verilog
+12			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb_MSS\teste_sb_MSS_syn.v" verilog
+13			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb_MSS\teste_sb_MSS.v" verilog
+14			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\teste_sb.v" verilog
+15			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+1 -1
+2 1
+3 2
+4 -1
+5 4
+6 0 3 5
+7 -1
+8 7
+9 -1
+10 -1
+11 10
+12 -1
+13 12
+14 9 8 11 13
+15 6 14
+#Dependency Lists(Users Of)
+0 6
+1 2
+2 3
+3 6
+4 5
+5 6
+6 15
+7 8
+8 14
+9 14
+10 11
+11 14
+12 13
+13 14
+14 15
+15 -1
+#Design Unit to File Association
+module work Ram_intferface 0
+module work TAMPER 1
+module work TAMPER_C0_TAMPER_C0_0_TAMPER 2
+module work TAMPER_C0 3
+module work TPSRAM_C0_TPSRAM_C0_0_TPSRAM 4
+module work TPSRAM_C0 5
+module work Dev_Restart_after_IAP_blk 6
+module work coreresetp_pcie_hotreset 7
+module work CoreResetP 8
+module work teste_sb_CCC_0_FCCC 9
+module work RCOSC_1MHZ 10
+module work RCOSC_25_50MHZ 10
+module work XTLOSC 10
+module work RCOSC_1MHZ_FAB 10
+module work RCOSC_25_50MHZ_FAB 10
+module work XTLOSC_FAB 10
+module work teste_sb_FABOSC_0_OSC 11
+module work MSS_005 12
+module work teste_sb_MSS 13
+module work teste_sb 14
+module work teste 15

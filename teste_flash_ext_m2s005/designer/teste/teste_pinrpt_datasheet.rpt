@@ -1,0 +1,20 @@
+----------------------------------------------------------------
+-Pin Report - Date: Mon Apr 14 11:41:36 2025 Pinchecksum: NOT-AVAILABLE
+-Product: Designer
+-Release: v2024.1
+-Version: 2024.1.0.3
+-Design Name: teste
+-Family: SmartFusion2
+-Die: M2S005
+-Package: 144 TQ
+-----------------------------------------------------------------
+
+Port             |Pin |Fixed |Function                     |Bank     |I/O Std   |Direction                      |I/O state in Flash*Freeze mode |Resistor Pull                      |I/O available in Flash*Freeze mode |Schmitt Trigger |Odt_Static    |Odt Imp (Ohm)  |Low Power Exit |Input Delay |Slew         |Pre-Emphasis      |Output Drive (mA) |Output Load (pF) |
+-----------------|----|------|-----------------------------|---------|----------|-------------------------------|-------------------------------|-----------------------------------|-----------------------------------|----------------|--------------|---------------|---------------|------------|-------------|------------------|------------------|-----------------|
+DEVRST_N          72   Fixed  DEVRST_N                      ---       
+MMUART_0_RXD_F2M  1    Yes    MSIO52NB6                     Bank6     LVCMOS25   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
+MMUART_0_TXD_M2F  2    Yes    MSIO52PB6                     Bank6     LVCMOS25   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          SLOW          ---                4                  5                 
+SPI_0_CLK         98   Yes    MSIO12PB2/SPI_0_CLK           Bank2     LVCMOS25   Inout                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          SLOW          ---                4                  5                 
+SPI_0_DI          99   Yes    MSIO12NB2/SPI_0_SDI/GPIO_5_A  Bank2     LVCMOS25   Input                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          ---           ---                ---                ---               
+SPI_0_DO          100  Yes    MSIO13PB2/SPI_0_SDO/GPIO_6_A  Bank2     LVCMOS25   Output                          TRISTATE                        None                                No                                  ---              ---            ---             ---             ---          SLOW          ---                4                  5                 
+SPI_0_SS0         101  Yes    MSIO13NB2/SPI_0_SS0/GPIO_7_A  Bank2     LVCMOS25   Inout                           TRISTATE                        None                                No                                  Off              ---            ---             Off             Off          SLOW          ---                4                  5                 

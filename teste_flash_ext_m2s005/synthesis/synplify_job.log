@@ -1,0 +1,85 @@
+{
+"Synplify Pro (R) Job Log" : {
+	"Date" : "11:40:18    14-Apr-2025",
+	"Working Directory" : "C:/Users/Lucas/Documents/Nascerr/teste_flash_ext_m2s005/synthesis",
+	"Install" : "C:/Microchip/Libero_SoC_v2024.1/SynplifyPro"
+},
+"synthesis" :{
+   "Job Flow" : "Sequential",
+   "Start Time" : "11:40:09",
+   "Runtime" : "09s",
+   "Executable Run Time" : "08s",
+   "synthesis" : {
+      "Job Flow" : "Sequential",
+      "Start Time" : "11:40:09",
+      "Runtime" : "09s",
+      "Executable Run Time" : "08s",
+      "compile" : {
+         "Job Flow" : "Sequential",
+         "Start Time" : "11:40:09",
+         "Runtime" : "07s",
+         "Executable Run Time" : "06s",
+         "compile_flow" : {
+            "Job Flow" : "Sequential",
+            "Start Time" : "11:40:09",
+            "Runtime" : "05s",
+            "Executable Run Time" : "04s",
+            "compiler" : {
+               "executable" : "bin64/c_hdl.exe",
+               "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/teste_flash_ext_m2s005/synthesis",
+               "Run State" : "Complete",
+               "Return Code" : "0",
+               "Has Errors" : "no",
+               "Run Start Time" : "11:40:09",
+               "Run Time" : "05s",
+               "Exe Run Time" : "04s",
+               "Memory Usage" : "-",
+               "Up-to-date (run skipped)" : "no"
+            },
+            "multi_srs_gen" : {
+               "executable" : "bin64/syn_nfilter.exe",
+               "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/teste_flash_ext_m2s005/synthesis",
+               "Run State" : "Complete",
+               "Return Code" : "0",
+               "Has Errors" : "no",
+               "Run Start Time" : "11:40:14",
+               "Run Time" : "00s",
+               "Exe Run Time" : "00s",
+               "Memory Usage" : "-",
+               "Up-to-date (run skipped)" : "no"
+            }
+         },
+         "premap" : {
+            "executable" : "bin64/m_generic.exe",
+            "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/teste_flash_ext_m2s005/synthesis",
+            "Run State" : "Complete",
+            "Return Code" : "1",
+            "Has Errors" : "no",
+            "Run Start Time" : "11:40:14",
+            "Run Time" : "02s",
+            "Exe Run Time" : "02s",
+            "Memory Usage" : "-",
+            "Up-to-date (run skipped)" : "no"
+         }
+      },
+      "map" : {
+         "Job Flow" : "Sequential",
+         "Start Time" : "11:40:16",
+         "Runtime" : "02s",
+         "Executable Run Time" : "02s",
+         "fpga_mapper" : {
+            "executable" : "bin64/m_generic.exe",
+            "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/teste_flash_ext_m2s005/synthesis",
+            "Run State" : "Complete",
+            "Return Code" : "1",
+            "Has Errors" : "no",
+            "Run Start Time" : "11:40:16",
+            "Run Time" : "02s",
+            "Exe Run Time" : "02s",
+            "Memory Usage" : "-",
+            "Up-to-date (run skipped)" : "no"
+         }
+      }
+   }
+}
+}

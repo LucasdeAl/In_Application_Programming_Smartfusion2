@@ -1,0 +1,164 @@
+# Microchip Physical design constraints file
+
+# Version: 2024.1 2024.1.0.3
+
+# Design Name: teste 
+
+# Input Netlist Format: EDIF 
+
+# Family: SmartFusion2 , Die: M2S005 , Package: 144 TQ , Speed grade: STD 
+
+# Date generated: Mon Apr 14 11:41:35 2025 
+
+
+#
+# I/O constraints
+#
+
+set_io MMUART_0_RXD_F2M -DIRECTION INPUT -pinname 1 -fixed no
+set_io MMUART_0_TXD_M2F -DIRECTION OUTPUT -pinname 2 -fixed no
+set_io SPI_0_CLK -DIRECTION INOUT -pinname 98 -fixed no
+set_io SPI_0_DI -DIRECTION INPUT -pinname 99 -fixed no
+set_io SPI_0_DO -DIRECTION OUTPUT -pinname 100 -fixed no
+set_io SPI_0_SS0 -DIRECTION INOUT -pinname 101 -fixed no
+
+#
+# Core cell constraints
+#
+
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_reset_n_RNO -fixed no 369 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[1\] -fixed no 341 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_5_i_o2_RNI63ROA -fixed no 342 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_6\[4\] -fixed no 349 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[6\] -fixed no 346 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[4\] -fixed no 344 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_5_i_o2_RNI63ROA_0 -fixed no 370 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[4\] -fixed no 353 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNIDV0J2\[1\] -fixed no 362 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[6\] -fixed no 334 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv_6\[2\] -fixed no 348 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_i_TPSRAM_RD_sv_NE_3 -fixed no 337 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[11\] -fixed no 339 34
+set_location teste_sb_0/SYSRESET_POR_RNI89HK7 -fixed no 221 30
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_3_i_0 -fixed no 368 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_5_i_o2_3 -fixed no 353 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[8\] -fixed no 336 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2\[0\] -fixed no 364 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0\[0\] -fixed no 366 36
+set_location teste_sb_0/CCC_0/GL0_INST/U0_RGB1 -fixed no 218 54
+set_location teste_sb_0/SYSRESET_POR_RNI89HK7/U0_RGB1 -fixed no 219 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNICU0J2\[2\] -fixed no 344 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2_0_11\[1\] -fixed no 325 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[14\] -fixed no 342 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un9_next_addr_ac0_5 -fixed no 355 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[12\] -fixed no 340 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WADDR_sv\[3\] -fixed no 354 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[6\] -fixed no 360 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WADDR_sv\[4\] -fixed no 357 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_5_i_o2 -fixed no 357 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[0\] -fixed no 340 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[0\] -fixed no 328 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[1\] -fixed no 329 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WADDR_sv\[5\] -fixed no 356 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[7\] -fixed no 356 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WEN_RNO -fixed no 371 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[4\] -fixed no 358 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_i_TPSRAM_RD_sv_NE_1 -fixed no 336 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv\[0\] -fixed no 339 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr\[1\] -fixed no 348 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[3\] -fixed no 331 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[1\] -fixed no 341 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr\[5\] -fixed no 348 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[5\] -fixed no 352 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv\[1\] -fixed no 337 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[0\] -fixed no 349 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[2\] -fixed no 351 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNIIDHS3\[1\] -fixed no 364 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[3\] -fixed no 352 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un9_next_addr_ac0_1 -fixed no 356 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_6_0 -fixed no 362 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[3\] -fixed no 351 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[2\] -fixed no 330 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[13\] -fixed no 341 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNIIDHS3_0\[1\] -fixed no 343 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv_6\[1\] -fixed no 337 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[2\] -fixed no 343 37
+set_location teste_sb_0/FABOSC_0/I_RCOSC_25_50MHZ -fixed no 396 44
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[3\] -fixed no 343 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr\[4\] -fixed no 349 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_6\[3\] -fixed no 351 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_i_TPSRAM_RD_sv_NE_0 -fixed no 359 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_i_TPSRAM_RD_sv_NE_2 -fixed no 338 39
+set_location teste_sb_0/CCC_0/GL0_INST -fixed no 219 30
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv_6\[3\] -fixed no 349 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[9\] -fixed no 337 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0\[1\] -fixed no 367 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[5\] -fixed no 354 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNO\[2\] -fixed no 365 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr\[3\] -fixed no 351 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WEN -fixed no 371 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv_6\[4\] -fixed no 353 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv\[2\] -fixed no 348 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv_6\[5\] -fixed no 355 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2_0\[1\] -fixed no 344 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_reset_n -fixed no 369 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_6\[1\] -fixed no 352 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access_10_i_0 -fixed no 363 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_m5s4_1_0_a2_0 -fixed no 371 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[7\] -fixed no 335 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WADDR_sv\[0\] -fixed no 345 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2_0_14\[1\] -fixed no 347 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access_10_i_a2_RNI1G6KD -fixed no 361 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access\[0\] -fixed no 366 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WADDR_sv\[1\] -fixed no 336 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_i_TPSRAM_RD_sv_NE -fixed no 363 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2_0_10\[1\] -fixed no 345 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[5\] -fixed no 345 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv_6\[0\] -fixed no 350 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_6\[2\] -fixed no 354 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2_0_13\[1\] -fixed no 326 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access\[2\] -fixed no 365 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_REN_RNO -fixed no 370 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access\[1\] -fixed no 367 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[10\] -fixed no 338 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr\[0\] -fixed no 357 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_6\[5\] -fixed no 348 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2_0_12\[1\] -fixed no 346 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[4\] -fixed no 332 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access_10_i_a2 -fixed no 360 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_m5s4_1_0 -fixed no 368 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[7\] -fixed no 362 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv\[3\] -fixed no 349 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv\[4\] -fixed no 353 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[2\] -fixed no 342 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[1\] -fixed no 350 34
+set_location CFG0_GND_INST -fixed no 354 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data\[6\] -fixed no 364 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_m5s4_1_0_a2 -fixed no 336 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[5\] -fixed no 333 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WADDR_sv\[2\] -fixed no 350 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_RADDR_sv\[5\] -fixed no 355 40
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter\[15\] -fixed no 343 34
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_6\[0\] -fixed no 357 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr\[2\] -fixed no 354 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_REN -fixed no 370 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/o_TPSRAM_WD\[0\] -fixed no 344 37
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_0_a2_0_8\[1\] -fixed no 369 36
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data\[7\] -fixed no 347 40
+set_location teste_sb_0/teste_sb_MSS_0/MSS_ADLIB_INST -fixed no 228 56
+set_location teste_sb_0/CCC_0/CCC_INST -fixed no 390 44
+set_location Dev_Restart_after_IAP_blk_0/TPSRAM_C0_0/TPSRAM_C0_0/TPSRAM_C0_TPSRAM_C0_0_TPSRAM_R0C0 -fixed no 336 44
+set_location Dev_Restart_after_IAP_blk_0/TAMPER_C0_0/TAMPER_C0_0/TAMPER_INST -fixed no 396 8
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data_s_70 -fixed no 348 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data_s_69 -fixed no 339 39
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter_s_68 -fixed no 327 33
+set_location teste_sb_0/CCC_0/GL0_INST/U0_RGB1_RGB0 -fixed no 218 42
+set_location teste_sb_0/CCC_0/GL0_INST/U0_RGB1_RGB1 -fixed no 218 39
+set_location teste_sb_0/CCC_0/GL0_INST/U0_RGB1_RGB2 -fixed no 218 36
+set_location teste_sb_0/CCC_0/GL0_INST/U0_RGB1_RGB3 -fixed no 218 33
+set_location teste_sb_0/SYSRESET_POR_RNI89HK7/U0_RGB1_RGB0 -fixed no 219 36
+set_location teste_sb_0/SYSRESET_POR_RNI89HK7/U0_RGB1_RGB1 -fixed no 219 33
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter_s_68_CC_0 -fixed no 327 35
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter_s_68_CC_1 -fixed no 336 35
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data_s_69_CC_0 -fixed no 339 41
+set_location Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data_s_70_CC_0 -fixed no 348 35

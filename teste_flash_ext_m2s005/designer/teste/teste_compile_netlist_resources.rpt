@@ -1,0 +1,184 @@
+Resource Report
+Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)
+Date: Mon Apr 14 11:40:22 2025
+
+Device Selection
++--------------------------------+----------------+
+| Family                         | SmartFusion2   |
+| Device                         | M2S005         |
+| Package                        | 144 TQ         |
+| Speed Grade                    | STD            |
+| Temp                           | 0:25:85        |
+| Voltage                        | 1.26:1.20:1.14 |
+| Core Voltage                   | 1.2V           |
+| Ramp Rate                      | 100ms Minimum  |
+| System Controller Suspend Mode | No             |
+| PLL Supply Voltage             | 2.5V           |
+| Default I/O technology         | LVCMOS 2.5V    |
+| Restrict Probe Pins            | No             |
+| Restrict SPI Pins              | No             |
++--------------------------------+----------------+
+
+Source Files
++---------+----------------------------------------------------------------------------+
+| Topcell | teste                                                                      |
+| Format  | Verilog                                                                    |
+| Source  | C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\synthesis\teste.vm |
++---------+----------------------------------------------------------------------------+
+
+Options
++----------------------------------------------------+-------+
+| Enable Single Event Transient mitigation           | false |
+| Enable Design Separation Methodology               | false |
+| Limit the number of high fanout nets to display to | 10    |
++----------------------------------------------------+-------+
+
+Resource Usage
++---------------------------+------+-------+------------+
+| Type                      | Used | Total | Percentage |
++---------------------------+------+-------+------------+
+| 4LUT                      | 121  | 6060  | 2.00       |
+| DFF                       | 100  | 6060  | 1.65       |
+| I/O Register              | 0    | 252   | 0.00       |
+| User I/O                  | 6    | 84    | 7.14       |
+| -- Single-ended I/O       | 6    | 84    | 7.14       |
+| -- Differential I/O Pairs | 0    | 38    | 0.00       |
+| RAM64x18                  | 0    | 11    | 0.00       |
+| RAM1K18                   | 1    | 10    | 10.00      |
+| MACC                      | 0    | 11    | 0.00       |
+| Chip Globals              | 2    | 8     | 25.00      |
+| CCC                       | 1    | 2     | 50.00      |
+| RCOSC_25_50MHZ            | 1    | 1     | 100.00     |
+| RCOSC_1MHZ                | 0    | 1     | 0.00       |
+| XTLOSC                    | 0    | 1     | 0.00       |
+| MSS                       | 1    | 1     | 100.00     |
++---------------------------+------+-------+------------+
+
+Detailed Logic Resource Usage
++--------------------------+------+-----+
+| Type                     | 4LUT | DFF |
++--------------------------+------+-----+
+| Fabric Logic             | 85   | 64  |
+| RAM64x18 Interface Logic | 0    | 0   |
+| RAM1K18 Interface Logic  | 36   | 36  |
+| MACC Interface Logic     | 0    | 0   |
+| Total Used               | 121  | 100 |
++--------------------------+------+-----+
+
+MSS Resource Usage
++---------------+------+-------+
+| Type          | Used | Total |
++---------------+------+-------+
+| Cortex-M3*    | 1    | 1     |
+| eNVM (128KB)* | 1    | 1     |
+| eSRAM*        | 2    | 2     |
+| TIMER*        | 2    | 2     |
+| CAN           | 0    | 1     |
+| SPI           | 1    | 2     |
+| I2C           | 0    | 2     |
+| UART          | 1    | 2     |
+| USB           | 0    | 1     |
+| MAC           | 0    | 1     |
+| MDDR          | 0    | 1     |
+| HPDMA         | 1    | 1     |
+| PDMA          | 1    | 1     |
++---------------+------+-------+
+
+* These resources are always marked as used when you are using the MSS
+
+Detailed Carry Chains Resource Usage
++--------+------+
+| Length | Used |
+| 9      | 2    |
+| 17     | 1    |
+| Total  | 3    |
++--------+------+
+
+I/O Function
++-------------------------------+--------------+-------------+-----------------+
+| Type                          | w/o register | w/ register | w/ DDR register |
++-------------------------------+--------------+-------------+-----------------+
+| Input I/O                     | 2            | 0           | 0               |
+| Output I/O                    | 2            | 0           | 0               |
+| Bidirectional I/O             | 2            | 0           | 0               |
+| Differential Input I/O Pairs  | 0            | 0           | 0               |
+| Differential Output I/O Pairs | 0            | 0           | 0               |
++-------------------------------+--------------+-------------+-----------------+
+
+I/O Technology
++--------------+--------+------+-------+--------+---------------+
+| I/O Standard | Vddi   | Vref | Input | Output | Bidirectional |
++--------------+--------+------+-------+--------+---------------+
+| LVCMOS25     |  2.50v |  N/A |  2    |  2     |  2            |
++--------------+--------+------+-------+--------+---------------+
+
+Nets assigned to chip global resources
++--------+---------+--------------------------------------------------+
+| Fanout | Type    | Name                                             |
++--------+---------+--------------------------------------------------+
+| 67     | INT_NET | Net   : teste_sb_0_FAB_CCC_GL0                   |
+|        |         | Driver: teste_sb_0/CCC_0/GL0_INST/U0_RGB1        |
+|        |         | Source: NETLIST                                  |
+| 64     | INT_NET | Net   : teste_sb_0_POWER_ON_RESET_N              |
+|        |         | Driver: teste_sb_0/SYSRESET_POR_RNI89HK7/U0_RGB1 |
+|        |         | Source: NETLIST                                  |
++--------+---------+--------------------------------------------------+
+
+Nets assigned to row global resources
++--------+------+------+
+| Fanout | Type | Name |
++--------+------+------+
++--------+------+------+
+
+High fanout nets
++--------+---------+--------------------------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                                             |
++--------+---------+--------------------------------------------------------------------------------------------------+
+| 31     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter                                     |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[0]                      |
+| 25     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data                               |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[2]                      |
+| 24     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data                                   |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[1]                      |
+| 16     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_41_i                                      |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNIIDHS3_0[1]           |
+| 15     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_62_i                                      |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNICU0J2[2]             |
+| 14     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_13_i                                      |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_m5s4_1_0_a2           |
+| 8      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_datae                              |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access_10_i_a2_RNI1G6KD    |
+| 8      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_6_i                                       |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_5_i_o2_RNI63ROA_0 |
+| 7      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_Z[2]                              |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr[2]                                |
+| 7      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_113_i                                     |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr[0]                                |
++--------+---------+--------------------------------------------------------------------------------------------------+
+
+High fanout nets (through buffer trees)
++--------+---------+--------------------------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                                             |
++--------+---------+--------------------------------------------------------------------------------------------------+
+| 31     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter                                     |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[0]                      |
+| 25     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data                               |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[2]                      |
+| 24     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_data                                   |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[1]                      |
+| 16     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_41_i                                      |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNIIDHS3_0[1]           |
+| 15     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_62_i                                      |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_RNICU0J2[2]             |
+| 14     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_13_i                                      |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access_6_m5s4_1_0_a2           |
+| 8      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_datae                              |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access_10_i_a2_RNI1G6KD    |
+| 8      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_6_i                                       |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/un1_state_tpsram_access26_5_i_o2_RNI63ROA_0 |
+| 7      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr_Z[2]                              |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr[2]                                |
+| 7      | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/N_113_i                                     |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/next_addr[0]                                |
++--------+---------+--------------------------------------------------------------------------------------------------+
+

@@ -1,0 +1,14 @@
+Software Version: 2024.1.0.3
+Opened 'C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\designer\teste\teste_fp\teste.pro'
+PDB file 'C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\designer\teste\teste.pdb' has been loaded successfully.
+DESIGN : teste;  CHECKSUM : 287A;  PDB_VERSION : 1.9
+Info: Programming Interface selected is JTAG.
+Info: Design version will be programmed to 0 with this bitstream.
+File/Folder 'C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\designer\teste\teste.ppd' will be overwritten.
+Successfully exported PPD file for currently secured device: 'C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\designer\teste\teste.ppd'; file programs Fabric.
+Fabric component bitstream digest: e353f107cf04694592e920fae659047cb72aad8ec3cc0488fd1b2655a445b88d
+Entire bitstream digest: d21caf58796eefbcf0b59af5bd05083d3fdc9f0b5d1dcb33f03696195b1b65a2
+Finished: Mon Apr 14 11:41:51 2025 (Elapsed time 00:00:03)
+
+Project saved.
+Project closed.

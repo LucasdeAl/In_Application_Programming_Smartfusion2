@@ -1,0 +1,43 @@
+# Microchip Physical design constraints file
+
+# Version: 2024.1 2024.1.0.3
+
+# Design Name:  
+
+# Input Netlist Format: EDIF 
+
+# Family: SmartFusion2 , Die: M2S005 , Package: 144 TQ , Speed grade: STD 
+
+# Date generated: Mon Apr 14 11:40:22 2025 
+
+
+#
+# IO banks setting
+#
+
+set_iobank Bank2 -vcci 2.50 -fixed no
+
+#
+# Local clock constraints
+#
+
+
+#
+# Region constraints
+#
+
+
+#
+# I/O constraints
+#
+
+set_io DEVRST_N -DIRECTION INPUT -pinname 72
+set_io SPI_0_CLK -DIRECTION INOUT -pinname 98 -fixed yes
+set_io SPI_0_DI -DIRECTION INPUT -pinname 99 -fixed yes
+set_io SPI_0_DO -DIRECTION OUTPUT -pinname 100 -fixed yes
+set_io SPI_0_SS0 -DIRECTION INOUT -pinname 101 -fixed yes
+
+#
+# Core cell constraints
+#
+
