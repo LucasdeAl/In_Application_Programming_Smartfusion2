@@ -28,4 +28,5 @@ drivers_config/sys_config \
 hal/CortexM3/GNU \
 hal/CortexM3 \
 . \
+windbondflash \
 

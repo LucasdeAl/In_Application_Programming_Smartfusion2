@@ -5,6 +5,10 @@
 #include "mss_sys_services.h"
 #include "mss_spi.h"
 //#include"flash_w25n01g.h"
+#define BUFFER_SIZE 2048
+
+//*&************************************************************
+uint8_t g_page_buffer[BUFFER_SIZE];
 
 
 mss_uart_instance_t * const gp_my_uart = &g_mss_uart0;
@@ -41,16 +45,6 @@ void test_spi_flash(void)
 
 
 }
-void erase_block_flash(void)
-{
-    // Comando 0xD8 seguido de 3 bytes de endereço – para o bloco iniciado em 0x000000.
-    uint8_t tx_buf[4] = { 0xD8, 0x00, 0x00, 0x00 };
-    uint8_t rx_buf[4] = { 0 };
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 4, rx_buf, 4);
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-}
 
 
 void write_enable(void)
@@ -66,10 +60,27 @@ void write_enable(void)
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 }
 
+
+
+void erase_block_flash(void)
+{
+    uint8_t tx_buf[4] = { 0xD8, 0x00, 0x00, 0x00 };  // Comando de apagamento de bloco e endereço
+    uint8_t rx_buf[4] = { 0 };
+
+    // Habilita a escrita
+    write_enable();
+
+    // Envia o comando de apagamento de bloco
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 4, rx_buf, 4);
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+
+
+}
 void program_data_load(void)
 {
-    // Neste exemplo, 6 bytes: comando, 2 bytes de endereço e 3 bytes de dados.
-    uint8_t tx_buf[6] = { 0x02, 0x00, 0x00, 0xAB, 0xCD, 0xEF };
+
+    uint8_t tx_buf[6] = { 0x02, 0x00, 0x00, 0xaa, 0xbb, 0xcc };
 
     MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
     MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 6, NULL, 0);
@@ -78,7 +89,7 @@ void program_data_load(void)
 
 void program_execute(void)
 {
-    // 0x10 seguido por 2 bytes de endereço (0x00, 0x00)
+
     uint8_t tx_buf[3] = { 0x10, 0x00, 0x00 };
 
     MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
@@ -88,7 +99,7 @@ void program_execute(void)
 
 void page_data_read(void)
 {
-    // 0x13 seguido de 2 bytes de endereço (0x00, 0x00)
+
     uint8_t tx_buf[3] = { 0x13, 0x00, 0x00 };
 
     MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
@@ -99,16 +110,16 @@ void page_data_read(void)
 
 void read_data(void)
 {
-    // 0x03 seguido de 2 bytes de endereço (0x00, 0x00)
+
     uint8_t tx_buf[3] = { 0x03, 0x00, 0x00 };
-    // Defina um buffer de leitura com tamanho adequado – aqui, exemplo com 6 bytes (poderá incluir dummy bytes)
+
     uint8_t rx_buff[6] = {0};
 
     MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
     MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, rx_buff, 6);
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 
-    // rx_buff deverá conter os dados lidos a partir do buffer interno da flash.
+
 }
 
 
@@ -116,10 +127,9 @@ void read_data(void)
 
 int main()
 {
-    uint8_t rx_buff[8];
-    uint8_t tx_data[4] = {0xAB, 0xCD, 0, 0};
-    uint8_t rx_data[2] = {0x00, 0x00};
-
+    uint8_t data_write[BUFFER_SIZE];
+    uint8_t data_read[BUFFER_SIZE];
+    uint8_t dread;
 
     MSS_SPI_init(&g_mss_spi0);
     MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
@@ -133,7 +143,7 @@ int main()
            8
        );
 
-       Read_Status_Register();
+
        //test_spi_flash();
        write_enable();
        erase_block_flash();

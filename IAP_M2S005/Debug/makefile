@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include windbondflash/subdir.mk
 -include hal/CortexM3/GNU/subdir.mk
 -include hal/CortexM3/subdir.mk
 -include drivers_config/sys_config/subdir.mk
