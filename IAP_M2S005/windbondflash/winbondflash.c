@@ -102,7 +102,7 @@ void FLASH_read_device_id //OK
 /*******************************************************************************
  *
  */
-void FLASH_read // OK falta teste
+void FLASH_read // OK deu certo
 (
     uint32_t address,
     uint8_t * rx_buffer,
@@ -134,7 +134,7 @@ void FLASH_read // OK falta teste
 /*******************************************************************************
  *
  */
-void FLASH_global_unprotect( void ) //ok falta teste
+void FLASH_global_unprotect( void ) //ok
 {
     uint8_t cmd_buffer[3];
     /* Send Write Enable command */
@@ -299,11 +299,12 @@ void FLASH_program
     size_t size_in_bytes
 )
 {
-    uint8_t cmd_buffer[4];
+    uint8_t cmd_buffer[3];
     
     uint32_t in_buffer_idx;
     uint32_t nb_bytes_to_write;
     uint32_t target_addr;
+    uint8_t tx_buff[2051];// cmd + 2048 bytes
 
     MSS_SPI_set_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
     
@@ -316,7 +317,7 @@ void FLASH_program
     cmd_buffer[0] = WRITE_STATUS1_OPCODE;
     cmd_buffer[1] = 0xA0;
     cmd_buffer[2] = 0;
-    cmd_buffer[3] = 0;
+
     wait_ready();
     MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, sizeof(cmd_buffer), 0, 0 );
 
@@ -325,47 +326,37 @@ void FLASH_program
     wait_ready();
     MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 1, 0, 0 );
     
-    /**/
+    /*  */
     in_buffer_idx = 0;
     nb_bytes_to_write = size_in_bytes;
     target_addr = address;
     
-    while ( in_buffer_idx < size_in_bytes )
-    {
-        uint32_t size_left;
-        nb_bytes_to_write = 0x100 - (target_addr & 0xFF);   /* adjust max possible size to page boundary. */
-        size_left = size_in_bytes - in_buffer_idx;
-        if ( size_left < nb_bytes_to_write )
-        {
-            nb_bytes_to_write = size_left;
-        }
-        
-        wait_ready();
-        
-        /* Send Write Enable command */
-        cmd_buffer[0] = WRITE_ENABLE_CMD;
-        MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 1, 0, 0 );
-            
-        /* Program page */
-        wait_ready();
+
+    /* carrega a página no buffer da flash*/
+    cmd_buffer[0] = DATA_LOAD_CMD;
+    cmd_buffer[1] = (target_addr << 16) & 0xff;
+    cmd_buffer[2] = (target_addr) & 0xff;
     
-        cmd_buffer[0] = PROGRAM_PAGE_CMD;
-        cmd_buffer[1] = (target_addr >> 16) & 0xFF;
-        cmd_buffer[2] = (target_addr >> 8 ) & 0xFF;
-        cmd_buffer[3] = target_addr & 0xFF;
-        
-        write_cmd_data
-          (
-            &g_mss_spi0,
-            cmd_buffer,
-            sizeof(cmd_buffer),
-            &write_buffer[in_buffer_idx],
-            nb_bytes_to_write
-          );
-        
-        target_addr += nb_bytes_to_write;
-        in_buffer_idx += nb_bytes_to_write;
+
+    for(in_buffer_idx = 0;in_buffer_idx<sizeof(cmd_buffer);in_buffer_idx++)
+    {
+        tx_buff[in_buffer_idx] = cmd_buffer[in_buffer_idx];
     }
+
+    for(int i = 0;i<size_in_bytes;i++)
+    {
+        tx_buff[in_buffer_idx + i] = write_buffer[i];
+    }
+
+    MSS_SPI_transfer_block( &g_mss_spi0, tx_buff, (sizeof(cmd_buffer) + nb_bytes_to_write), 0, 0 );
+
+    /* Programa a página */
+    cmd_buffer[0] = PROGRAM_PAGE_CMD;
+    cmd_buffer[1] = (target_addr << 24) & 0xff;
+    cmd_buffer[2] = (target_addr << 16) & 0xff;
+
+    wait_ready();
+    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 3, 0, 0 );
     
     /* Send Write Disable command. */
     cmd_buffer[0] = WRITE_DISABLE_CMD;
@@ -395,11 +386,14 @@ uint8_t FLASH_get_status( void )
 static void wait_ready( void )
 {
     uint8_t ready_bit;
-    uint8_t command = READ_STATUS;
-    
-    do {
-        MSS_SPI_transfer_block( &g_mss_spi0, &command, sizeof(command), &ready_bit, sizeof(ready_bit) );
-        ready_bit = ready_bit & READY_BIT_MASK;
-    } while( ready_bit == 1 );
+    uint8_t command[2] = {0x0F, 0xC0};
+
+     do {
+          MSS_SPI_set_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
+          MSS_SPI_transfer_block( &g_mss_spi0, command, sizeof(command), &ready_bit, sizeof(ready_bit) );
+          //MSS_SPI_clear_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
+          ready_bit = ready_bit & 0x01;
+     } while( ready_bit == 1 );
+
 }
 

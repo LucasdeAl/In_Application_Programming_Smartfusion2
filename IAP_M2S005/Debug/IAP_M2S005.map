@@ -67,65 +67,14 @@ Discarded input sections
  .text          0x0000000000000000        0x0 ./windbondflash/winbondflash.o
  .data          0x0000000000000000        0x0 ./windbondflash/winbondflash.o
  .bss           0x0000000000000000        0x0 ./windbondflash/winbondflash.o
- .text.FLASH_init
-                0x0000000000000000       0x28 ./windbondflash/winbondflash.o
  .text.FLASH_read_device_id
                 0x0000000000000000       0x4c ./windbondflash/winbondflash.o
- .text.FLASH_read
-                0x0000000000000000       0x68 ./windbondflash/winbondflash.o
  .text.FLASH_global_unprotect
-                0x0000000000000000       0x5c ./windbondflash/winbondflash.o
- .text.FLASH_chip_erase
-                0x0000000000000000       0x58 ./windbondflash/winbondflash.o
- .text.FLASH_erase_4k_block
-                0x0000000000000000       0x74 ./windbondflash/winbondflash.o
- .text.FLASH_erase_64k_block
-                0x0000000000000000       0x74 ./windbondflash/winbondflash.o
+                0x0000000000000000       0x60 ./windbondflash/winbondflash.o
  .text.write_cmd_data
                 0x0000000000000000       0xdc ./windbondflash/winbondflash.o
- .text.FLASH_program
-                0x0000000000000000      0x13c ./windbondflash/winbondflash.o
  .text.FLASH_get_status
                 0x0000000000000000       0x28 ./windbondflash/winbondflash.o
- .text.wait_ready
-                0x0000000000000000       0x38 ./windbondflash/winbondflash.o
- .debug_info    0x0000000000000000     0x131f ./windbondflash/winbondflash.o
- .debug_abbrev  0x0000000000000000      0x306 ./windbondflash/winbondflash.o
- .debug_aranges
-                0x0000000000000000       0x70 ./windbondflash/winbondflash.o
- .debug_ranges  0x0000000000000000       0x60 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0x1da ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0xa84 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x22 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x8e ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x51 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0xef ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x6a ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0x1df ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x18 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x64 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x35 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x34 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x16 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0x10e ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x8d ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x58 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x1f ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x43 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x20 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0x18e ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0x339 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x16 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x29 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x26 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x3a ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000       0x34 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0xca6 ./windbondflash/winbondflash.o
- .debug_macro   0x0000000000000000      0x265 ./windbondflash/winbondflash.o
- .debug_line    0x0000000000000000      0x65d ./windbondflash/winbondflash.o
- .debug_str     0x0000000000000000     0xcf07 ./windbondflash/winbondflash.o
- .comment       0x0000000000000000       0x67 ./windbondflash/winbondflash.o
- .debug_frame   0x0000000000000000      0x1a8 ./windbondflash/winbondflash.o
  .text          0x0000000000000000        0xe ./hal/CortexM3/GNU/hal.o
  .data          0x0000000000000000        0x0 ./hal/CortexM3/GNU/hal.o
  .bss           0x0000000000000000        0x0 ./hal/CortexM3/GNU/hal.o
@@ -1273,7 +1222,7 @@ END GROUP
                 0x0000000000000570                . = ALIGN (0x10)
  *fill*         0x0000000000000568        0x8 
 
-.text           0x0000000000000570     0x1e40 load address 0x0000000060000570
+.text           0x0000000000000570     0x2230 load address 0x0000000060000570
  CREATE_OBJECT_SYMBOLS
                 0x0000000060000570                __text_load = LOADADDR (.text)
                 0x0000000000000570                __text_start = .
@@ -1282,126 +1231,143 @@ END GROUP
                 0x0000000000000570       0x24 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
  .text.frame_dummy
                 0x0000000000000594       0x1c c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text.FLASH_init
+                0x00000000000005b0       0x28 ./windbondflash/winbondflash.o
+                0x00000000000005b0                FLASH_init
+ .text.FLASH_read
+                0x00000000000005d8       0x80 ./windbondflash/winbondflash.o
+                0x00000000000005d8                FLASH_read
+ .text.FLASH_chip_erase
+                0x0000000000000658       0x78 ./windbondflash/winbondflash.o
+                0x0000000000000658                FLASH_chip_erase
+ .text.FLASH_erase_128k_block
+                0x00000000000006d0       0x70 ./windbondflash/winbondflash.o
+                0x00000000000006d0                FLASH_erase_128k_block
+ .text.FLASH_program
+                0x0000000000000740      0x194 ./windbondflash/winbondflash.o
+                0x0000000000000740                FLASH_program
+ .text.wait_ready
+                0x00000000000008d4       0x44 ./windbondflash/winbondflash.o
  .text.read_bit_reg8
-                0x00000000000005b0       0x38 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000918       0x38 ./drivers/mss_uart/mss_uart.o
  .text.UART0_IRQHandler
-                0x00000000000005e8       0x24 ./drivers/mss_uart/mss_uart.o
-                0x00000000000005e8                UART0_IRQHandler
+                0x0000000000000950       0x24 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000950                UART0_IRQHandler
  .text.UART1_IRQHandler
-                0x000000000000060c       0x24 ./drivers/mss_uart/mss_uart.o
-                0x000000000000060c                UART1_IRQHandler
+                0x0000000000000974       0x24 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000974                UART1_IRQHandler
  .text.MSS_UART_isr
-                0x0000000000000630      0x208 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000998      0x208 ./drivers/mss_uart/mss_uart.o
  .text.NVIC_EnableIRQ
-                0x0000000000000838       0x30 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000ba0       0x30 ./drivers/mss_sys_services/mss_comblk.o
  .text.NVIC_DisableIRQ
-                0x0000000000000868       0x34 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000bd0       0x34 ./drivers/mss_sys_services/mss_comblk.o
  .text.NVIC_ClearPendingIRQ
-                0x000000000000089c       0x34 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000c04       0x34 ./drivers/mss_sys_services/mss_comblk.o
  .text.MSS_COMBLK_init
-                0x00000000000008d0       0xd8 ./drivers/mss_sys_services/mss_comblk.o
-                0x00000000000008d0                MSS_COMBLK_init
+                0x0000000000000c38       0xd8 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000c38                MSS_COMBLK_init
  .text.ComBlk_IRQHandler
-                0x00000000000009a8       0x48 ./drivers/mss_sys_services/mss_comblk.o
-                0x00000000000009a8                ComBlk_IRQHandler
+                0x0000000000000d10       0x48 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000d10                ComBlk_IRQHandler
  .text.handle_tx_okay_irq
-                0x00000000000009f0      0x1b0 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000d58      0x1b0 ./drivers/mss_sys_services/mss_comblk.o
  .text.handle_rx_okay_irq
-                0x0000000000000ba0      0x210 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000f08      0x210 ./drivers/mss_sys_services/mss_comblk.o
  .text.complete_request
-                0x0000000000000db0       0x40 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001118       0x40 ./drivers/mss_sys_services/mss_comblk.o
  .text.abort_current_cmd
-                0x0000000000000df0       0x4c ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001158       0x4c ./drivers/mss_sys_services/mss_comblk.o
  .text.fill_tx_fifo
-                0x0000000000000e3c       0x60 ./drivers/mss_sys_services/mss_comblk.o
+                0x00000000000011a4       0x60 ./drivers/mss_sys_services/mss_comblk.o
  .text.process_sys_ctrl_command
-                0x0000000000000e9c       0x28 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001204       0x28 ./drivers/mss_sys_services/mss_comblk.o
  .text.MSS_SYS_init
-                0x0000000000000ec4       0x50 ./drivers/mss_sys_services/mss_sys_services.o
-                0x0000000000000ec4                MSS_SYS_init
+                0x000000000000122c       0x50 ./drivers/mss_sys_services/mss_sys_services.o
+                0x000000000000122c                MSS_SYS_init
  .text.asynchronous_event_handler
-                0x0000000000000f14       0xe4 ./drivers/mss_sys_services/mss_sys_services.o
+                0x000000000000127c       0xe4 ./drivers/mss_sys_services/mss_sys_services.o
  .text.determine_seq
-                0x0000000000000ff8       0xac ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000001360       0xac ./drivers/mss_sys_services/mss_sys_services.o
  .text.revert_clk_config
-                0x00000000000010a4      0x1c0 ./drivers/mss_sys_services/mss_sys_services.o
+                0x000000000000140c      0x1c0 ./drivers/mss_sys_services/mss_sys_services.o
  .text.NVIC_EnableIRQ
-                0x0000000000001264       0x30 ./drivers/mss_spi/mss_spi.o
+                0x00000000000015cc       0x30 ./drivers/mss_spi/mss_spi.o
  .text.NVIC_DisableIRQ
-                0x0000000000001294       0x34 ./drivers/mss_spi/mss_spi.o
+                0x00000000000015fc       0x34 ./drivers/mss_spi/mss_spi.o
  .text.NVIC_ClearPendingIRQ
-                0x00000000000012c8       0x34 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001630       0x34 ./drivers/mss_spi/mss_spi.o
  .text.MSS_SPI_init
-                0x00000000000012fc       0xe4 ./drivers/mss_spi/mss_spi.o
-                0x00000000000012fc                MSS_SPI_init
+                0x0000000000001664       0xe4 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001664                MSS_SPI_init
  .text.recover_from_rx_overflow
-                0x00000000000013e0      0x128 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001748      0x128 ./drivers/mss_spi/mss_spi.o
  .text.MSS_SPI_configure_master_mode
-                0x0000000000001508      0x130 ./drivers/mss_spi/mss_spi.o
-                0x0000000000001508                MSS_SPI_configure_master_mode
+                0x0000000000001870      0x130 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001870                MSS_SPI_configure_master_mode
  .text.MSS_SPI_set_slave_select
-                0x0000000000001638       0xec ./drivers/mss_spi/mss_spi.o
-                0x0000000000001638                MSS_SPI_set_slave_select
+                0x00000000000019a0       0xec ./drivers/mss_spi/mss_spi.o
+                0x00000000000019a0                MSS_SPI_set_slave_select
  .text.MSS_SPI_clear_slave_select
-                0x0000000000001724       0x88 ./drivers/mss_spi/mss_spi.o
-                0x0000000000001724                MSS_SPI_clear_slave_select
+                0x0000000000001a8c       0x88 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001a8c                MSS_SPI_clear_slave_select
  .text.MSS_SPI_transfer_block
-                0x00000000000017ac      0x1f4 ./drivers/mss_spi/mss_spi.o
-                0x00000000000017ac                MSS_SPI_transfer_block
+                0x0000000000001b14      0x1f4 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001b14                MSS_SPI_transfer_block
  .text.fill_slave_tx_fifo
-                0x00000000000019a0       0xd6 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001d08       0xd6 ./drivers/mss_spi/mss_spi.o
  .text.read_slave_rx_fifo
-                0x0000000000001a76       0xa6 ./drivers/mss_spi/mss_spi.o
+                0x0000000000001dde       0xa6 ./drivers/mss_spi/mss_spi.o
  .text.mss_spi_isr
-                0x0000000000001b1c      0x27c ./drivers/mss_spi/mss_spi.o
+                0x0000000000001e84      0x27c ./drivers/mss_spi/mss_spi.o
  .text.SPI0_IRQHandler
-                0x0000000000001d98       0x24 ./drivers/mss_spi/mss_spi.o
-                0x0000000000001d98                SPI0_IRQHandler
+                0x0000000000002100       0x24 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002100                SPI0_IRQHandler
  .text.SPI1_IRQHandler
-                0x0000000000001dbc       0x24 ./drivers/mss_spi/mss_spi.o
-                0x0000000000001dbc                SPI1_IRQHandler
+                0x0000000000002124       0x24 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002124                SPI1_IRQHandler
  .text.start_transfer
-                0x0000000000001de0      0x154 ./drivers/mss_hpdma/mss_hpdma.o
+                0x0000000000002148      0x154 ./drivers/mss_hpdma/mss_hpdma.o
  .text.HPDMA_Complete_IRQHandler
-                0x0000000000001f34       0xf8 ./drivers/mss_hpdma/mss_hpdma.o
-                0x0000000000001f34                HPDMA_Complete_IRQHandler
+                0x000000000000229c       0xf8 ./drivers/mss_hpdma/mss_hpdma.o
+                0x000000000000229c                HPDMA_Complete_IRQHandler
  .text.HPDMA_Error_IRQHandler
-                0x000000000000202c      0x104 ./drivers/mss_hpdma/mss_hpdma.o
-                0x000000000000202c                HPDMA_Error_IRQHandler
+                0x0000000000002394      0x104 ./drivers/mss_hpdma/mss_hpdma.o
+                0x0000000000002394                HPDMA_Error_IRQHandler
  .text.write_enable
-                0x0000000000002130       0x38 ./main.o
-                0x0000000000002130                write_enable
+                0x0000000000002498       0x38 ./main.o
+                0x0000000000002498                write_enable
  .text.erase_block_flash
-                0x0000000000002168       0x40 ./main.o
-                0x0000000000002168                erase_block_flash
+                0x00000000000024d0       0x40 ./main.o
+                0x00000000000024d0                erase_block_flash
  .text.program_data_load
-                0x00000000000021a8       0x44 ./main.o
-                0x00000000000021a8                program_data_load
+                0x0000000000002510       0x44 ./main.o
+                0x0000000000002510                program_data_load
  .text.program_execute
-                0x00000000000021ec       0x48 ./main.o
-                0x00000000000021ec                program_execute
+                0x0000000000002554       0x48 ./main.o
+                0x0000000000002554                program_execute
  .text.page_data_read
-                0x0000000000002234       0x48 ./main.o
-                0x0000000000002234                page_data_read
+                0x000000000000259c       0x48 ./main.o
+                0x000000000000259c                page_data_read
  .text.read_data
-                0x000000000000227c       0x54 ./main.o
-                0x000000000000227c                read_data
- .text.main     0x00000000000022d0       0x48 ./main.o
-                0x00000000000022d0                main
+                0x00000000000025e4       0x54 ./main.o
+                0x00000000000025e4                read_data
+ .text.main     0x0000000000002638       0xd4 ./main.o
+                0x0000000000002638                main
  .text.__libc_init_array
-                0x0000000000002318       0x48 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
-                0x0000000000002318                __libc_init_array
- .text.memset   0x0000000000002360       0x10 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
-                0x0000000000002360                memset
+                0x000000000000270c       0x48 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
+                0x000000000000270c                __libc_init_array
+ .text.memset   0x0000000000002754       0x10 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
+                0x0000000000002754                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x0000000000002370        0x0 linker stubs
+ .glue_7t       0x0000000000002764        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000000002370        0x0 linker stubs
+ .glue_7        0x0000000000002764        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x0000000000002370        0x0 linker stubs
-                0x0000000000002370                . = ALIGN (0x4)
+ .vfp11_veneer  0x0000000000002764        0x0 linker stubs
+                0x0000000000002764                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT_BY_NAME(.ctors.*))
@@ -1411,56 +1377,56 @@ END GROUP
  *(SORT_BY_NAME(.dtors.*))
  *crtend.o(.dtors)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000000002370       0x13 ./main.o
+ .rodata        0x0000000000002764       0x13 ./main.o
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
  *(.eh_frame_hdr)
  *(.eh_frame)
- *fill*         0x0000000000002383        0x1 
- .eh_frame      0x0000000000002384        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+ *fill*         0x0000000000002777        0x1 
+ .eh_frame      0x0000000000002778        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
  *(.vector_table)
  *(.init)
- .init          0x0000000000002384        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
-                0x0000000000002384                _init
- .init          0x0000000000002388        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
+ .init          0x0000000000002778        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
+                0x0000000000002778                _init
+ .init          0x000000000000277c        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x0000000000002390        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
-                0x0000000000002390                _fini
- .fini          0x0000000000002394        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
-                0x000000000000239c                PROVIDE (__preinit_array_start = .)
+ .fini          0x0000000000002784        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
+                0x0000000000002784                _fini
+ .fini          0x0000000000002788        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
+                0x0000000000002790                PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x000000000000239c                PROVIDE (__preinit_array_end = .)
-                0x000000000000239c                PROVIDE (__init_array_start = .)
+                0x0000000000002790                PROVIDE (__preinit_array_end = .)
+                0x0000000000002790                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x000000000000239c        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
-                0x00000000000023a0                PROVIDE (__init_array_end = .)
+ .init_array    0x0000000000002790        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x0000000000002794                PROVIDE (__init_array_end = .)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(.fini_array)
- .fini_array    0x00000000000023a0        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x0000000000002794        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
  *(SORT_BY_NAME(.fini_array.*))
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00000000000023b0                . = ALIGN (0x10)
- *fill*         0x00000000000023a4        0xc 
-                0x00000000000023b0                __exidx_start = .
+                0x00000000000027a0                . = ALIGN (0x10)
+ *fill*         0x0000000000002798        0x8 
+                0x00000000000027a0                __exidx_start = .
 
-.v4_bx          0x00000000000023b0        0x0 load address 0x00000000600023b0
- .v4_bx         0x00000000000023b0        0x0 linker stubs
+.v4_bx          0x00000000000027a0        0x0 load address 0x00000000600027a0
+ .v4_bx         0x00000000000027a0        0x0 linker stubs
 
-.iplt           0x00000000000023b0        0x0 load address 0x00000000600023b0
- .iplt          0x00000000000023b0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x00000000000027a0        0x0 load address 0x00000000600027a0
+ .iplt          0x00000000000027a0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.rel.dyn        0x00000000000023b0        0x0 load address 0x00000000600023b0
- .rel.iplt      0x00000000000023b0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x00000000000027a0        0x0 load address 0x00000000600027a0
+ .rel.iplt      0x00000000000027a0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000000000023b0                __exidx_end = .
-                0x00000000000023b0                _etext = .
+                0x00000000000027a0                __exidx_end = .
+                0x00000000000027a0                _etext = .
 
-.data           0x0000000020000000       0x20 load address 0x00000000600023b0
-                0x00000000600023b0                __data_load = LOADADDR (.data)
-                0x00000000600023b0                _sidata = LOADADDR (.data)
+.data           0x0000000020000000       0x20 load address 0x00000000600027a0
+                0x00000000600027a0                __data_load = LOADADDR (.data)
+                0x00000000600027a0                _sidata = LOADADDR (.data)
                 0x0000000020000000                __data_start = .
                 0x0000000020000000                _sdata = .
  *(.jcr)
@@ -1494,10 +1460,10 @@ END GROUP
  *fill*         0x000000002000001a        0x6 
                 0x0000000020000020                _edata = .
 
-.igot.plt       0x0000000020000020        0x0 load address 0x00000000600023d0
+.igot.plt       0x0000000020000020        0x0 load address 0x00000000600027c0
  .igot.plt      0x0000000020000020        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.bss            0x0000000020000020      0x210 load address 0x00000000600023d0
+.bss            0x0000000020000020      0x210 load address 0x00000000600027c0
                 0x0000000020000020                __bss_start__ = .
                 0x0000000020000020                _sbss = .
  *(.shbss)
@@ -1570,7 +1536,7 @@ END GROUP
                 0x0000000020000230                _ebss = .
                 [!provide]                        PROVIDE (end = .)
 
-.heap           0x0000000020000230     0xedd0 load address 0x00000000600023d0
+.heap           0x0000000020000230     0xedd0 load address 0x00000000600027c0
                 0x0000000020000230                __heap_start__ = .
                 0x0000000020001230                . = (. + MIN_SIZE_HEAP)
  *fill*         0x0000000020000230     0x1000 
@@ -1578,7 +1544,7 @@ END GROUP
  *fill*         0x0000000020001230     0xddd0 
                 0x000000002000f000                _eheap = .
 
-.stack          0x000000002000f000     0x1000 load address 0x00000000600023d0
+.stack          0x000000002000f000     0x1000 load address 0x00000000600027c0
                 0x000000002000f000                __stack_start__ = .
                 0x0000000020010000                . = (. + MAIN_STACK_SIZE)
  *fill*         0x000000002000f000     0x1000 
@@ -1602,91 +1568,99 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x660
+.debug_aranges  0x0000000000000000      0x6c8
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000      0x1d0 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000000       0x68 ./windbondflash/winbondflash.o
  .debug_aranges
-                0x00000000000001d0       0x90 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000000068      0x1d0 ./drivers/mss_uart/mss_uart.o
  .debug_aranges
-                0x0000000000000260      0x1c8 ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000000238       0x90 ./drivers/mss_sys_services/mss_comblk.o
  .debug_aranges
-                0x0000000000000428       0xe0 ./drivers/mss_spi/mss_spi.o
+                0x00000000000002c8      0x1c8 ./drivers/mss_sys_services/mss_sys_services.o
  .debug_aranges
-                0x0000000000000508       0x80 ./drivers/mss_hpdma/mss_hpdma.o
+                0x0000000000000490       0xe0 ./drivers/mss_spi/mss_spi.o
  .debug_aranges
-                0x0000000000000588       0x20 ./CMSIS/startup_gcc/startup_m2sxxx.o
+                0x0000000000000570       0x80 ./drivers/mss_hpdma/mss_hpdma.o
  .debug_aranges
-                0x00000000000005a8       0x50 ./CMSIS/system_m2sxxx.o
+                0x00000000000005f0       0x20 ./CMSIS/startup_gcc/startup_m2sxxx.o
  .debug_aranges
-                0x00000000000005f8       0x68 ./main.o
+                0x0000000000000610       0x50 ./CMSIS/system_m2sxxx.o
+ .debug_aranges
+                0x0000000000000660       0x68 ./main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0xa580
+.debug_info     0x0000000000000000     0xb89a
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x0000000000000000     0x1ea8 ./drivers/mss_uart/mss_uart.o
- .debug_info    0x0000000000001ea8      0xb4b ./drivers/mss_sys_services/mss_comblk.o
- .debug_info    0x00000000000029f3     0x2867 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_info    0x000000000000525a     0x1f5b ./drivers/mss_spi/mss_spi.o
- .debug_info    0x00000000000071b5     0x1231 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_info    0x00000000000083e6       0x26 ./CMSIS/startup_gcc/startup_m2sxxx.o
- .debug_info    0x000000000000840c      0xb61 ./CMSIS/system_m2sxxx.o
- .debug_info    0x0000000000008f6d     0x1613 ./main.o
+ .debug_info    0x0000000000000000     0x1335 ./windbondflash/winbondflash.o
+ .debug_info    0x0000000000001335     0x1ea8 ./drivers/mss_uart/mss_uart.o
+ .debug_info    0x00000000000031dd      0xb4b ./drivers/mss_sys_services/mss_comblk.o
+ .debug_info    0x0000000000003d28     0x2867 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_info    0x000000000000658f     0x1f5b ./drivers/mss_spi/mss_spi.o
+ .debug_info    0x00000000000084ea     0x1231 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_info    0x000000000000971b       0x26 ./CMSIS/startup_gcc/startup_m2sxxx.o
+ .debug_info    0x0000000000009741      0xb61 ./CMSIS/system_m2sxxx.o
+ .debug_info    0x000000000000a2a2     0x15f8 ./main.o
 
-.debug_abbrev   0x0000000000000000     0x137e
+.debug_abbrev   0x0000000000000000     0x1686
  *(.debug_abbrev)
- .debug_abbrev  0x0000000000000000      0x356 ./drivers/mss_uart/mss_uart.o
- .debug_abbrev  0x0000000000000356      0x224 ./drivers/mss_sys_services/mss_comblk.o
- .debug_abbrev  0x000000000000057a      0x367 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_abbrev  0x00000000000008e1      0x35d ./drivers/mss_spi/mss_spi.o
- .debug_abbrev  0x0000000000000c3e      0x2a3 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_abbrev  0x0000000000000ee1       0x14 ./CMSIS/startup_gcc/startup_m2sxxx.o
- .debug_abbrev  0x0000000000000ef5      0x1b2 ./CMSIS/system_m2sxxx.o
- .debug_abbrev  0x00000000000010a7      0x2d7 ./main.o
+ .debug_abbrev  0x0000000000000000      0x306 ./windbondflash/winbondflash.o
+ .debug_abbrev  0x0000000000000306      0x356 ./drivers/mss_uart/mss_uart.o
+ .debug_abbrev  0x000000000000065c      0x224 ./drivers/mss_sys_services/mss_comblk.o
+ .debug_abbrev  0x0000000000000880      0x367 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_abbrev  0x0000000000000be7      0x35d ./drivers/mss_spi/mss_spi.o
+ .debug_abbrev  0x0000000000000f44      0x2a3 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_abbrev  0x00000000000011e7       0x14 ./CMSIS/startup_gcc/startup_m2sxxx.o
+ .debug_abbrev  0x00000000000011fb      0x1b2 ./CMSIS/system_m2sxxx.o
+ .debug_abbrev  0x00000000000013ad      0x2d9 ./main.o
 
-.debug_line     0x0000000000000000     0x5700
+.debug_line     0x0000000000000000     0x5e11
  *(.debug_line)
- .debug_line    0x0000000000000000     0x159a ./drivers/mss_uart/mss_uart.o
- .debug_line    0x000000000000159a      0x89b ./drivers/mss_sys_services/mss_comblk.o
- .debug_line    0x0000000000001e35     0x15a5 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_line    0x00000000000033da     0x1061 ./drivers/mss_spi/mss_spi.o
- .debug_line    0x000000000000443b      0x653 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_line    0x0000000000004a8e      0x18e ./CMSIS/startup_gcc/startup_m2sxxx.o
- .debug_line    0x0000000000004c1c      0x41f ./CMSIS/system_m2sxxx.o
- .debug_line    0x000000000000503b      0x6c5 ./main.o
+ .debug_line    0x0000000000000000      0x682 ./windbondflash/winbondflash.o
+ .debug_line    0x0000000000000682     0x159a ./drivers/mss_uart/mss_uart.o
+ .debug_line    0x0000000000001c1c      0x89b ./drivers/mss_sys_services/mss_comblk.o
+ .debug_line    0x00000000000024b7     0x15a5 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_line    0x0000000000003a5c     0x1061 ./drivers/mss_spi/mss_spi.o
+ .debug_line    0x0000000000004abd      0x653 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_line    0x0000000000005110      0x18e ./CMSIS/startup_gcc/startup_m2sxxx.o
+ .debug_line    0x000000000000529e      0x41f ./CMSIS/system_m2sxxx.o
+ .debug_line    0x00000000000056bd      0x754 ./main.o
 
-.debug_frame    0x0000000000000000     0x1ad8
+.debug_frame    0x0000000000000000     0x1c5c
  *(.debug_frame)
- .debug_frame   0x0000000000000000      0x820 ./drivers/mss_uart/mss_uart.o
- .debug_frame   0x0000000000000820      0x240 ./drivers/mss_sys_services/mss_comblk.o
- .debug_frame   0x0000000000000a60      0x7dc ./drivers/mss_sys_services/mss_sys_services.o
- .debug_frame   0x000000000000123c      0x3c0 ./drivers/mss_spi/mss_spi.o
- .debug_frame   0x00000000000015fc      0x208 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_frame   0x0000000000001804      0x10c ./CMSIS/system_m2sxxx.o
- .debug_frame   0x0000000000001910      0x17c ./main.o
- .debug_frame   0x0000000000001a8c       0x2c c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
- .debug_frame   0x0000000000001ab8       0x20 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000000000      0x184 ./windbondflash/winbondflash.o
+ .debug_frame   0x0000000000000184      0x820 ./drivers/mss_uart/mss_uart.o
+ .debug_frame   0x00000000000009a4      0x240 ./drivers/mss_sys_services/mss_comblk.o
+ .debug_frame   0x0000000000000be4      0x7dc ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_frame   0x00000000000013c0      0x3c0 ./drivers/mss_spi/mss_spi.o
+ .debug_frame   0x0000000000001780      0x208 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_frame   0x0000000000001988      0x10c ./CMSIS/system_m2sxxx.o
+ .debug_frame   0x0000000000001a94      0x17c ./main.o
+ .debug_frame   0x0000000000001c10       0x2c c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000001c3c       0x20 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x0000000000000000    0x13aaa
+.debug_str      0x0000000000000000    0x13d55
  *(.debug_str)
- .debug_str     0x0000000000000000     0xbb10 ./drivers/mss_uart/mss_uart.o
+ .debug_str     0x0000000000000000     0xcb7a ./windbondflash/winbondflash.o
+                                       0xcec9 (size before relaxing)
+ .debug_str     0x000000000000cb7a     0x1f34 ./drivers/mss_uart/mss_uart.o
                                        0xbe1d (size before relaxing)
- .debug_str     0x000000000000bb10      0x4be ./drivers/mss_sys_services/mss_comblk.o
+ .debug_str     0x000000000000eaae      0x4b6 ./drivers/mss_sys_services/mss_comblk.o
                                        0xa1f5 (size before relaxing)
- .debug_str     0x000000000000bfce     0x4d0c ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_str     0x000000000000ef64     0x24d4 ./drivers/mss_sys_services/mss_sys_services.o
                                        0xf009 (size before relaxing)
- .debug_str     0x0000000000010cda      0xac7 ./drivers/mss_spi/mss_spi.o
+ .debug_str     0x0000000000011438      0x706 ./drivers/mss_spi/mss_spi.o
                                        0xdb74 (size before relaxing)
- .debug_str     0x00000000000117a1      0x754 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_str     0x0000000000011b3e      0x754 ./drivers/mss_hpdma/mss_hpdma.o
                                        0xab0f (size before relaxing)
- .debug_str     0x0000000000011ef5       0x34 ./CMSIS/startup_gcc/startup_m2sxxx.o
+ .debug_str     0x0000000000012292       0x34 ./CMSIS/startup_gcc/startup_m2sxxx.o
                                          0x80 (size before relaxing)
- .debug_str     0x0000000000011f29      0x74c ./CMSIS/system_m2sxxx.o
+ .debug_str     0x00000000000122c6      0x74c ./CMSIS/system_m2sxxx.o
                                        0xa1df (size before relaxing)
- .debug_str     0x0000000000012675     0x1435 ./main.o
-                                       0xf76e (size before relaxing)
+ .debug_str     0x0000000000012a12     0x1343 ./main.o
+                                       0xf719 (size before relaxing)
 
 .debug_loc
  *(.debug_loc)
@@ -1769,42 +1743,72 @@ END GROUP
  *(.note.GNU-stack)
 OUTPUT(IAP_M2S005.elf elf32-littlearm)
 
-.debug_ranges   0x0000000000000000      0x650
- .debug_ranges  0x0000000000000000      0x1d8 ./drivers/mss_uart/mss_uart.o
- .debug_ranges  0x00000000000001d8       0xd0 ./drivers/mss_sys_services/mss_comblk.o
- .debug_ranges  0x00000000000002a8      0x1b8 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_ranges  0x0000000000000460       0xd0 ./drivers/mss_spi/mss_spi.o
- .debug_ranges  0x0000000000000530       0x70 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_ranges  0x00000000000005a0       0x58 ./CMSIS/system_m2sxxx.o
- .debug_ranges  0x00000000000005f8       0x58 ./main.o
+.debug_ranges   0x0000000000000000      0x6a8
+ .debug_ranges  0x0000000000000000       0x58 ./windbondflash/winbondflash.o
+ .debug_ranges  0x0000000000000058      0x1d8 ./drivers/mss_uart/mss_uart.o
+ .debug_ranges  0x0000000000000230       0xd0 ./drivers/mss_sys_services/mss_comblk.o
+ .debug_ranges  0x0000000000000300      0x1b8 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_ranges  0x00000000000004b8       0xd0 ./drivers/mss_spi/mss_spi.o
+ .debug_ranges  0x0000000000000588       0x70 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_ranges  0x00000000000005f8       0x58 ./CMSIS/system_m2sxxx.o
+ .debug_ranges  0x0000000000000650       0x58 ./main.o
 
-.debug_macro    0x0000000000000000     0x18f1
- .debug_macro   0x0000000000000000      0x185 ./drivers/mss_uart/mss_uart.o
- .debug_macro   0x0000000000000185      0x174 ./drivers/mss_uart/mss_uart.o
- .debug_macro   0x00000000000002f9      0x177 ./drivers/mss_uart/mss_uart.o
- .debug_macro   0x0000000000000470       0xe2 ./drivers/mss_uart/mss_uart.o
- .debug_macro   0x0000000000000552       0x22 ./drivers/mss_uart/mss_uart.o
- .debug_macro   0x0000000000000574      0x168 ./drivers/mss_sys_services/mss_comblk.o
- .debug_macro   0x00000000000006dc      0x3f4 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_macro   0x0000000000000ad0      0x2f8 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_macro   0x0000000000000dc8       0x10 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_macro   0x0000000000000dd8       0x35 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_macro   0x0000000000000e0d      0x26a ./drivers/mss_spi/mss_spi.o
- .debug_macro   0x0000000000001077      0x151 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_macro   0x00000000000011c8       0x5e ./drivers/mss_hpdma/mss_hpdma.o
- .debug_macro   0x0000000000001226       0x94 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_macro   0x00000000000012ba       0x57 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_macro   0x0000000000001311       0x10 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_macro   0x0000000000001321      0x173 ./CMSIS/system_m2sxxx.o
- .debug_macro   0x0000000000001494      0x2ac ./main.o
- .debug_macro   0x0000000000001740       0x1c ./main.o
- .debug_macro   0x000000000000175c       0x10 ./main.o
- .debug_macro   0x000000000000176c       0x16 ./main.o
- .debug_macro   0x0000000000001782      0x16f ./main.o
+.debug_macro    0x0000000000000000     0x419b
+ .debug_macro   0x0000000000000000      0x1ce ./windbondflash/winbondflash.o
+ .debug_macro   0x00000000000001ce      0xa84 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000000c52       0x22 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000000c74       0x8e ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000000d02       0x51 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000000d53       0xef ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000000e42       0x6a ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000000eac      0x1df ./windbondflash/winbondflash.o
+ .debug_macro   0x000000000000108b       0x18 ./windbondflash/winbondflash.o
+ .debug_macro   0x00000000000010a3       0x64 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001107       0x35 ./windbondflash/winbondflash.o
+ .debug_macro   0x000000000000113c       0x34 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001170       0x16 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001186      0x10e ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001294       0x8d ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001321       0x58 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001379       0x1f ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001398       0x43 ./windbondflash/winbondflash.o
+ .debug_macro   0x00000000000013db       0x20 ./windbondflash/winbondflash.o
+ .debug_macro   0x00000000000013fb      0x18e ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001589      0x339 ./windbondflash/winbondflash.o
+ .debug_macro   0x00000000000018c2       0x16 ./windbondflash/winbondflash.o
+ .debug_macro   0x00000000000018d8       0x29 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001901       0x26 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001927       0x3a ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001961       0x34 ./windbondflash/winbondflash.o
+ .debug_macro   0x0000000000001995      0xca6 ./windbondflash/winbondflash.o
+ .debug_macro   0x000000000000263b      0x265 ./windbondflash/winbondflash.o
+ .debug_macro   0x00000000000028a0      0x185 ./drivers/mss_uart/mss_uart.o
+ .debug_macro   0x0000000000002a25      0x174 ./drivers/mss_uart/mss_uart.o
+ .debug_macro   0x0000000000002b99      0x177 ./drivers/mss_uart/mss_uart.o
+ .debug_macro   0x0000000000002d10       0xe2 ./drivers/mss_uart/mss_uart.o
+ .debug_macro   0x0000000000002df2       0x22 ./drivers/mss_uart/mss_uart.o
+ .debug_macro   0x0000000000002e14      0x168 ./drivers/mss_sys_services/mss_comblk.o
+ .debug_macro   0x0000000000002f7c      0x3f4 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_macro   0x0000000000003370      0x2f8 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_macro   0x0000000000003668       0x10 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_macro   0x0000000000003678       0x35 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_macro   0x00000000000036ad      0x26a ./drivers/mss_spi/mss_spi.o
+ .debug_macro   0x0000000000003917      0x151 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_macro   0x0000000000003a68       0x5e ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_macro   0x0000000000003ac6       0x94 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_macro   0x0000000000003b5a       0x57 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_macro   0x0000000000003bb1       0x10 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_macro   0x0000000000003bc1      0x173 ./CMSIS/system_m2sxxx.o
+ .debug_macro   0x0000000000003d34      0x2b6 ./main.o
+ .debug_macro   0x0000000000003fea       0x1c ./main.o
+ .debug_macro   0x0000000000004006       0x10 ./main.o
+ .debug_macro   0x0000000000004016       0x16 ./main.o
+ .debug_macro   0x000000000000402c      0x16f ./main.o
 
 .comment        0x0000000000000000       0x66
- .comment       0x0000000000000000       0x66 ./drivers/mss_uart/mss_uart.o
+ .comment       0x0000000000000000       0x66 ./windbondflash/winbondflash.o
                                          0x67 (size before relaxing)
+ .comment       0x0000000000000066       0x67 ./drivers/mss_uart/mss_uart.o
  .comment       0x0000000000000066       0x67 ./drivers/mss_sys_services/mss_comblk.o
  .comment       0x0000000000000066       0x67 ./drivers/mss_sys_services/mss_sys_services.o
  .comment       0x0000000000000066       0x67 ./drivers/mss_spi/mss_spi.o

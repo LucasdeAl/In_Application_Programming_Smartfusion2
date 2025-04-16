@@ -4,7 +4,7 @@
 #include "mss_uart.h"
 #include "mss_sys_services.h"
 #include "mss_spi.h"
-//#include"flash_w25n01g.h"
+#include "winbondflash.h"
 #define BUFFER_SIZE 2048
 
 //*&************************************************************
@@ -29,7 +29,6 @@ void Read_Status_Register(void)
 
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 }
-
 void test_spi_flash(void)
 {
     uint8_t tx_buf[1] = { 0x9F};
@@ -45,8 +44,6 @@ void test_spi_flash(void)
 
 
 }
-
-
 void write_enable(void)
 {
     uint8_t tx_buf[1] = { 0x06};
@@ -59,9 +56,6 @@ void write_enable(void)
 
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 }
-
-
-
 void erase_block_flash(void)
 {
     uint8_t tx_buf[4] = { 0xD8, 0x00, 0x00, 0x00 };  // Comando de apagamento de bloco e endereço
@@ -86,7 +80,6 @@ void program_data_load(void)
     MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 6, NULL, 0);
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 }
-
 void program_execute(void)
 {
 
@@ -96,7 +89,6 @@ void program_execute(void)
     MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, NULL, 0);
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 }
-
 void page_data_read(void)
 {
 
@@ -106,17 +98,15 @@ void page_data_read(void)
     MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, NULL, 0);
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 }
-
-
-void read_data(void)
+void read_data(uint8_t * rx_buff)
 {
 
     uint8_t tx_buf[3] = { 0x03, 0x00, 0x00 };
+    size_t size = sizeof(rx_buff);
 
-    uint8_t rx_buff[6] = {0};
 
     MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, rx_buff, 6);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, rx_buff, size);
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 
 
@@ -127,21 +117,25 @@ void read_data(void)
 
 int main()
 {
+
+    MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
     uint8_t data_write[BUFFER_SIZE];
     uint8_t data_read[BUFFER_SIZE];
-    uint8_t dread;
+    uint32_t addr = 0x0;
 
-    MSS_SPI_init(&g_mss_spi0);
-    MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
+    FLASH_init();
 
+    for(int i=0;i<BUFFER_SIZE;i++)
+    {
+        data_write[i] = 5;
+        data_read[i] = 7;
+    }
 
-       MSS_SPI_configure_master_mode(
-           &g_mss_spi0,
-           MSS_SPI_SLAVE_0,
-           MSS_SPI_MODE3,
-           128u,
-           8
-       );
+    //FLASH_init();
+    FLASH_chip_erase();
+    FLASH_erase_128k_block(addr);
+    FLASH_program(addr, data_write, 2048);
+    FLASH_read(addr, data_read, 2048);
 
 
        //test_spi_flash();
@@ -150,7 +144,7 @@ int main()
        program_data_load();
        program_execute();
        page_data_read();
-       read_data();
+       read_data(data_read);
 
 
 
