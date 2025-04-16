@@ -9,165 +9,31 @@
 
 //*&************************************************************
 uint8_t g_page_buffer[BUFFER_SIZE];
+uint32_t page_read_handler(uint8_t const ** pp_next_page);
+//void isp_completion_handler(uint32_t value);
+//dummy
+//void dummy_isp_completion_handler(uint32_t value);
+//uint32_t dummy_page_read_handler(uint8_t const ** pp_next_page);
+volatile uint8_t g_isp_operation_busy = 1;
+uint8_t dummy_g_page_buffer[20];
+/*==============================================================================
+  UART selection.
 
+  mss_uart_instance_t * const gp_my_uart = &g_mss_uart1;
+ */
 
 mss_uart_instance_t * const gp_my_uart = &g_mss_uart0;
+static uint32_t g_src_image_target_address = 0;
+uint32_t g_bkup = 0;
+uint8_t g_mode = 0;
+static uint32_t g_file_size = 0;
+//***********************************************************
 
-size_t
-UART_Polled_Rx(mss_uart_instance_t * this_uart,uint8_t * rx_buff, size_t buff_size);
-
-void Read_Status_Register(void)
+void delay(volatile uint8_t n)
 {
-    uint8_t tx_buf[2] = { 0x0F, 0x00};
-    uint8_t rx_buf[8] = { 0 };
-
-
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 2, rx_buf, 8);
-
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+    while(n)
+        n--;
 }
-void test_spi_flash(void)
-{
-    uint8_t tx_buf[1] = { 0x9F};
-    uint8_t rx_buf[4] = { 0 };
-
-
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 1, rx_buf, 4);
-
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-
-
-}
-void write_enable(void)
-{
-    uint8_t tx_buf[1] = { 0x06};
-
-
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 1, NULL, 0);
-
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-}
-void erase_block_flash(void)
-{
-    uint8_t tx_buf[4] = { 0xD8, 0x00, 0x00, 0x00 };  // Comando de apagamento de bloco e endereço
-    uint8_t rx_buf[4] = { 0 };
-
-    // Habilita a escrita
-    write_enable();
-
-    // Envia o comando de apagamento de bloco
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 4, rx_buf, 4);
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-
-
-}
-void program_data_load(void)
-{
-
-    uint8_t tx_buf[6] = { 0x02, 0x00, 0x00, 0xaa, 0xbb, 0xcc };
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 6, NULL, 0);
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-}
-void program_execute(void)
-{
-
-    uint8_t tx_buf[3] = { 0x10, 0x00, 0x00 };
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, NULL, 0);
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-}
-void page_data_read(void)
-{
-
-    uint8_t tx_buf[3] = { 0x13, 0x00, 0x00 };
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, NULL, 0);
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-}
-void read_data(uint8_t * rx_buff)
-{
-
-    uint8_t tx_buf[3] = { 0x03, 0x00, 0x00 };
-    size_t size = sizeof(rx_buff);
-
-
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, rx_buff, size);
-    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-
-
-}
-
-
-
-
-int main()
-{
-
-    MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
-    uint8_t data_write[BUFFER_SIZE];
-    uint8_t data_read[BUFFER_SIZE];
-    uint32_t addr = 0x0;
-
-    FLASH_init();
-
-    for(int i=0;i<BUFFER_SIZE;i++)
-    {
-        data_write[i] = 5;
-        data_read[i] = 7;
-    }
-
-    //FLASH_init();
-    FLASH_chip_erase();
-    FLASH_erase_128k_block(addr);
-    FLASH_program(addr, data_write, 2048);
-    FLASH_read(addr, data_read, 2048);
-
-
-       //test_spi_flash();
-       write_enable();
-       erase_block_flash();
-       program_data_load();
-       program_execute();
-       page_data_read();
-       read_data(data_read);
-
-
-
-
-/*
-    MSS_UART_init( gp_my_uart,
-                MSS_UART_57600_BAUD,
-                      MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
-
-*/
-
-
-    while(1)
-    {
-
-
-    }
-
-
-    return 0;
-}
-
-
 
 size_t
 UART_Polled_Rx
@@ -191,5 +57,165 @@ UART_Polled_Rx
 
     return rx_size;
 }
+static uint32_t read_page_from_host_through_uart
+(
+    uint8_t * g_buffer,
+    uint32_t length
+);
+
+
+int main()
+{
+
+    uint8_t rx_buff[8] ;
+
+    MSS_UART_init( gp_my_uart,
+            MSS_UART_57600_BAUD,
+                  MSS_UART_DATA_8_BITS | MSS_UART_NO_PARITY | MSS_UART_ONE_STOP_BIT);
+
+
+      MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
+
+      /* start the handshake with the host */
+      START_HANDSHAKE:
+           while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )))
+              ;
+           if(rx_buff[0] == 'h')
+              MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"a", 1 );
+           else
+               goto START_HANDSHAKE;
+           while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )))
+              ;
+           if(rx_buff[0] == 'n')
+              MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"d", 1 );
+           while(!(UART_Polled_Rx (gp_my_uart, rx_buff, 1 )))
+              ;
+           if(rx_buff[0] == 's')
+              MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"h", 1 );
+           while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )))
+              ;
+           if(rx_buff[0] == 'a')
+              MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"k", 1 );
+           while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )))
+              ;
+           if(rx_buff[0] == 'e')
+            {
+               MSS_UART_polled_tx( gp_my_uart, (const uint8_t * )"r", 1 );
+            }
+           /* poll for starting Ack message from the host as an acknowledgment
+                   that the host is ready to send file size */
+
+           while(!(UART_Polled_Rx (gp_my_uart, rx_buff, 1 )));
+           MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"a",1);
+           /*poll for mode */
+           //MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"m",1);
+           //while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )));
+
+           //g_mode  = rx_buff[0];
+           /*poll for file size*/
+           MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"z",1);
+           while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 8 )))
+                         ;
+           g_file_size = atoi((const char*)rx_buff);
+
+           MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"a",1);
+
+
+
+           while(1)
+           {
+
+           }
+
+}
+
+
+uint32_t page_read_handler
+(
+    uint8_t const ** pp_next_page
+)
+{
+    uint32_t length;
+
+    length = read_page_from_host_through_uart(g_page_buffer, BUFFER_SIZE);  // Chama a função de leitura de página
+    *pp_next_page = g_page_buffer;  // Aponta pp_next_page para o buffer que contém os dados da página
+
+    return length;  // Retorna o número de bytes lidos
+}
+
+
+static uint32_t read_page_from_host_through_uart
+(
+    uint8_t * g_buffer,
+    uint32_t length
+)
+{
+    uint32_t num_bytes,factor,temp;
+    num_bytes = length;  // O número de bytes a serem lidos é dado por 'length'
+
+    char crc;
+    size_t rx_size = 0;
+    uint8_t rx_buff[1];
+
+    // Inicia a transação de leitura enviando "b" para o host
+    MSS_UART_polled_tx(gp_my_uart, (const uint8_t *)"b", 1);
+
+    // Aguarda a confirmação ("Ack") do host
+    while (!(UART_Polled_Rx(gp_my_uart, rx_buff, 1)));
+
+    // Se o host confirmou a transação, envia o endereço da memória onde os dados serão armazenados
+    temp = g_src_image_target_address / 8;
+    if (rx_buff[0] == 'a') {
+        MSS_UART_polled_tx(gp_my_uart, (const uint8_t *)&temp, 8);
+    }
+
+    // Aguarda a confirmação do envio do endereço
+    while (!(UART_Polled_Rx(gp_my_uart, rx_buff, 1)));
+
+    // Envia o número de bytes a serem lidos (returnbytes)
+    if (rx_buff[0] == 'a') {
+        MSS_UART_polled_tx(gp_my_uart, (const uint8_t *)&num_bytes, 4);
+    }
+
+    // Aguarda a confirmação do número de bytes
+    while (!(UART_Polled_Rx(gp_my_uart, rx_buff, 1)));
+
+    // Se o host está pronto, começa a leitura dos dados
+    if (rx_buff[0] == 'a')
+        rx_size = UART_Polled_Rx(gp_my_uart, g_buffer, num_bytes);
+
+    // Envia uma confirmação ("Ack") de que os dados foram lidos
+    MSS_UART_polled_tx(gp_my_uart, (const uint8_t *)"a", 1);
+
+    // Recebe o CRC dos dados
+    while (!(UART_Polled_Rx(gp_my_uart, rx_buff, 1)));
+
+    factor = 1;
+    crc = 0;
+
+    // Calcula o CRC para verificar a integridade dos dados
+    while ((num_bytes - 1) / factor) {
+        crc = crc ^ g_buffer[factor];
+        factor = factor * 2;
+    }
+
+    // Compara o CRC calculado com o CRC recebido
+    if (crc == (char)rx_buff[0]) {
+        g_src_image_target_address += rx_size;
+        g_bkup = g_bkup + rx_size;
+        MSS_UART_polled_tx(gp_my_uart, (const uint8_t *)"a", 1);  // Envia "a" para confirmar o sucesso da transação
+    } else {
+        // Se o CRC falhar, envia "n" e tenta novamente
+        MSS_UART_polled_tx(gp_my_uart, (const uint8_t *)"n", 1);
+        goto CRCFAIL;
+    }
+
+    return rx_size;
+}
+
+
+
+
+
 
 

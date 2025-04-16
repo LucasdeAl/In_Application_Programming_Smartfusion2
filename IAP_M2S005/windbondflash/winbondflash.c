@@ -397,3 +397,103 @@ static void wait_ready( void )
 
 }
 
+
+
+void Read_Status_Register(void)
+{
+    uint8_t tx_buf[2] = { 0x0F, 0x00};
+    uint8_t rx_buf[8] = { 0 };
+
+
+
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 2, rx_buf, 8);
+
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+}
+void test_spi_flash(void)
+{
+    uint8_t tx_buf[1] = { 0x9F};
+    uint8_t rx_buf[4] = { 0 };
+
+
+
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 1, rx_buf, 4);
+
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+
+
+}
+void write_enable(void)
+{
+    uint8_t tx_buf[1] = { 0x06};
+
+
+
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 1, NULL, 0);
+
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+}
+void erase_block_flash(void)
+{
+    uint8_t tx_buf[4] = { 0xD8, 0x00, 0x00, 0x00 };  // Comando de apagamento de bloco e endereço
+    uint8_t rx_buf[4] = { 0 };
+
+    // Habilita a escrita
+    write_enable();
+
+    // Envia o comando de apagamento de bloco
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 4, rx_buf, 4);
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+
+
+}
+void program_data_load(void)
+{
+
+    uint8_t tx_buf[6] = { 0x02, 0x00, 0x00, 0xaa, 0xbb, 0xcc };
+
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 6, NULL, 0);
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+}
+void program_execute(void)
+{
+
+    uint8_t tx_buf[3] = { 0x10, 0x00, 0x00 };
+
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, NULL, 0);
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+}
+void page_data_read(void)
+{
+
+    uint8_t tx_buf[3] = { 0x13, 0x00, 0x00 };
+
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, NULL, 0);
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+}
+void read_data(uint8_t * rx_buff)
+{
+
+    uint8_t tx_buf[3] = { 0x03, 0x00, 0x00 };
+    size_t size = sizeof(rx_buff);
+
+
+    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 3, rx_buff, size);
+    MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+
+
+}
+
+
+
