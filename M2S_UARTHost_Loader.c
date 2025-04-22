@@ -29,6 +29,33 @@ DWORD iBytesWritten;
 DWORD iBytesRead;
 
 
+#define MAX_BUFFER_SIZE 1024
+
+// Função para ler uma string da porta serial
+int ReadStringFromSerial(HANDLE hCom, char *buffer, int bufferSize) {
+    DWORD bytesRead;
+    int i = 0;
+    char ch;
+
+    // Ler até o final da string ou até o buffer ficar cheio
+    while (i < bufferSize - 1) {
+        // Ler um caractere da porta serial
+        if (ReadFile(hCom, &ch, 1, &bytesRead, NULL)) {
+            if (bytesRead > 0) {
+                if (ch == '\n' || ch =='\r') {  // Se encontrou o caractere de nova linha, termine a string
+                    buffer[i] = '\0';  // Adiciona o caractere de terminação de string
+                    return i;  // Retorna o número de caracteres lidos
+                }
+                buffer[i++] = ch;  // Adiciona o caractere ao buffer
+            }
+        } else {
+            // Erro ao ler da porta serial
+            printf("Erro ao ler da porta serial\n");
+            return -1;
+        }
+    }
+}
+
 char SerialGetc(HANDLE hCom)
 {
 	BOOL bReadRC;
@@ -55,7 +82,8 @@ void SerialPutc(HANDLE hCom, char txchar)
 
 
 int main(int argc, char *argv[])
-{
+{	
+    int bytesRead;
 	DCB dcb;
 	HANDLE hCom;
 	HANDLE *ptr;
@@ -73,26 +101,26 @@ int main(int argc, char *argv[])
 	char pcCommPort[10]="\\\\.\\COM";
 	char prevch;
 	char crc = 0;
-	//char Action_code[2];
-	if(argc <3)
+	char Action_code[3];
+	if(argc < 4)
 	{
 
 		printf("Usage for M2S_UARTHost_Loader: M2S_UARTHost_Loader.exe filename comportnumber\n");
-		//printf("IAP modes : mode = 0 -> Authenticate ; mode = 1 -> program ; mode = 2 -> verify\n");
+		printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin IAP\n");
 
 		return 0;
 	}
-	//strcpy(Action_code,argv[3]);
-	//printf("mode = %s\n",Action_code);
-   /* 
+	strcpy(Action_code,argv[3]);
+	printf("mode = %s\n",Action_code);
+   
     if( Action_code[0] != '0' && Action_code[0] != '1' &&  Action_code[0] != '2')
     {
    	    printf("Usage for M2S_UARTHost_Loader: M2S_UARTHost_Loader.exe filename comportnumber\n");
-		printf("ISP modes : \nmode = 0 -> Authenticate ; mode = 1 -> program ; mode = 2 -> verify\n");
+		   printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin IAP\n");
 
 		return 0;
     }
-		*/
+		
 
 	strcat(pcCommPort,argv[2]);
 	hCom = CreateFile( pcCommPort,
@@ -225,15 +253,15 @@ int main(int argc, char *argv[])
 	bWriteRC = WriteFile(hCom, Ack, 1, &iBytesWritten,NULL);
 	bReadRC = ReadFile(hCom, ret, 1,&iBytesRead,NULL);
     
-	printf("Comecar a operacao para iniciar a gravacao do bitstream na flash....\n");  
+	//printf("Comecar a operacao para iniciar a gravacao do bitstream na flash....\n");  
 	//send the mode
-	/*
+		
 	ret[0] = SerialGetc(hCom);
 	if (ret[0] == 'm')
 	{
         SerialPutc(hCom,Action_code[0]);
 	}
-		*/
+	
 	strcpy(filename, argv[1]);
 	fp = fopen(filename,"rb");
 	// obtain file size:
@@ -243,12 +271,12 @@ int main(int argc, char *argv[])
 
 	printf("Sending the programming file size = %d\n", size);
 	ret[0] = SerialGetc(hCom);
-	printf("recebeu:  %c\n", ret[0]);
+	//printf("recebeu:  %c\n", ret[0]);
 	if (ret[0] == 'z')
 	{
         _itoa(size,filesize,10);       
 		bWriteRC = WriteFile(hCom, filesize, 8, &iBytesWritten,NULL); // aqui se manda o tamanho do arquivo
-		printf("mandou o tamanho do arquivo");
+		printf("mandou o tamanho do arquivo\r\n");
 	}
 	//Read the address and return bytes from target and transmit the requested number of bytes from that address to the target.
 	//At the target side the data will be stored in internal memory and to the internal memory for the external flash memory 
@@ -313,123 +341,155 @@ int main(int argc, char *argv[])
              
          }
         */
-        if(ret[0]!='b') // b de begining
-			continue;
-        
+	   //printf("actioncode 0: %d,  action code 1: %d ",Action_code[0],Action_code[1]);
+	   if(Action_code[0] == '0'){
+			if(ret[0]!='b') // b de begining
+				continue;
+			
 
-		if(bReadRC==0)
-		{
-			printf("No transction started from the target.Begin transaction Ack 'b' fails\n");   
-		}
+			if(bReadRC==0)
+			{
+				printf("No transction started from the target.Begin transaction Ack 'b' fails\n");   
+			}
 
-		printf("============Begin transaction Ack '%s' is received from the target=============\n",ret); 
-		//send Ack message to the target as an acknowledgement for receiving the begin transaction Ack 'b'.
-		bWriteRC = WriteFile(hCom, Ack, 1, &iBytesWritten,NULL);        
-		if(bWriteRC==0)
-		{
-			printf("Sending Ack message 'a' fails for an acknowledgement of receiving the begin transaction Ack 'b'\n");   
-		}            
-		//read address from target
-		bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL);
-		address = temp*8;
-		if(bReadRC==0)
-		{
-			printf("Read address transaction fails from the target\n");   
-		}
-		printf("Requested address from the target =%d\n", address);   
-		//send an Ack to the target as an acknowledgment for receiving the address     
-		bWriteRC = WriteFile(hCom, Ack, 1, &iBytesWritten,NULL);        
-		if(bWriteRC==0)
-		{
-			printf("Sending Ack message fails for the received address\n");   
-		}
-		//read returnbytes from target
-		bReadRC =ReadFile(hCom, (char *)&returnbytes, 4,&iBytesRead,NULL);        
-		if(bReadRC==0)
-		{
-			printf("Read number of returnbytes transcation fails from the target\n");   
-		}
-		printf("Requested returnbytes from the target =%d\n", returnbytes);     
-		//send an Ack to the target as an acknowledgment for receiving the returnbytes        
-		bWriteRC = WriteFile(hCom, Ack, 1, &iBytesWritten,NULL);
-		if(bWriteRC==0)
-		{
-			printf("Sending Ack message fails for the received returnbytes\n");   
-		}
-		//set the file pointer to the requested address
-		fseek (fp , address , SEEK_SET);
-		//read the requested number of bytes from the file into buffer
-		result = fread (buffer,1,returnbytes,fp);
+			printf("============Begin transaction Ack '%s' is received from the target=============\n",ret); 
+			//send Ack message to the target as an acknowledgement for receiving the begin transaction Ack 'b'.
+			bWriteRC = WriteFile(hCom, Ack, 1, &iBytesWritten,NULL);        
+			if(bWriteRC==0)
+			{
+				printf("Sending Ack message 'a' fails for an acknowledgement of receiving the begin transaction Ack 'b'\n");   
+			}            
+			//read address from target
+			bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL);
+			address = temp*8;
+			if(bReadRC==0)
+			{
+				printf("Read address transaction fails from the target\n");   
+			}
+			printf("Requested address from the target =%d\n", address);   
+			//send an Ack to the target as an acknowledgment for receiving the address     
+			bWriteRC = WriteFile(hCom, Ack, 1, &iBytesWritten,NULL);        
+			if(bWriteRC==0)
+			{
+				printf("Sending Ack message fails for the received address\n");   
+			}
+			//read returnbytes from target
+			bReadRC =ReadFile(hCom, (char *)&returnbytes, 4,&iBytesRead,NULL);        
+			if(bReadRC==0)
+			{
+				printf("Read number of returnbytes transcation fails from the target\n");   
+			}
+			printf("Requested returnbytes from the target =%d\n", returnbytes);     
+			//send an Ack to the target as an acknowledgment for receiving the returnbytes        
+			bWriteRC = WriteFile(hCom, Ack, 1, &iBytesWritten,NULL);
+			if(bWriteRC==0)
+			{
+				printf("Sending Ack message fails for the received returnbytes\n");   
+			}
+			//set the file pointer to the requested address
+			fseek (fp , address , SEEK_SET);
+			//read the requested number of bytes from the file into buffer
+			result = fread (buffer,1,returnbytes,fp);
 
-		printf("bytes read from the file=%d\n", result);
-		//printf("requested bytes from the the target =%d\n", returnbytes);
-        printf("Remaining bytes =%d\n", size - address-returnbytes);
-		if (result != returnbytes)
-		{
-			printf("Can't open Input file: Please check the path of the file: Reading error\n");
-			exit (3);
-		}
-		
-		//send the requested data to the target
-		bWriteRC = WriteFile(hCom, buffer, returnbytes, &iBytesWritten,NULL);
-		printf("Sending the data to the target...............................................\n");
-		//read an Ack from the target to ensure that the whole data is received by the target          
-		bReadRC = ReadFile(hCom, ret, 1,&iBytesRead,NULL); 
-		if(bReadRC==0)
-		{
+			printf("bytes read from the file=%d\n", result);
+			//printf("requested bytes from the the target =%d\n", returnbytes);
+			printf("Remaining bytes =%d\n", size - address-returnbytes);
+			if (result != returnbytes)
+			{
+				printf("Can't open Input file: Please check the path of the file: Reading error\n");
+				exit (3);
+			}
+			
+			//send the requested data to the target
+			bWriteRC = WriteFile(hCom, buffer, returnbytes, &iBytesWritten,NULL);
+			printf("Sending the data to the target...............................................\n");
+			//read an Ack from the target to ensure that the whole data is received by the target          
+			bReadRC = ReadFile(hCom, ret, 1,&iBytesRead,NULL); 
+			if(bReadRC==0)
+			{
+				printf("Read Ack operation fail from target for the requested bytes\n");   
+			}
+			//CRC check
+			factor = 1;
+			crc = 0;
+			while((returnbytes-1)/factor)
+			{
+				crc = crc^buffer[factor];
+				factor = factor*2;
+			}
+			bWriteRC = WriteFile(hCom, &crc, 1, &iBytesWritten,NULL); 
+			bReadRC = ReadFile(hCom, ret, 1,&iBytesRead,NULL); 
+			if(bReadRC==0)
+			{
 			printf("Read Ack operation fail from target for the requested bytes\n");   
-		}
-		//CRC check
-		factor = 1;
-		crc = 0;
-		while((returnbytes-1)/factor)
-		{
-			crc = crc^buffer[factor];
-			factor = factor*2;
-		}
-		bWriteRC = WriteFile(hCom, &crc, 1, &iBytesWritten,NULL); 
-		bReadRC = ReadFile(hCom, ret, 1,&iBytesRead,NULL); 
-		if(bReadRC==0)
-		{
-		printf("Read Ack operation fail from target for the requested bytes\n");   
-		}
-		else
-		printf("End of one transaction:Ack '%s' received from target for the data from the host\n",ret); 
-       
-        //CRC check ends
-		//fclose(fp);
-		if(address+returnbytes == size)
-       {
-        
-             printf("\n*********envio de bitstream completado com sucesso*******\n");  
-           	return (0);
-	   }
-        else if(ret[0]=='q')
-        {
-           
-            printf("\n*********falhou\n");
-            temp = 0; 
-            bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
-            printf(" with error code = %d\n",temp);
-                
-           	return (0);
-        }
-		   
-    }
-	fclose(fp); 	
-		if(returnbytes == 0 && address >= size )
-		{
-                                         
-            printf("\n*********deu certo!	*******\n");
-                  
-              return (0);
-                       
-        }
+			}
+			else
+			printf("End of one transaction:Ack '%s' received from target for the data from the host\n",ret); 
 		
+			//CRC check ends
+			//fclose(fp);
+			if(address+returnbytes == size)
+			{
+			
+				printf("\n*********envio de bitstream completado com sucesso*******\n");  
+				return (0);
+			}
+			else if(ret[0]=='q')
+			{
+			
+				printf("\n*********falhou\n");
+				temp = 0; 
+				bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
+				printf(" with error code = %d\n",temp);
+					
+				return (0);
+			}
+			//fclose(fp);	
+		}
+		else if(Action_code[0]=='1')
+		{
+			printf("Iniciar Operacao de IAP\n\r");
+			ret[0] = SerialGetc(hCom);
+			if(ret[0]=='c')
+			{
+				printf("\n\rSelect IAP Operation mode 1/2/3  1.Authenticate 2.Program 3.Verify\n\r");
+			}
+			ret[0] = getchar();
+			SerialPutc(hCom,ret[0]);
+			ret[0] = SerialGetc(hCom);
+			if(ret[0] == 'm')
+			{
+				printf("\n\r IAP Authentication started...wait  \n\r");
+			}
+			ret[0] = SerialGetc(hCom);
+			if(ret[0]=='f')
+			{
+				printf(" \n\rIAP Autenticacao falhou \n\r");
+			}
+			else if (ret[0] == 'v')
+			{
+				printf(" \n\rIAP autenticacao bem sucedido! \n\r");
+			}
+			
+		}
+		//fclose(fp);
+		/*
+		    fclose(fp); 	
+			if(returnbytes == 0 && address >= size )
+			{
+											
+				printf("\n*********deu certo!	*******\n");
+					
+				return (0);
+						
+			}
+				*/
+		
+	
 		//fp = fopen(filename,"rb");
 	 
-}
-	 
+	}
+} 
 
 	/*
 	printf("Some thing is Wrong with the target,the control shouldn't come here\n");    
