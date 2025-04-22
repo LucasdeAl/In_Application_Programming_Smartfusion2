@@ -380,24 +380,24 @@ int main(int argc, char *argv[])
 			printf("Read Ack operation fail from target for the requested bytes\n");   
 		}
 		//CRC check
-		   factor = 1;
-           crc = 0;
-           while((returnbytes-1)/factor)
-           {
-              crc = crc^buffer[factor];
-              factor = factor*2;
-           }
-          bWriteRC = WriteFile(hCom, &crc, 1, &iBytesWritten,NULL); 
-          bReadRC = ReadFile(hCom, ret, 1,&iBytesRead,NULL); 
-		  if(bReadRC==0)
-		  {
-			printf("Read Ack operation fail from target for the requested bytes\n");   
-           }
-           else
-           printf("End of one transaction:Ack '%s' received from target for the data from the host\n",ret); 
+		factor = 1;
+		crc = 0;
+		while((returnbytes-1)/factor)
+		{
+			crc = crc^buffer[factor];
+			factor = factor*2;
+		}
+		bWriteRC = WriteFile(hCom, &crc, 1, &iBytesWritten,NULL); 
+		bReadRC = ReadFile(hCom, ret, 1,&iBytesRead,NULL); 
+		if(bReadRC==0)
+		{
+		printf("Read Ack operation fail from target for the requested bytes\n");   
+		}
+		else
+		printf("End of one transaction:Ack '%s' received from target for the data from the host\n",ret); 
        
         //CRC check ends
-		fclose(fp);
+		//fclose(fp);
 		if(address+returnbytes == size)
        {
         
@@ -413,8 +413,10 @@ int main(int argc, char *argv[])
             printf(" with error code = %d\n",temp);
                 
            	return (0);
-        }   
-        } 
+        }
+		   
+    }
+	fclose(fp); 	
 		if(returnbytes == 0 && address >= size )
 		{
                                          
@@ -423,8 +425,11 @@ int main(int argc, char *argv[])
               return (0);
                        
         }
-		fp = fopen(filename,"rb");    
-	}   
+		
+		//fp = fopen(filename,"rb");
+	 
+}
+	 
 
 	/*
 	printf("Some thing is Wrong with the target,the control shouldn't come here\n");    
