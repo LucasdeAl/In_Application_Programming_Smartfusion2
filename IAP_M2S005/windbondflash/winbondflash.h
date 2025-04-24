@@ -1,15 +1,3 @@
-/***************************************************************************//**
- * (c) Copyright 2009 Actel Corporation.  All rights reserved.
- * 
- *  Atmel AT25DF641 SPI flash driver API.
- *
- * SVN $Revision:$
- * SVN $Date:$
- */
-
-#ifndef __AT25DF641_SPI_FLASH_H_
-#define __AT25DF641_SPI_FLASH_H_
-
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -42,5 +30,7 @@ void FLASH_program
     uint8_t * write_buffer,
     size_t size_in_bytes
 );
+void program_data_load(void);
+void page_data_read(void);
+void read_data(uint8_t * rx_buff);
 
-#endif

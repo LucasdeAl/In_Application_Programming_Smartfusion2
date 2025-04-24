@@ -1,14 +1,3 @@
-/***************************************************************************//**
- * (c) Copyright 2009 Actel Corporation.  All rights reserved.
- * 
- *  Atmel AT25DF641 SPI flash driver implementation.
- *
- * SVN $Revision:$
- * SVN $Date:$
- */
-
-
-
 #include "winbondflash.h"
 #include "mss_spi.h"
 //#include "../mss_pdma/mss_pdma.h"
@@ -29,7 +18,12 @@
 //#define ERASE_64K_BLOCK_OPCODE  0xD8
 #define ERASE_128K_BLOCK_OPCODE 0xD8 //OK EXTRA
 #define READ_STATUS         0x05 //OK
+#define W25N01G_CONFIG_BUFFER_READ_MODE (1 << 3)//configura modo de leitura para ler do buffer buff =1
 
+
+#define W25N01G_PROT_REG 0xA0
+#define W25N01G_CONF_REG 0xB0
+#define W25N01G_STAT_REG 0xC0
 
 #define READY_BIT_MASK      0x01
 
@@ -109,26 +103,46 @@ void FLASH_read // OK deu certo
     size_t size_in_bytes
 )
 {
-    uint8_t cmd_buffer[3];
+    uint8_t cmd_buffer[4];
     
-    //ler PA
-    cmd_buffer[0] = DATA_READ_CMD;
-    cmd_buffer[1] = (uint8_t)((address >> 24) & 0xFF);
-    cmd_buffer[2] = (uint8_t)((address >> 16) & 0xFF);
-
+    /* Habilitar modo buff =1 */
+    cmd_buffer[0] = WRITE_STATUS1_OPCODE;
+    cmd_buffer[1] = W25N01G_CONF_REG;
+    cmd_buffer[2] = W25N01G_CONFIG_BUFFER_READ_MODE; //buff = 1
+    //cmd_buffer[2] = 0; //buff = 0
     MSS_SPI_set_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
     wait_ready();
-    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 3, NULL,0); //carrega os dados no buffer da flash
+    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 3, 0, 0 );
+
+
+    //ler PA
+    cmd_buffer[0] = DATA_READ_CMD;
+    cmd_buffer[1] = 0; //dummy
+    cmd_buffer[2] = (uint8_t)((address >> 24) & 0xFF);
+    cmd_buffer[3] = (uint8_t)((address >> 16) & 0xFF);
+
+
+    wait_ready();
+    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 4, NULL,0); //carrega os dados no buffer da flash
 
     //ler a partir do CA
+        //buff = 1
     cmd_buffer[0] = READ_ARRAY_OPCODE;
     cmd_buffer[1] = (uint8_t)((address >> 8) & 0xFF);
     cmd_buffer[2] = (uint8_t)(address & 0xFF);
+    cmd_buffer[3] = 0;//dummy
 
+    /*   //buff = 0
+    cmd_buffer[0] = READ_ARRAY_OPCODE;
+    cmd_buffer[1] = 0;//dummy
+    cmd_buffer[2] = 0;//dummy
+    cmd_buffer[3] = 0;//dummy
+*/
     wait_ready();
-    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 3, rx_buffer, size_in_bytes ); // ler os dados do buffer da flash
+    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 4, rx_buffer, size_in_bytes ); // ler os dados do buffer da flash
     wait_ready();
     MSS_SPI_clear_slave_select( &g_mss_spi0, MSS_SPI_SLAVE_0 );
+
 }
 
 /*******************************************************************************
@@ -173,8 +187,9 @@ void FLASH_chip_erase(void) // ok testar
     {
         // Configurar o comando de apagamento de bloco (128KB)
         cmd_buffer[0] = ERASE_128K_BLOCK_OPCODE;
-        cmd_buffer[1] = (block_address >> 8) & 0xFF;  // Endereço de bloco mais significativo (1 byte)
-        cmd_buffer[2] = block_address & 0xFF;         // Endereço de bloco menos significativo (1 byte)
+        cmd_buffer[1] = 0;//dummy
+        cmd_buffer[2] = (block_address >> 8) & 0xFF;  // Endereço de bloco mais significativo (1 byte)
+        cmd_buffer[3] = block_address & 0xFF;         // Endereço de bloco menos significativo (1 byte)
 
         // Enviar o comando de apagamento para o bloco de 128KB
         MSS_SPI_transfer_block(&g_mss_spi0, cmd_buffer, sizeof(cmd_buffer), NULL, 0);
@@ -299,7 +314,7 @@ void FLASH_program
     size_t size_in_bytes
 )
 {
-    uint8_t cmd_buffer[3];
+    uint8_t cmd_buffer[4];
     
     uint32_t in_buffer_idx;
     uint32_t nb_bytes_to_write;
@@ -334,7 +349,7 @@ void FLASH_program
 
     /* carrega a página no buffer da flash*/
     cmd_buffer[0] = DATA_LOAD_CMD;
-    cmd_buffer[1] = (target_addr << 16) & 0xff;
+    cmd_buffer[1] = (target_addr >> 8) & 0xff;
     cmd_buffer[2] = (target_addr) & 0xff;
     
 
@@ -352,11 +367,12 @@ void FLASH_program
 
     /* Programa a página */
     cmd_buffer[0] = PROGRAM_PAGE_CMD;
-    cmd_buffer[1] = (target_addr << 24) & 0xff;
-    cmd_buffer[2] = (target_addr << 16) & 0xff;
+    cmd_buffer[1] = 0;//dummy
+    cmd_buffer[2] = (target_addr >> 24) & 0xff;
+    cmd_buffer[3] = (target_addr >> 16) & 0xff;
 
     wait_ready();
-    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 3, 0, 0 );
+    MSS_SPI_transfer_block( &g_mss_spi0, cmd_buffer, 4, 0, 0 );
     
     /* Send Write Disable command. */
     cmd_buffer[0] = WRITE_DISABLE_CMD;
@@ -457,10 +473,10 @@ void erase_block_flash(void)
 void program_data_load(void)
 {
 
-    uint8_t tx_buf[6] = { 0x02, 0x00, 0x00, 0xaa, 0xbb, 0xcc };
+    uint8_t tx_buf[7] = { 0x02, 0x00, 0x00, 0x00, 0x00, 0x00,0x00};
 
     MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 6, NULL, 0);
+    MSS_SPI_transfer_block(&g_mss_spi0, tx_buf, 7, NULL, 0);
     MSS_SPI_clear_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
 }
 void program_execute(void)

@@ -308,6 +308,7 @@ int main(int argc, char *argv[])
 		/*
         if( Action_code[0] == '2')
         {
+			
             if(ret[0] == 'p')
             {
                  printf("\nISP Verification completed successfully\n");
@@ -338,6 +339,11 @@ int main(int argc, char *argv[])
                 printf(" with error code = %d\n",temp);
                 return (0);
              }
+			 if(ret[0] == '.')
+            {
+                 printf(".");
+                 return (0);
+            }
              
          }
         */
@@ -462,14 +468,19 @@ int main(int argc, char *argv[])
 				printf("\n\r IAP Authentication started...wait  \n\r");
 			}
 			ret[0] = SerialGetc(hCom);
-			if(ret[0]=='f')
+			if(ret[0]=='q')
 			{
 				printf(" \n\rIAP Autenticacao falhou \n\r");
+				return 0;
 			}
-			else if (ret[0] == 'v')
+			else if (ret[0] == 'p')
 			{
 				printf(" \n\rIAP autenticacao bem sucedido! \n\r");
-			}
+			}else if(ret[0] == '.')
+            {
+                 printf(".");
+                 
+            }
 			
 		}
 		//fclose(fp);

@@ -10,13 +10,20 @@
 
 //*&************************************************************
 uint8_t g_page_buffer[BUFFER_SIZE];
-//uint32_t page_read_handler(uint8_t const ** pp_next_page);
-//void isp_completion_handler(uint32_t value);
+uint32_t page_read_handler(uint8_t const ** pp_next_page);
+void isp_completion_handler(uint32_t value);
+static uint32_t read_page_from_flash
+(
+    uint8_t * g_buffer,
+    uint32_t length,//2048
+    uint32_t *addr_flash
+);
 //dummy
-//void dummy_isp_completion_handler(uint32_t value);
-//uint32_t dummy_page_read_handler(uint8_t const ** pp_next_page);
+void dummy_isp_completion_handler(uint32_t value);
+uint32_t dummy_page_read_handler(uint8_t const ** pp_next_page);
 volatile uint8_t g_isp_operation_busy = 1;
 uint8_t dummy_g_page_buffer[20];
+//volatile uint32_t bitstream_spi_addr = 0x0000000;
 /*==============================================================================
   UART selection.
 
@@ -28,10 +35,11 @@ static uint32_t g_src_image_target_address = 0;
 uint32_t g_bkup = 0;
 uint8_t g_mode = 0;
 static uint32_t g_file_size = 0;
-uint32_t addr_flash = 0;
+uint32_t addr_size = 0;
+uint32_t addr_bitstream = 0x10000;
 //***********************************************************
 
-void delay(volatile uint8_t n)
+void delay(volatile uint32_t n)
 {
     while(n)
         n--;
@@ -68,7 +76,7 @@ static uint32_t read_page_from_host_through_uart
 bool write_bitstream_on_flash
 (
     uint8_t * g_buffer,
-    uint32_t addr_flash
+    uint32_t *addr_flash
 );
 
 int main()
@@ -76,6 +84,7 @@ int main()
 
     uint8_t rx_buff[8] ;
     bool status;
+    uint8_t tamanho[4];
 
     MSS_UART_init( gp_my_uart,
             MSS_UART_57600_BAUD,
@@ -120,10 +129,10 @@ int main()
            while(!(UART_Polled_Rx (gp_my_uart, rx_buff, 1 )));
            MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"a",1);
            /*poll for mode */
-           //MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"m",1);
-           //while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )));
+           MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"m",1);
+           while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )));
 
-           //g_mode  = rx_buff[0];
+           g_mode  = rx_buff[0];
            /*poll for file size*/
            MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"z",1);
            while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 8 )))
@@ -132,26 +141,153 @@ int main()
 
            MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"a",1);
 
-           FLASH_init();
-           FLASH_chip_erase();
+           switch(g_mode){
 
+           case '0':
+               FLASH_init();
+               FLASH_global_unprotect();
+               //FLASH_chip_erase();
 
-           while((status = write_bitstream_on_flash(g_page_buffer, addr_flash) == true));
-           if (status == false)
-               return 0;
+               tamanho[0] = (uint8_t)(g_file_size & 0xFF);
+               tamanho[1] = (uint8_t)((g_file_size >> 8) & 0xFF);
+               tamanho[2] = (uint8_t)((g_file_size >> 16) & 0xFF);
+               tamanho[3] = (uint8_t)((g_file_size >> 24) & 0xFF);
 
-           while(1)
-           {
+               FLASH_program(addr_size, tamanho ,4);
+               /*
+               while(1){
+               //FLASH_program(addr_size, tamanho ,4);
 
+               FLASH_read(addr_size, rx_buff ,5);
+               FLASH_read(0x10000, rx_buff ,5);
+               program_data_load();//zera o buffer
+               FLASH_read(0x20000, rx_buff ,5);
+               FLASH_read(addr_size, rx_buff ,5);
+
+               }
+               */
+               while((status = write_bitstream_on_flash(g_page_buffer, &addr_bitstream) == true));
+               if (status == false)
+                   return 0;
+               break;
+
+           case '1':
+              //MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
+              FLASH_init();
+              //delay(80000);
+              MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"c",1);
+              //MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"\n\rSelect IAP Operation mode 1/2/3  1.Authenticate 2.Program 3.Verify\n\r");
+              while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )))
+                  ;
+
+              if(rx_buff[0] =='1')
+              {
+
+                  MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"m",1);
+                  delay(80000);
+
+                  //status=MSS_SYS_initiate_iap(MSS_SYS_PROG_AUTHENTICATE, bitstream_spi_addr);
+                  status = MSS_SYS_start_isp(MSS_SYS_PROG_AUTHENTICATE,page_read_handler,isp_completion_handler);
+                  delay(80000);
+
+                  if(status)
+                  {
+
+                      MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"p");
+
+                  }
+                  else
+                  {
+                      MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"q");
+                  }
+
+              }else if (rx_buff[0] =='2')
+
+              {
+                  MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"\n\r");
+                  MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"IAP program started.. wait..\n\r");
+                  delay(80000);
+                  //copy_image_to_ram();
+                  //remap_user_code_eSRAM_0();
+
+              }
+              else if (rx_buff[0] =='3')
+              {
+
+                  MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"\n\rIAP Verify started...wait \n\r");
+                  delay(80000);
+
+                  //status=MSS_SYS_initiate_iap(MSS_SYS_PROG_VERIFY, bitstream_spi_addr);
+
+                  /*
+                  p_addr_value_pair = g_m2s_serdes_0_config;
+                  nb_of_cfg_pairs = SERDES_0_CFG_NB_OF_PAIRS;
+
+                  for(inc = 0u; inc < nb_of_cfg_pairs; ++inc)
+                  {
+                      *p_addr_value_pair[inc].p_reg = p_addr_value_pair[inc].value;
+                  }
+
+                  if(status)
+                  {
+                      MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"IAP operation failed\n\r");
+
+                  }
+                  else
+                  {
+                      MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"IAP operation is successful\n\r");
+                  }
+                    */
+              }
+              else
+              {
+                  MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"Invalid option. Reset the board\n\r");
+              }
+
+              //while(1)
+              //  {
+              //
+              //}
+              break;
            }
 
+}
+
+
+void isp_completion_handler(uint32_t value)// usado so quando o ISP teve sucesso
+{
+  if (value == MSS_SYS_SUCCESS)
+  {
+
+      MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"p",1);
+
+
+  }
+  else
+  {
+      MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"q",1);
+      MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )&value,8);
+  }
+}
+
+uint32_t page_read_handler
+(
+    uint8_t const ** pp_next_page
+)
+{
+    uint32_t length;
+
+    length = read_page_from_flash(g_page_buffer, BUFFER_SIZE,&addr_size);
+    *pp_next_page = g_page_buffer;
+
+    return length;
 }
 
 
 bool write_bitstream_on_flash
 (
     uint8_t * g_buffer,
-    uint32_t addr_flash
+    uint32_t *addr_flash
 )
 {
    uint32_t length;
@@ -161,8 +297,8 @@ bool write_bitstream_on_flash
    while(remaining_bytes>0)
    {
        length = read_page_from_host_through_uart(g_page_buffer, BUFFER_SIZE);
-       FLASH_program(addr_flash, g_page_buffer, length);
-       FLASH_read(addr_flash, rx_buffer, length+1);
+       FLASH_program(*addr_flash, g_page_buffer, length);
+       FLASH_read(*addr_flash, rx_buffer, length+1);
        for(int i=0;i<length;i++)
        {
            if(g_buffer[i] != rx_buffer[i+1])
@@ -174,12 +310,12 @@ bool write_bitstream_on_flash
        }
        MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )".",1);
 
-       addr_flash = addr_flash + length;
-       if((addr_flash & 0xFFFF) > 0x7FF)
+       *addr_flash = *addr_flash + length;
+       if((*addr_flash & 0xFFFF) > 0x7FF)
        {
 
-           addr_flash = addr_flash + (1<<16);
-           addr_flash = addr_flash & 0xFFFF07FF;
+           *addr_flash = *addr_flash + (1<<16);
+           *addr_flash = *addr_flash & 0xFFFF07FF;
        }
        remaining_bytes = remaining_bytes - length;
 
@@ -188,6 +324,58 @@ bool write_bitstream_on_flash
 
    return status;
 
+}
+
+
+
+static uint32_t read_page_from_flash
+(
+    uint8_t * g_buffer,
+    uint32_t length,//2048
+    uint32_t *addr_flash
+)
+{
+
+       uint8_t tam[5];
+       uint32_t num_bytes = length;
+       uint32_t bytes_read = 0;
+       uint32_t addr_corrigido;
+       uint8_t buffer_interno[BUFFER_SIZE+1];
+
+    if(*addr_flash == addr_size)
+    {
+        FLASH_read(*addr_flash, tam,5);
+        g_file_size = ((tam[4]<<24)|(tam[3]<<16)|(tam[2]<<8)|tam[1]);
+
+    }
+
+    addr_corrigido = (((*addr_flash + addr_bitstream) & 0xffff0000)>>5)|((*addr_flash + addr_bitstream) & 0x7ff);
+
+    if(addr_corrigido + length > g_file_size )
+    {
+        num_bytes = g_file_size - addr_corrigido;
+    }
+    if(addr_corrigido>= g_file_size)
+    {
+        return 0;
+    }
+
+
+    FLASH_read(*addr_flash + addr_bitstream, buffer_interno, num_bytes+1);
+
+    for(int i=0;i<BUFFER_SIZE;i++)
+        g_buffer[i] = buffer_interno[i+1];
+
+
+    *addr_flash = *addr_flash + num_bytes;
+     if((*addr_flash & 0xFFFF) > 0x7FF)
+     {
+         *addr_flash = *addr_flash + (1<<16);
+         *addr_flash = *addr_flash & 0xFFFF07FF;
+     }
+
+     bytes_read = num_bytes;
+     return bytes_read;
 }
 
 static uint32_t read_page_from_host_through_uart
@@ -271,5 +459,35 @@ static uint32_t read_page_from_host_through_uart
 
 
 
+/* function called by COMM_BLK for input data bit stream*/
+uint32_t dummy_page_read_handler
+(
+    uint8_t const ** pp_next_page
+)
+{
+    uint32_t length;
+    int i = 0;
 
+    for(i = 0;i<20;i++ )
+    {
+        dummy_g_page_buffer[i] = '1';
+    }
+    length = 20;
+    *pp_next_page = dummy_g_page_buffer;
+
+    return length;
+}
+/*==============================================================================
+  ISP function to get status after completion of ISP operation.
+ */
+
+void dummy_isp_completion_handler
+(
+    uint32_t value
+)
+{
+
+    g_isp_operation_busy = 0;
+
+}
 
