@@ -176,15 +176,17 @@ void FLASH_chip_erase(void) // ok testar
 {
     uint8_t cmd_buffer[4];  // Comando de 1 byte + 2 bytes de endereço de bloco
 
-    // Enviar o comando Write Enable
-    cmd_buffer[0] = WRITE_ENABLE_CMD;
-    MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
-    wait_ready();
-    MSS_SPI_transfer_block(&g_mss_spi0, cmd_buffer, 1, NULL, 0);
 
     // Iterar sobre todos os 1.024 blocos de 128KB e apagá-los
     for (uint16_t block_address = 0; block_address < 1024; block_address++)
     {
+
+        // Enviar o comando Write Enable
+           cmd_buffer[0] = WRITE_ENABLE_CMD;
+           MSS_SPI_set_slave_select(&g_mss_spi0, MSS_SPI_SLAVE_0);
+           wait_ready();
+           MSS_SPI_transfer_block(&g_mss_spi0, cmd_buffer, 1, NULL, 0);
+
         // Configurar o comando de apagamento de bloco (128KB)
         cmd_buffer[0] = ERASE_128K_BLOCK_OPCODE;
         cmd_buffer[1] = 0;//dummy

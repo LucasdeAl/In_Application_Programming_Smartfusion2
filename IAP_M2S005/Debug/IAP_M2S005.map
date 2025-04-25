@@ -77,8 +77,6 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 ./windbondflash/winbondflash.o
  .text.FLASH_read_device_id
                 0x0000000000000000       0x4c ./windbondflash/winbondflash.o
- .text.FLASH_chip_erase
-                0x0000000000000000       0x7c ./windbondflash/winbondflash.o
  .text.FLASH_erase_128k_block
                 0x0000000000000000       0x70 ./windbondflash/winbondflash.o
  .text.write_cmd_data
@@ -1192,7 +1190,7 @@ END GROUP
                 0x0000000000000700                . = ALIGN (0x10)
  *fill*         0x00000000000006f8        0x8 
 
-.text           0x0000000000000700     0x3910 load address 0x0000000060000700
+.text           0x0000000000000700     0x39a0 load address 0x0000000060000700
  CREATE_OBJECT_SYMBOLS
                 0x0000000060000700                __text_load = LOADADDR (.text)
                 0x0000000000000700                __text_start = .
@@ -1210,185 +1208,188 @@ END GROUP
  .text.FLASH_global_unprotect
                 0x0000000000000814       0x60 ./windbondflash/winbondflash.o
                 0x0000000000000814                FLASH_global_unprotect
+ .text.FLASH_chip_erase
+                0x0000000000000874       0x7c ./windbondflash/winbondflash.o
+                0x0000000000000874                FLASH_chip_erase
  .text.FLASH_program
-                0x0000000000000874      0x1ac ./windbondflash/winbondflash.o
-                0x0000000000000874                FLASH_program
+                0x00000000000008f0      0x1ac ./windbondflash/winbondflash.o
+                0x00000000000008f0                FLASH_program
  .text.wait_ready
-                0x0000000000000a20       0x44 ./windbondflash/winbondflash.o
+                0x0000000000000a9c       0x44 ./windbondflash/winbondflash.o
  .text.NVIC_ClearPendingIRQ
-                0x0000000000000a64       0x34 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000ae0       0x34 ./drivers/mss_uart/mss_uart.o
  .text.set_bit_reg8
-                0x0000000000000a98       0x3a ./drivers/mss_uart/mss_uart.o
+                0x0000000000000b14       0x3a ./drivers/mss_uart/mss_uart.o
  .text.clear_bit_reg8
-                0x0000000000000ad2       0x3a ./drivers/mss_uart/mss_uart.o
+                0x0000000000000b4e       0x3a ./drivers/mss_uart/mss_uart.o
  .text.read_bit_reg8
-                0x0000000000000b0c       0x38 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000b88       0x38 ./drivers/mss_uart/mss_uart.o
  .text.MSS_UART_init
-                0x0000000000000b44       0x70 ./drivers/mss_uart/mss_uart.o
-                0x0000000000000b44                MSS_UART_init
+                0x0000000000000bc0       0x70 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000bc0                MSS_UART_init
  .text.MSS_UART_polled_tx
-                0x0000000000000bb4       0xc4 ./drivers/mss_uart/mss_uart.o
-                0x0000000000000bb4                MSS_UART_polled_tx
+                0x0000000000000c30       0xc4 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000c30                MSS_UART_polled_tx
  .text.MSS_UART_polled_tx_string
-                0x0000000000000c78       0xb4 ./drivers/mss_uart/mss_uart.o
-                0x0000000000000c78                MSS_UART_polled_tx_string
+                0x0000000000000cf4       0xb4 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000cf4                MSS_UART_polled_tx_string
  .text.UART0_IRQHandler
-                0x0000000000000d2c       0x24 ./drivers/mss_uart/mss_uart.o
-                0x0000000000000d2c                UART0_IRQHandler
+                0x0000000000000da8       0x24 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000da8                UART0_IRQHandler
  .text.UART1_IRQHandler
-                0x0000000000000d50       0x24 ./drivers/mss_uart/mss_uart.o
-                0x0000000000000d50                UART1_IRQHandler
+                0x0000000000000dcc       0x24 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000dcc                UART1_IRQHandler
  .text.config_baud_divisors
-                0x0000000000000d74      0x14c ./drivers/mss_uart/mss_uart.o
+                0x0000000000000df0      0x14c ./drivers/mss_uart/mss_uart.o
  .text.global_init
-                0x0000000000000ec0      0x1d8 ./drivers/mss_uart/mss_uart.o
+                0x0000000000000f3c      0x1d8 ./drivers/mss_uart/mss_uart.o
  .text.MSS_UART_isr
-                0x0000000000001098      0x208 ./drivers/mss_uart/mss_uart.o
+                0x0000000000001114      0x208 ./drivers/mss_uart/mss_uart.o
  .text.default_tx_handler
-                0x00000000000012a0       0xe8 ./drivers/mss_uart/mss_uart.o
+                0x000000000000131c       0xe8 ./drivers/mss_uart/mss_uart.o
  .text.NVIC_EnableIRQ
-                0x0000000000001388       0x30 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001404       0x30 ./drivers/mss_sys_services/mss_comblk.o
  .text.NVIC_DisableIRQ
-                0x00000000000013b8       0x34 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001434       0x34 ./drivers/mss_sys_services/mss_comblk.o
  .text.NVIC_ClearPendingIRQ
-                0x00000000000013ec       0x34 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001468       0x34 ./drivers/mss_sys_services/mss_comblk.o
  .text.MSS_COMBLK_init
-                0x0000000000001420       0xd8 ./drivers/mss_sys_services/mss_comblk.o
-                0x0000000000001420                MSS_COMBLK_init
+                0x000000000000149c       0xd8 ./drivers/mss_sys_services/mss_comblk.o
+                0x000000000000149c                MSS_COMBLK_init
  .text.MSS_COMBLK_send_cmd
-                0x00000000000014f8      0x130 ./drivers/mss_sys_services/mss_comblk.o
-                0x00000000000014f8                MSS_COMBLK_send_cmd
+                0x0000000000001574      0x130 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001574                MSS_COMBLK_send_cmd
  .text.MSS_COMBLK_send_paged_cmd
-                0x0000000000001628      0x130 ./drivers/mss_sys_services/mss_comblk.o
-                0x0000000000001628                MSS_COMBLK_send_paged_cmd
+                0x00000000000016a4      0x130 ./drivers/mss_sys_services/mss_comblk.o
+                0x00000000000016a4                MSS_COMBLK_send_paged_cmd
  .text.ComBlk_IRQHandler
-                0x0000000000001758       0x48 ./drivers/mss_sys_services/mss_comblk.o
-                0x0000000000001758                ComBlk_IRQHandler
+                0x00000000000017d4       0x48 ./drivers/mss_sys_services/mss_comblk.o
+                0x00000000000017d4                ComBlk_IRQHandler
  .text.handle_tx_okay_irq
-                0x00000000000017a0      0x1b0 ./drivers/mss_sys_services/mss_comblk.o
+                0x000000000000181c      0x1b0 ./drivers/mss_sys_services/mss_comblk.o
  .text.handle_rx_okay_irq
-                0x0000000000001950      0x210 ./drivers/mss_sys_services/mss_comblk.o
+                0x00000000000019cc      0x210 ./drivers/mss_sys_services/mss_comblk.o
  .text.complete_request
-                0x0000000000001b60       0x40 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001bdc       0x40 ./drivers/mss_sys_services/mss_comblk.o
  .text.abort_current_cmd
-                0x0000000000001ba0       0x4c ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001c1c       0x4c ./drivers/mss_sys_services/mss_comblk.o
  .text.send_cmd_opcode
-                0x0000000000001bec       0x3c ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001c68       0x3c ./drivers/mss_sys_services/mss_comblk.o
  .text.fill_tx_fifo
-                0x0000000000001c28       0x60 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001ca4       0x60 ./drivers/mss_sys_services/mss_comblk.o
  .text.process_sys_ctrl_command
-                0x0000000000001c88       0x28 ./drivers/mss_sys_services/mss_comblk.o
+                0x0000000000001d04       0x28 ./drivers/mss_sys_services/mss_comblk.o
  .text.MSS_SYS_init
-                0x0000000000001cb0       0x50 ./drivers/mss_sys_services/mss_sys_services.o
-                0x0000000000001cb0                MSS_SYS_init
+                0x0000000000001d2c       0x50 ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000001d2c                MSS_SYS_init
  .text.asynchronous_event_handler
-                0x0000000000001d00       0xe4 ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000001d7c       0xe4 ./drivers/mss_sys_services/mss_sys_services.o
  .text.determine_seq
-                0x0000000000001de4       0xac ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000001e60       0xac ./drivers/mss_sys_services/mss_sys_services.o
  .text.clk_switching_fix
-                0x0000000000001e90      0x29c ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000001f0c      0x29c ./drivers/mss_sys_services/mss_sys_services.o
  .text.revert_clk_config
-                0x000000000000212c      0x1c0 ./drivers/mss_sys_services/mss_sys_services.o
+                0x00000000000021a8      0x1c0 ./drivers/mss_sys_services/mss_sys_services.o
  .text.isp_page_read_handler
-                0x00000000000022ec       0x88 ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000002368       0x88 ./drivers/mss_sys_services/mss_sys_services.o
  .text.isp_sys_completion_handler
-                0x0000000000002374       0x58 ./drivers/mss_sys_services/mss_sys_services.o
+                0x00000000000023f0       0x58 ./drivers/mss_sys_services/mss_sys_services.o
  .text.MSS_SYS_start_isp
-                0x00000000000023cc       0xf8 ./drivers/mss_sys_services/mss_sys_services.o
-                0x00000000000023cc                MSS_SYS_start_isp
+                0x0000000000002448       0xf8 ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000002448                MSS_SYS_start_isp
  .text.MSS_SYS_check_digest
-                0x00000000000024c4       0xd0 ./drivers/mss_sys_services/mss_sys_services.o
-                0x00000000000024c4                MSS_SYS_check_digest
+                0x0000000000002540       0xd0 ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000002540                MSS_SYS_check_digest
  .text.request_completion_handler
-                0x0000000000002594       0x2c ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000002610       0x2c ./drivers/mss_sys_services/mss_sys_services.o
  .text.signal_request_start
-                0x00000000000025c0       0x2c ./drivers/mss_sys_services/mss_sys_services.o
+                0x000000000000263c       0x2c ./drivers/mss_sys_services/mss_sys_services.o
  .text.wait_for_request_completion
-                0x00000000000025ec       0x28 ./drivers/mss_sys_services/mss_sys_services.o
+                0x0000000000002668       0x28 ./drivers/mss_sys_services/mss_sys_services.o
  .text.NVIC_EnableIRQ
-                0x0000000000002614       0x30 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002690       0x30 ./drivers/mss_spi/mss_spi.o
  .text.NVIC_DisableIRQ
-                0x0000000000002644       0x34 ./drivers/mss_spi/mss_spi.o
+                0x00000000000026c0       0x34 ./drivers/mss_spi/mss_spi.o
  .text.NVIC_ClearPendingIRQ
-                0x0000000000002678       0x34 ./drivers/mss_spi/mss_spi.o
+                0x00000000000026f4       0x34 ./drivers/mss_spi/mss_spi.o
  .text.MSS_SPI_init
-                0x00000000000026ac       0xe4 ./drivers/mss_spi/mss_spi.o
-                0x00000000000026ac                MSS_SPI_init
+                0x0000000000002728       0xe4 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002728                MSS_SPI_init
  .text.recover_from_rx_overflow
-                0x0000000000002790      0x128 ./drivers/mss_spi/mss_spi.o
+                0x000000000000280c      0x128 ./drivers/mss_spi/mss_spi.o
  .text.MSS_SPI_configure_master_mode
-                0x00000000000028b8      0x130 ./drivers/mss_spi/mss_spi.o
-                0x00000000000028b8                MSS_SPI_configure_master_mode
+                0x0000000000002934      0x130 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002934                MSS_SPI_configure_master_mode
  .text.MSS_SPI_set_slave_select
-                0x00000000000029e8       0xec ./drivers/mss_spi/mss_spi.o
-                0x00000000000029e8                MSS_SPI_set_slave_select
+                0x0000000000002a64       0xec ./drivers/mss_spi/mss_spi.o
+                0x0000000000002a64                MSS_SPI_set_slave_select
  .text.MSS_SPI_clear_slave_select
-                0x0000000000002ad4       0x88 ./drivers/mss_spi/mss_spi.o
-                0x0000000000002ad4                MSS_SPI_clear_slave_select
+                0x0000000000002b50       0x88 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002b50                MSS_SPI_clear_slave_select
  .text.MSS_SPI_transfer_block
-                0x0000000000002b5c      0x1f4 ./drivers/mss_spi/mss_spi.o
-                0x0000000000002b5c                MSS_SPI_transfer_block
+                0x0000000000002bd8      0x1f4 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002bd8                MSS_SPI_transfer_block
  .text.fill_slave_tx_fifo
-                0x0000000000002d50       0xd6 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002dcc       0xd6 ./drivers/mss_spi/mss_spi.o
  .text.read_slave_rx_fifo
-                0x0000000000002e26       0xa6 ./drivers/mss_spi/mss_spi.o
+                0x0000000000002ea2       0xa6 ./drivers/mss_spi/mss_spi.o
  .text.mss_spi_isr
-                0x0000000000002ecc      0x27c ./drivers/mss_spi/mss_spi.o
+                0x0000000000002f48      0x27c ./drivers/mss_spi/mss_spi.o
  .text.SPI0_IRQHandler
-                0x0000000000003148       0x24 ./drivers/mss_spi/mss_spi.o
-                0x0000000000003148                SPI0_IRQHandler
+                0x00000000000031c4       0x24 ./drivers/mss_spi/mss_spi.o
+                0x00000000000031c4                SPI0_IRQHandler
  .text.SPI1_IRQHandler
-                0x000000000000316c       0x24 ./drivers/mss_spi/mss_spi.o
-                0x000000000000316c                SPI1_IRQHandler
+                0x00000000000031e8       0x24 ./drivers/mss_spi/mss_spi.o
+                0x00000000000031e8                SPI1_IRQHandler
  .text.start_transfer
-                0x0000000000003190      0x154 ./drivers/mss_hpdma/mss_hpdma.o
+                0x000000000000320c      0x154 ./drivers/mss_hpdma/mss_hpdma.o
  .text.HPDMA_Complete_IRQHandler
-                0x00000000000032e4       0xf8 ./drivers/mss_hpdma/mss_hpdma.o
-                0x00000000000032e4                HPDMA_Complete_IRQHandler
+                0x0000000000003360       0xf8 ./drivers/mss_hpdma/mss_hpdma.o
+                0x0000000000003360                HPDMA_Complete_IRQHandler
  .text.HPDMA_Error_IRQHandler
-                0x00000000000033dc      0x104 ./drivers/mss_hpdma/mss_hpdma.o
-                0x00000000000033dc                HPDMA_Error_IRQHandler
- .text.delay    0x00000000000034e0       0x22 ./main.o
-                0x00000000000034e0                delay
+                0x0000000000003458      0x104 ./drivers/mss_hpdma/mss_hpdma.o
+                0x0000000000003458                HPDMA_Error_IRQHandler
+ .text.delay    0x000000000000355c       0x22 ./main.o
+                0x000000000000355c                delay
  .text.UART_Polled_Rx
-                0x0000000000003502       0x4c ./main.o
-                0x0000000000003502                UART_Polled_Rx
- *fill*         0x000000000000354e        0x2 
- .text.main     0x0000000000003550      0x2ec ./main.o
-                0x0000000000003550                main
+                0x000000000000357e       0x4c ./main.o
+                0x000000000000357e                UART_Polled_Rx
+ *fill*         0x00000000000035ca        0x2 
+ .text.main     0x00000000000035cc      0x2f0 ./main.o
+                0x00000000000035cc                main
  .text.isp_completion_handler
-                0x000000000000383c       0x48 ./main.o
-                0x000000000000383c                isp_completion_handler
+                0x00000000000038bc       0x48 ./main.o
+                0x00000000000038bc                isp_completion_handler
  .text.page_read_handler
-                0x0000000000003884       0x30 ./main.o
-                0x0000000000003884                page_read_handler
+                0x0000000000003904       0x30 ./main.o
+                0x0000000000003904                page_read_handler
  .text.write_bitstream_on_flash
-                0x00000000000038b4      0x118 ./main.o
-                0x00000000000038b4                write_bitstream_on_flash
+                0x0000000000003934      0x11c ./main.o
+                0x0000000000003934                write_bitstream_on_flash
  .text.read_page_from_flash
-                0x00000000000039cc      0x17c ./main.o
+                0x0000000000003a50      0x17c ./main.o
  .text.read_page_from_host_through_uart
-                0x0000000000003b48      0x19c ./main.o
- .text.atoi     0x0000000000003ce4        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-atoi.o)
-                0x0000000000003ce4                atoi
+                0x0000000000003bcc      0x19c ./main.o
+ .text.atoi     0x0000000000003d68        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-atoi.o)
+                0x0000000000003d68                atoi
  .text.__libc_init_array
-                0x0000000000003cec       0x48 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
-                0x0000000000003cec                __libc_init_array
- .text.memset   0x0000000000003d34       0x10 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
-                0x0000000000003d34                memset
+                0x0000000000003d70       0x48 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
+                0x0000000000003d70                __libc_init_array
+ .text.memset   0x0000000000003db8       0x10 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
+                0x0000000000003db8                memset
  .text._strtol_l.isra.0
-                0x0000000000003d44       0xf4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-strtol.o)
- .text.strtol   0x0000000000003e38       0x14 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-strtol.o)
-                0x0000000000003e38                strtol
+                0x0000000000003dc8       0xf4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-strtol.o)
+ .text.strtol   0x0000000000003ebc       0x14 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-strtol.o)
+                0x0000000000003ebc                strtol
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x0000000000003e4c        0x0 linker stubs
+ .glue_7t       0x0000000000003ed0        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x0000000000003e4c        0x0 linker stubs
+ .glue_7        0x0000000000003ed0        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x0000000000003e4c        0x0 linker stubs
-                0x0000000000003e4c                . = ALIGN (0x4)
+ .vfp11_veneer  0x0000000000003ed0        0x0 linker stubs
+                0x0000000000003ed0                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT_BY_NAME(.ctors.*))
@@ -1398,59 +1399,60 @@ END GROUP
  *(SORT_BY_NAME(.dtors.*))
  *crtend.o(.dtors)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000000003e4c        0x8 ./CMSIS/system_m2sxxx.o
- .rodata        0x0000000000003e54       0x9a ./main.o
+ .rodata        0x0000000000003ed0        0x8 ./CMSIS/system_m2sxxx.o
+ .rodata        0x0000000000003ed8       0x9a ./main.o
  .rodata._ctype_
-                0x0000000000003eee      0x101 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-ctype_.o)
-                0x0000000000003eee                _ctype_
+                0x0000000000003f72      0x101 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-ctype_.o)
+                0x0000000000003f72                _ctype_
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
  *(.eh_frame_hdr)
  *(.eh_frame)
- *fill*         0x0000000000003fef        0x1 
- .eh_frame      0x0000000000003ff0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+ *fill*         0x0000000000004073        0x1 
+ .eh_frame      0x0000000000004074        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
  *(.vector_table)
  *(.init)
- .init          0x0000000000003ff0        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
-                0x0000000000003ff0                _init
- .init          0x0000000000003ff4        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
+ .init          0x0000000000004074        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
+                0x0000000000004074                _init
+ .init          0x0000000000004078        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x0000000000003ffc        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
-                0x0000000000003ffc                _fini
- .fini          0x0000000000004000        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
-                0x0000000000004008                PROVIDE (__preinit_array_start = .)
+ .fini          0x0000000000004080        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crti.o
+                0x0000000000004080                _fini
+ .fini          0x0000000000004084        0x8 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtn.o
+                0x000000000000408c                PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x0000000000004008                PROVIDE (__preinit_array_end = .)
-                0x0000000000004008                PROVIDE (__init_array_start = .)
+                0x000000000000408c                PROVIDE (__preinit_array_end = .)
+                0x000000000000408c                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x0000000000004008        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
-                0x000000000000400c                PROVIDE (__init_array_end = .)
+ .init_array    0x000000000000408c        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x0000000000004090                PROVIDE (__init_array_end = .)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(.fini_array)
- .fini_array    0x000000000000400c        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x0000000000004090        0x4 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
  *(SORT_BY_NAME(.fini_array.*))
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000000004010                . = ALIGN (0x10)
-                0x0000000000004010                __exidx_start = .
+                0x00000000000040a0                . = ALIGN (0x10)
+ *fill*         0x0000000000004094        0xc 
+                0x00000000000040a0                __exidx_start = .
 
-.v4_bx          0x0000000000004010        0x0 load address 0x0000000060004010
- .v4_bx         0x0000000000004010        0x0 linker stubs
+.v4_bx          0x00000000000040a0        0x0 load address 0x00000000600040a0
+ .v4_bx         0x00000000000040a0        0x0 linker stubs
 
-.iplt           0x0000000000004010        0x0 load address 0x0000000060004010
- .iplt          0x0000000000004010        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x00000000000040a0        0x0 load address 0x00000000600040a0
+ .iplt          0x00000000000040a0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.rel.dyn        0x0000000000004010        0x0 load address 0x0000000060004010
- .rel.iplt      0x0000000000004010        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x00000000000040a0        0x0 load address 0x00000000600040a0
+ .rel.iplt      0x00000000000040a0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x0000000000004010                __exidx_end = .
-                0x0000000000004010                _etext = .
+                0x00000000000040a0                __exidx_end = .
+                0x00000000000040a0                _etext = .
 
-.data           0x0000000020000000       0xb0 load address 0x0000000060004010
-                0x0000000060004010                __data_load = LOADADDR (.data)
-                0x0000000060004010                _sidata = LOADADDR (.data)
+.data           0x0000000020000000       0xb0 load address 0x00000000600040a0
+                0x00000000600040a0                __data_load = LOADADDR (.data)
+                0x00000000600040a0                _sidata = LOADADDR (.data)
                 0x0000000020000000                __data_start = .
                 0x0000000020000000                _sdata = .
  *(.jcr)
@@ -1519,10 +1521,10 @@ END GROUP
  *fill*         0x00000000200000a8        0x8 
                 0x00000000200000b0                _edata = .
 
-.igot.plt       0x00000000200000b0        0x0 load address 0x00000000600040c0
+.igot.plt       0x00000000200000b0        0x0 load address 0x0000000060004150
  .igot.plt      0x00000000200000b0        0x0 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/thumb/v7-m/nofp/crtbegin.o
 
-.bss            0x00000000200000b0      0xa50 load address 0x00000000600040c0
+.bss            0x00000000200000b0      0xa50 load address 0x0000000060004150
                 0x00000000200000b0                __bss_start__ = .
                 0x00000000200000b0                _sbss = .
  *(.shbss)
@@ -1603,9 +1605,8 @@ END GROUP
  *fill*         0x0000000020000155        0x3 
  .bss.g_file_size
                 0x0000000020000158        0x4 ./main.o
- .bss.addr_size
-                0x000000002000015c        0x4 ./main.o
-                0x000000002000015c                addr_size
+ .bss.addr      0x000000002000015c        0x4 ./main.o
+                0x000000002000015c                addr
  *(COMMON)
  COMMON         0x0000000020000160       0x80 ./drivers/mss_uart/mss_uart.o
                 0x0000000020000160                g_mss_uart1
@@ -1624,7 +1625,7 @@ END GROUP
                 0x0000000020000b00                _ebss = .
                 [!provide]                        PROVIDE (end = .)
 
-.heap           0x0000000020000b00     0xe500 load address 0x00000000600040c0
+.heap           0x0000000020000b00     0xe500 load address 0x0000000060004150
                 0x0000000020000b00                __heap_start__ = .
                 0x0000000020001b00                . = (. + MIN_SIZE_HEAP)
  *fill*         0x0000000020000b00     0x1000 
@@ -1632,7 +1633,7 @@ END GROUP
  *fill*         0x0000000020001b00     0xd500 
                 0x000000002000f000                _eheap = .
 
-.stack          0x000000002000f000     0x1000 load address 0x00000000600040c0
+.stack          0x000000002000f000     0x1000 load address 0x0000000060004150
                 0x000000002000f000                __stack_start__ = .
                 0x0000000020010000                . = (. + MAIN_STACK_SIZE)
  *fill*         0x000000002000f000     0x1000 
@@ -1680,7 +1681,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0xbc78
+.debug_info     0x0000000000000000     0xbc83
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000     0x14f5 ./windbondflash/winbondflash.o
  .debug_info    0x00000000000014f5     0x1ea8 ./drivers/mss_uart/mss_uart.o
@@ -1690,9 +1691,9 @@ END GROUP
  .debug_info    0x00000000000086aa     0x1231 ./drivers/mss_hpdma/mss_hpdma.o
  .debug_info    0x00000000000098db       0x26 ./CMSIS/startup_gcc/startup_m2sxxx.o
  .debug_info    0x0000000000009901      0xb61 ./CMSIS/system_m2sxxx.o
- .debug_info    0x000000000000a462     0x1816 ./main.o
+ .debug_info    0x000000000000a462     0x1821 ./main.o
 
-.debug_abbrev   0x0000000000000000     0x175e
+.debug_abbrev   0x0000000000000000     0x176d
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x306 ./windbondflash/winbondflash.o
  .debug_abbrev  0x0000000000000306      0x356 ./drivers/mss_uart/mss_uart.o
@@ -1702,19 +1703,19 @@ END GROUP
  .debug_abbrev  0x0000000000000f44      0x2a3 ./drivers/mss_hpdma/mss_hpdma.o
  .debug_abbrev  0x00000000000011e7       0x14 ./CMSIS/startup_gcc/startup_m2sxxx.o
  .debug_abbrev  0x00000000000011fb      0x1b2 ./CMSIS/system_m2sxxx.o
- .debug_abbrev  0x00000000000013ad      0x3b1 ./main.o
+ .debug_abbrev  0x00000000000013ad      0x3c0 ./main.o
 
-.debug_line     0x0000000000000000     0x628e
+.debug_line     0x0000000000000000     0x6294
  *(.debug_line)
- .debug_line    0x0000000000000000      0x791 ./windbondflash/winbondflash.o
- .debug_line    0x0000000000000791     0x159a ./drivers/mss_uart/mss_uart.o
- .debug_line    0x0000000000001d2b      0x89b ./drivers/mss_sys_services/mss_comblk.o
- .debug_line    0x00000000000025c6     0x15a5 ./drivers/mss_sys_services/mss_sys_services.o
- .debug_line    0x0000000000003b6b     0x1061 ./drivers/mss_spi/mss_spi.o
- .debug_line    0x0000000000004bcc      0x653 ./drivers/mss_hpdma/mss_hpdma.o
- .debug_line    0x000000000000521f      0x18e ./CMSIS/startup_gcc/startup_m2sxxx.o
- .debug_line    0x00000000000053ad      0x41f ./CMSIS/system_m2sxxx.o
- .debug_line    0x00000000000057cc      0xac2 ./main.o
+ .debug_line    0x0000000000000000      0x7a1 ./windbondflash/winbondflash.o
+ .debug_line    0x00000000000007a1     0x159a ./drivers/mss_uart/mss_uart.o
+ .debug_line    0x0000000000001d3b      0x89b ./drivers/mss_sys_services/mss_comblk.o
+ .debug_line    0x00000000000025d6     0x15a5 ./drivers/mss_sys_services/mss_sys_services.o
+ .debug_line    0x0000000000003b7b     0x1061 ./drivers/mss_spi/mss_spi.o
+ .debug_line    0x0000000000004bdc      0x653 ./drivers/mss_hpdma/mss_hpdma.o
+ .debug_line    0x000000000000522f      0x18e ./CMSIS/startup_gcc/startup_m2sxxx.o
+ .debug_line    0x00000000000053bd      0x41f ./CMSIS/system_m2sxxx.o
+ .debug_line    0x00000000000057dc      0xab8 ./main.o
 
 .debug_frame    0x0000000000000000     0x1e2c
  *(.debug_frame)
@@ -1731,7 +1732,7 @@ END GROUP
  .debug_frame   0x0000000000001da8       0x20 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
  .debug_frame   0x0000000000001dc8       0x64 c:/microchip/softconsole-v2021.1/arm-none-eabi-gcc/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-strtol.o)
 
-.debug_str      0x0000000000000000    0x13f4b
+.debug_str      0x0000000000000000    0x13f41
  *(.debug_str)
  .debug_str     0x0000000000000000     0xcc5f ./windbondflash/winbondflash.o
                                        0xcfb3 (size before relaxing)
@@ -1749,8 +1750,8 @@ END GROUP
                                          0x80 (size before relaxing)
  .debug_str     0x00000000000123a3      0x74c ./CMSIS/system_m2sxxx.o
                                        0xa1df (size before relaxing)
- .debug_str     0x0000000000012aef     0x145c ./main.o
-                                       0xf871 (size before relaxing)
+ .debug_str     0x0000000000012aef     0x1452 ./main.o
+                                       0xf86c (size before relaxing)
 
 .debug_loc
  *(.debug_loc)

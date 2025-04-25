@@ -347,6 +347,27 @@ int main(int argc, char *argv[])
              
          }
         */
+	   if(ret[0]=='p')
+			{
+			
+				printf("\n*********envio de bitstream completado com sucesso*******\n");
+				//temp = 0; 
+				//bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
+				//printf(" with error code = %d\n",temp);
+					
+				return (0);
+			}
+
+		if(ret[0]=='q')
+			{
+			
+				printf("\n*********falhou\n");
+				//temp = 0; 
+				//bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
+				//printf(" with error code = %d\n",temp);
+					
+				return (0);
+			}
 	   //printf("actioncode 0: %d,  action code 1: %d ",Action_code[0],Action_code[1]);
 	   if(Action_code[0] == '0'){
 			if(ret[0]!='b') // b de begining
@@ -434,54 +455,79 @@ int main(int argc, char *argv[])
 		
 			//CRC check ends
 			//fclose(fp);
+			 
 			if(address+returnbytes == size)
+			{
+				
+				printf("\n*********envio de bitstream completado com sucesso*******\n");  
+				if(ret[0] == 'q')
+				{
+					printf("\nDeu ruim\n");
+					return (0);
+				}
+				else if(ret[0]=='p')
 			{
 			
 				printf("\n*********envio de bitstream completado com sucesso*******\n");  
-				return (0);
-			}
-			else if(ret[0]=='q')
-			{
+				
 			
-				printf("\n*********falhou\n");
-				temp = 0; 
-				bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
-				printf(" with error code = %d\n",temp);
+
 					
 				return (0);
 			}
-			//fclose(fp);	
+			fclose(fp);
+			return (0);	
+			}
+			if(ret[0]=='p')
+			{
+			
+				printf("\n*********envio de bitstream completado com sucesso*******\n");  
+				
+			
+				
+					
+				return (0);
+			}
+			
+				
 		}
 		else if(Action_code[0]=='1')
 		{
-			printf("Iniciar Operacao de IAP\n\r");
+			printf("Iniciar Operacao de ISP\n\r");
 			ret[0] = SerialGetc(hCom);
 			if(ret[0]=='c')
 			{
-				printf("\n\rSelect IAP Operation mode 1/2/3  1.Authenticate 2.Program 3.Verify\n\r");
+				printf("\n\rSelect ISP Operation mode 1/2/3  1.Authenticate 2.Program 3.Verify\n\r");
 			}
 			ret[0] = getchar();
 			SerialPutc(hCom,ret[0]);
 			ret[0] = SerialGetc(hCom);
 			if(ret[0] == 'm')
 			{
-				printf("\n\r IAP Authentication started...wait  \n\r");
+				printf("\n\r ISP Authentication started...wait  \n\r");
 			}
-			ret[0] = SerialGetc(hCom);
-			if(ret[0]=='q')
-			{
-				printf(" \n\rIAP Autenticacao falhou \n\r");
-				return 0;
+			while(1){
+				ret[0] = SerialGetc(hCom);
+				
+				if(ret[0] == 'p')
+				{
+					printf("\nISP Authentication completed successfully\n");
+					return (0);
+				}
+				else if(ret[0] == 'q')
+				{
+					printf("\nISP Authentication failed");
+					temp = 0; 
+					bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
+					printf(" with error code = %d\n",temp);
+					return (0);
+				}
+				if(ret[0] == '.')
+				{
+					printf(".");
+					//return (0);
+				}
 			}
-			else if (ret[0] == 'p')
-			{
-				printf(" \n\rIAP autenticacao bem sucedido! \n\r");
-			}else if(ret[0] == '.')
-            {
-                 printf(".");
-                 
-            }
-			
 		}
 		//fclose(fp);
 		/*
