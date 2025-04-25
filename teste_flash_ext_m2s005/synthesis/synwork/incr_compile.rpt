@@ -13,82 +13,15 @@ Hostname: DESKTOP-V6FS948
 Implementation : synthesis
 Synopsys HDL compiler and linker, Version comp202309synp1, Build 146R, Built Jan  4 2024 08:15:03, @
 
-Modified Files: 8
+Modified Files: 0
 FID:  path (prevtimestamp, timestamp)
-14       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\TAMPER\2.1.300\tamper_comps.v (N/A, 2025-04-08 14:44:39)
-15       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58)
-16       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0.v (N/A, 2025-04-14 11:33:03)
-17       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0_0\TAMPER_C0_TAMPER_C0_0_TAMPER.v (N/A, 2025-04-14 11:33:03)
-18       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0.v (N/A, 2025-04-14 11:37:07)
-19       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0_0\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v (N/A, 2025-04-14 11:37:07)
-8        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03)
-20       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\hdl\Ram_interface.v (N/A, 2025-04-14 11:35:45)
 
 *******************************************************************
-Modules that may have changed as a result of file changes: 21
+Modules that may have changed as a result of file changes: 0
 MID:  lib.cell.view
-0        work.CoreResetP.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-14       work.Dev_Restart_after_IAP_blk.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58) <-- (module definition)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-1        work.MSS_005.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-2        work.RCOSC_1MHZ.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-3        work.RCOSC_1MHZ_FAB.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-4        work.RCOSC_25_50MHZ.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-5        work.RCOSC_25_50MHZ_FAB.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-15       work.Ram_intferface.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\hdl\Ram_interface.v (N/A, 2025-04-14 11:35:45) <-- (module definition)
-16       work.TAMPER.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\TAMPER\2.1.300\tamper_comps.v (N/A, 2025-04-08 14:44:39) <-- (module definition)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0.v (N/A, 2025-04-14 11:33:03) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0_0\TAMPER_C0_TAMPER_C0_0_TAMPER.v (N/A, 2025-04-14 11:33:03) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-17       work.TAMPER_C0.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0.v (N/A, 2025-04-14 11:33:03) <-- (module definition)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-18       work.TAMPER_C0_TAMPER_C0_0_TAMPER.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0.v (N/A, 2025-04-14 11:33:03) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0_0\TAMPER_C0_TAMPER_C0_0_TAMPER.v (N/A, 2025-04-14 11:33:03) <-- (module definition)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-19       work.TPSRAM_C0.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0.v (N/A, 2025-04-14 11:37:07) <-- (module definition)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-20       work.TPSRAM_C0_TPSRAM_C0_0_TPSRAM.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (N/A, 2025-04-14 11:39:58) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0.v (N/A, 2025-04-14 11:37:07) <-- (may instantiate this module)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0_0\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v (N/A, 2025-04-14 11:37:07) <-- (module definition)
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-6        work.XTLOSC.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-7        work.XTLOSC_FAB.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-8        work.coreresetp_pcie_hotreset.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-9        work.teste.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (module definition)
-10       work.teste_sb.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-11       work.teste_sb_CCC_0_FCCC.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-12       work.teste_sb_FABOSC_0_OSC.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
-13       work.teste_sb_MSS.verilog may have changed because the following files changed:
-                        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-10 14:23:26, 2025-04-14 11:40:03) <-- (may instantiate this module)
 
 *******************************************************************
-Unmodified files: 13
+Unmodified files: 21
 FID:  path (timestamp)
 0        C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\lib\generic\smartfusion2.v (2024-01-04 13:11:02)
 1        C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\lib\vlog\hypermods.v (2024-01-04 13:04:40)
@@ -98,12 +31,41 @@ FID:  path (timestamp)
 5        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp.v (2024-09-10 15:44:31)
 6        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp_pcie_hotreset.v (2024-09-10 15:44:31)
 7        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\OSC\2.0.101\osc_comps.v (2024-09-10 15:44:32)
+14       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\TAMPER\2.1.300\tamper_comps.v (2025-04-08 14:44:39)
+15       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (2025-04-14 11:39:58)
+16       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0.v (2025-04-14 11:33:03)
+17       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0_0\TAMPER_C0_TAMPER_C0_0_TAMPER.v (2025-04-14 11:33:03)
+18       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0.v (2025-04-14 11:37:07)
+19       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0_0\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v (2025-04-14 11:37:07)
+8        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v (2025-04-14 11:40:03)
 9        C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\CCC_0\teste_sb_CCC_0_FCCC.v (2025-04-10 12:55:45)
 10       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\FABOSC_0\teste_sb_FABOSC_0_OSC.v (2025-04-10 12:55:46)
 11       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\teste_sb.v (2025-04-10 12:55:46)
 12       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb_MSS\teste_sb_MSS.v (2025-04-10 12:55:43)
 13       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb_MSS\teste_sb_MSS_syn.v (2025-04-10 12:55:43)
+20       C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\hdl\Ram_interface.v (2025-04-14 11:35:45)
 
 *******************************************************************
-Unchanged modules: 0
+Unchanged modules: 21
 MID:  lib.cell.view
+0        work.CoreResetP.verilog
+14       work.Dev_Restart_after_IAP_blk.verilog
+1        work.MSS_005.verilog
+2        work.RCOSC_1MHZ.verilog
+3        work.RCOSC_1MHZ_FAB.verilog
+4        work.RCOSC_25_50MHZ.verilog
+5        work.RCOSC_25_50MHZ_FAB.verilog
+15       work.Ram_intferface.verilog
+16       work.TAMPER.verilog
+17       work.TAMPER_C0.verilog
+18       work.TAMPER_C0_TAMPER_C0_0_TAMPER.verilog
+19       work.TPSRAM_C0.verilog
+20       work.TPSRAM_C0_TPSRAM_C0_0_TPSRAM.verilog
+6        work.XTLOSC.verilog
+7        work.XTLOSC_FAB.verilog
+8        work.coreresetp_pcie_hotreset.verilog
+9        work.teste.verilog
+10       work.teste_sb.verilog
+11       work.teste_sb_CCC_0_FCCC.verilog
+12       work.teste_sb_FABOSC_0_OSC.verilog
+13       work.teste_sb_MSS.verilog

@@ -6,7 +6,7 @@
 
 # Family: SmartFusion2 , Die: M2S005 , Package: 144 TQ
 
-# Date generated: Fri Apr 11 15:45:21 2025 
+# Date generated: Fri Apr 25 15:08:51 2025 
 
 
 # 
@@ -41,6 +41,26 @@ set_io MMUART_0_TXD_M2F  \
 # 
 # Dedicated Peripheral I/O Settings
 # 
+
+set_io SPI_0_CLK      \
+    -FF_IO_AVAIL Yes  \
+    -DIRECTION INOUT
+
+
+set_io SPI_0_DI       \
+    -FF_IO_AVAIL Yes  \
+    -DIRECTION INPUT
+
+
+set_io SPI_0_DO        \
+    -FF_IO_AVAIL Yes   \
+    -DIRECTION OUTPUT
+
+
+set_io SPI_0_SS0      \
+    -FF_IO_AVAIL Yes  \
+    -DIRECTION INOUT
+
 
 
 # 

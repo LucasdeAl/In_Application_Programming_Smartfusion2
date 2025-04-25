@@ -1,6 +1,6 @@
 Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)
 Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)
-Date: Mon Apr 14 11:41:40 2025
+Date: Fri Apr 25 15:09:35 2025
 
 teste_sb_0/CCC_0/CCC_INST/INST_CCC_IP
 +-------------------+--------------------+---------------+-------+
@@ -314,7 +314,7 @@ teste_sb_0/teste_sb_MSS_0/MSS_ADLIB_INST/INST_MSS_005_IP
 | MSSDDR_FACC_CONFIG_2    | RTC_CLK_SEL                 | INIT[618:617]   | 2'h1         | INIT[77]  | 1             |
 | MSSDDR_FACC_CONFIG_2    | FACC_SRC_SEL                | INIT[621:619]   | 3'h6         | INIT[78]  | 1             |
 | MSSDDR_FACC_CONFIG_2    | FACC_PRE_SRC_SEL            | INIT[622:622]   | 1'h0         | INIT[79]  | 1             |
-| MSSDDR_FACC_CONFIG_2    | FACC_STANDBY_SEL            | INIT[625:623]   | 3'h4         | INIT[80]  | 1             |
+| MSSDDR_FACC_CONFIG_2    | FACC_STANDBY_SEL            | INIT[625:623]   | 3'h0         | INIT[80]  | 1             |
 | MSSDDR_FACC_CONFIG_2    | MSS_25_50MHZ_EN             | INIT[626:626]   | 1'h1         | INIT[81]  | 1             |
 | MSSDDR_FACC_CONFIG_2    | MSS_1MHZ_EN                 | INIT[627:627]   | 1'h1         | INIT[82]  | 1             |
 | MSSDDR_FACC_CONFIG_2    | MSS_CLK_ENVM_EN             | INIT[628:628]   | 1'h1         | INIT[83]  | 1             |

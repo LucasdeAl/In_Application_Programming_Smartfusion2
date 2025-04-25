@@ -266,7 +266,7 @@ IS_READONLY="TRUE"
 ENDFILE
 VALUE "<project>\component\work\teste\teste.cxf,actgen_cxf"
 STATE="utd"
-TIME="1744641604"
+TIME="1744729073"
 SIZE="3983"
 ENDFILE
 VALUE "<project>\component\work\teste\teste.v,hdl"
@@ -400,7 +400,7 @@ PARENT="<project>\component\Actel\SmartFusion2MSS\MSS\1.1.500\MSS.cxf"
 ENDFILE
 VALUE "<project>\simulation\subsystem.bfm,sim"
 STATE="utd"
-TIME="1744305807"
+TIME="1744641604"
 SIZE="759"
 PARENT="<project>\component\work\teste\teste.cxf"
 PARENT="<project>\component\work\teste_sb\teste_sb.cxf"
@@ -419,22 +419,22 @@ PARENT="<project>\component\work\teste_sb_MSS\teste_sb_MSS.cxf"
 ENDFILE
 VALUE "<project>\synthesis\teste.so,so"
 STATE="utd"
-TIME="1744305818"
+TIME="1744641618"
 SIZE="240"
 ENDFILE
 VALUE "<project>\synthesis\teste.vm,syn_vm"
 STATE="utd"
-TIME="1744305818"
-SIZE="34300"
+TIME="1744641618"
+SIZE="78238"
 ENDFILE
 VALUE "<project>\synthesis\teste_syn.prj,prj"
 STATE="utd"
-TIME="1744305818"
-SIZE="3733"
+TIME="1744641619"
+SIZE="4624"
 ENDFILE
 VALUE "<project>\synthesis\teste_vm.sdc,syn_sdc"
 STATE="utd"
-TIME="1744305818"
+TIME="1744641618"
 SIZE="1297"
 ENDFILE
 ENDLIST
@@ -562,8 +562,8 @@ NAME="Synplify Pro ME"
 FUNCTION="Synthesis"
 TOOL="Synplify Pro ME"
 LOCATION="C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\bin\synplify_pro.exe"
-PARAM="-licensetype synplifypro_actel -batch -log synplify.log"
-BATCH=1
+PARAM=""
+BATCH=0
 LICENSE=""
 IS32BIT="1"
 EndProfile
@@ -612,25 +612,11 @@ LIST UserCustomizedFileList
 ENDLIST
 LIST OpenedFileList
 ORIENTATION;HORIZONTAL
-Reports;Reports;0
-ReportsCurrentItem;Export Bitstream:teste_exportBitstream.log
-Constraint Manager;Constraint Manager;0
 StartPage;StartPage;0
-SmartDesign;Dev_Restart_after_IAP_blk;0
-SmartDesign;teste;0
-ACTIVEVIEW;teste
+ACTIVEVIEW;StartPage
 ENDLIST
 LIST ModuleSubBlockList
 LIST "coreresetp_pcie_hotreset::work","component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp_pcie_hotreset.v","FALSE","FALSE"
-ENDLIST
-LIST "DESIGN_FIRMWARE::work","component\work\DESIGN_FIRMWARE\DESIGN_FIRMWARE.cxf","TRUE","FALSE"
-SUBBLOCK "SmartFusion2_CMSIS::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_MMUART_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_SPI_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
-SUBBLOCK "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "Dev_Restart_after_IAP_blk::work","component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v","TRUE","FALSE"
 SUBBLOCK "Ram_intferface::work","hdl\Ram_interface.v","FALSE","FALSE"
@@ -651,20 +637,6 @@ ENDLIST
 LIST "RCOSC_25_50MHZ::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
 ENDLIST
 LIST "RCOSC_25_50MHZ_FAB::work","component\Actel\SgCore\OSC\2.0.101\osc_comps.v","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_CMSIS::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_HPDMA_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_MMUART_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_NVM_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_SPI_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_System_Services_Driver::work","","FALSE","FALSE"
-ENDLIST
-LIST "SmartFusion2_MSS_Timer_Driver::work","","FALSE","FALSE"
 ENDLIST
 LIST "TAMPER::work","component\Actel\SgCore\TAMPER\2.1.300\tamper_comps.v","FALSE","FALSE"
 ENDLIST

@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
--Pin Report - Date: Mon Apr 14 11:41:36 2025 Pinchecksum: NOT-AVAILABLE
+-Pin Report - Date: Fri Apr 25 15:07:46 2025 Pinchecksum: NOT-AVAILABLE
 -Product: Designer
 -Release: v2024.1
 -Version: 2024.1.0.3
@@ -108,10 +108,10 @@ Number |Port             |Function                     |State      |I/O Std  |Di
 95                        VDD                           Reserved    
 96                        VDDI2                         Reserved    
 97                        VSS                           Reserved    
-98      SPI_0_CLK         MSIO12PB2/SPI_0_CLK           Fixed       LVCMOS25  Inout      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          SLOW  ---           4                  5                 
-99      SPI_0_DI          MSIO12NB2/SPI_0_SDI/GPIO_5_A  Fixed       LVCMOS25  Input      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          ---   ---           ---                ---               
-100     SPI_0_DO          MSIO13PB2/SPI_0_SDO/GPIO_6_A  Fixed       LVCMOS25  Output     TRISTATE                        None           No                                  ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
-101     SPI_0_SS0         MSIO13NB2/SPI_0_SS0/GPIO_7_A  Fixed       LVCMOS25  Inout      TRISTATE                        None           No                                  Off              ---         ---            Off             Off          SLOW  ---           4                  5                 
+98      SPI_0_CLK         MSIO12PB2/SPI_0_CLK           Fixed       LVCMOS25  Inout      TRISTATE                        None           Yes                                 Off              ---         ---            Off             Off          SLOW  ---           4                  5                 
+99      SPI_0_DI          MSIO12NB2/SPI_0_SDI/GPIO_5_A  Fixed       LVCMOS25  Input      TRISTATE                        None           Yes                                 Off              ---         ---            Off             Off          ---   ---           ---                ---               
+100     SPI_0_DO          MSIO13PB2/SPI_0_SDO/GPIO_6_A  Fixed       LVCMOS25  Output     TRISTATE                        None           Yes                                 ---              ---         ---            ---             ---          SLOW  ---           4                  5                 
+101     SPI_0_SS0         MSIO13NB2/SPI_0_SS0/GPIO_7_A  Fixed       LVCMOS25  Inout      TRISTATE                        None           Yes                                 Off              ---         ---            Off             Off          SLOW  ---           4                  5                 
 102                       VSSNVM                        Reserved    
 103                       VPPNVM                        Reserved    
 104                       VPP                           Reserved    

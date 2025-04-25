@@ -191,8 +191,8 @@ int main()
                   delay(80000);
 
                   //status=MSS_SYS_initiate_iap(MSS_SYS_PROG_AUTHENTICATE, bitstream_spi_addr);
-                  status = MSS_SYS_start_isp(MSS_SYS_PROG_AUTHENTICATE,page_read_handler,isp_completion_handler);
-                  //status = MSS_SYS_start_isp(MSS_SYS_PROG_PROGRAM,page_read_handler,isp_completion_handler);
+                  //status = MSS_SYS_start_isp(MSS_SYS_PROG_AUTHENTICATE,page_read_handler,isp_completion_handler);
+                  status = MSS_SYS_start_isp(MSS_SYS_PROG_PROGRAM,page_read_handler,isp_completion_handler);
                   delay(0xFFFFFFFF);
 
 

@@ -68,7 +68,9 @@ Synopsys Verilog Compiler, Version comp202309synp1, Build 146R, Built Jan  4 202
 @I::"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\teste_sb.v" (library work)
 @I::"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v" (library work)
 Verilog syntax check successful!
-Options changed - recompiling
+
+Compiler output is up to date.  No re-compile necessary
+
 Selecting top level module teste
 @N: CG364 :"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\hdl\Ram_interface.v":17:7:17:20|Synthesizing module Ram_intferface in library work.
 Running optimization stage 1 on Ram_intferface .......
@@ -354,12 +356,12 @@ For a summary of runtime per design unit, please see file:
 
 
 
-At c_ver Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 99MB peak: 103MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 89MB peak: 90MB)
 
-Process took 0h:00m:03s realtime, 0h:00m:03s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 11:40:13 2025
+# Fri Apr 25 15:07:26 2025
 
 ###########################################################]
 ###########################################################[
@@ -379,14 +381,16 @@ Implementation : synthesis
 Synopsys Synopsys Netlist Linker, Version comp202309synp1, Build 146R, Built Jan  4 2024 08:15:03, @
 
 @N|Running in 64-bit mode
-File C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\synthesis\synwork\layer0.srs changed - recompiling
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 92MB peak: 93MB)
+Linker output is up to date. No re-linking necessary
+
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 88MB peak: 89MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 11:40:13 2025
+# Fri Apr 25 15:07:26 2025
 
 ###########################################################]
 
@@ -396,11 +400,11 @@ For a summary of runtime and memory usage for all design units, please see file:
 
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 30MB peak: 30MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 22MB peak: 23MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:03s cputime
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Mon Apr 14 11:40:13 2025
+# Fri Apr 25 15:07:27 2025
 
 ###########################################################]

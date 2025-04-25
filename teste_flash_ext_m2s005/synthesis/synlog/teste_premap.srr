@@ -1,4 +1,4 @@
-# Mon Apr 14 11:40:15 2025
+# Fri Apr 25 15:07:27 2025
 
 
 Copyright (C) 1994-2023 Synopsys, Inc.
@@ -130,7 +130,7 @@ teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock     15        teste_sb_0
 Finished Pre Mapping Phase.
 @N: BN225 |Writing default property annotation file C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\synthesis\teste.sap.
 
-Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 252MB peak: 253MB)
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 252MB peak: 253MB)
 
 Encoding state machine sm0_state[6:0] (in view: work.CoreResetP_Z1(verilog))
 original code -> new code
@@ -142,16 +142,16 @@ original code -> new code
    101 -> 0100000
    110 -> 1000000
 
-Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 254MB peak: 254MB)
 
 
-Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 254MB peak: 254MB)
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 254MB peak: 255MB)
 
 Pre-mapping successful!
 
 At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 169MB peak: 255MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
-# Mon Apr 14 11:40:16 2025
+# Fri Apr 25 15:07:28 2025
 
 ###########################################################]

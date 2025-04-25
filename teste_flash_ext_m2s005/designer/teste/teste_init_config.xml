@@ -3,7 +3,7 @@
 <doc>
 <title>Configuration Report for MSS, SERDES(s), Fabric DDR and Fabric CCC(s)</title>
 <text>Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)</text>
-<text>Date: Mon Apr 14 11:41:40 2025
+<text>Date: Fri Apr 25 15:09:35 2025
 </text>
 <section><name>teste_sb_0/CCC_0/CCC_INST/INST_CCC_IP</name></section>
 <table>
@@ -2145,7 +2145,7 @@
  <cell>MSSDDR_FACC_CONFIG_2</cell>
  <cell>FACC_STANDBY_SEL</cell>
  <cell>INIT[625:623]</cell>
- <cell>3&apos;h4</cell>
+ <cell>3&apos;h0</cell>
  <cell>INIT[80]</cell>
  <cell>1</cell>
 </row>
