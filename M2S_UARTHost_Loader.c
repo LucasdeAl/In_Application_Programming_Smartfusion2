@@ -505,8 +505,9 @@ int main(int argc, char *argv[])
 			if(ret[0] == 'm')
 			{
 				printf("\n\r ISP Authentication started...wait  \n\r");
-			}
-			while(1){
+			
+			while(1)
+			{
 				ret[0] = SerialGetc(hCom);
 				
 				if(ret[0] == 'p')
@@ -527,7 +528,61 @@ int main(int argc, char *argv[])
 					printf(".");
 					//return (0);
 				}
+				}
 			}
+			else if(ret[0] == 'g')
+			{
+				printf("\n\r ISP Programming started...wait  \n\r");
+			while(1)
+			{
+				ret[0] = SerialGetc(hCom);
+				
+				if(ret[0] == 'p')
+				{
+					printf("\nISP Programming completed successfully\n");
+					return (0);
+				}
+				else if(ret[0] == 'q')
+				{
+					printf("\nISP Programming failed");
+					temp = 0; 
+					bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
+					printf(" with error code = %d\n",temp);
+					return (0);
+				}
+				if(ret[0] == '.')
+				{
+					printf(".");
+					//return (0);
+				}
+				}
+			}else if(ret[0] == 'k')
+			{
+				printf("\n\r ISP Verify started...wait  \n\r");
+			while(1)
+			{
+				ret[0] = SerialGetc(hCom);
+				
+				if(ret[0] == 'p')
+				{
+					printf("\nISP Verify completed successfully\n");
+					return (0);
+				}
+				else if(ret[0] == 'q')
+				{
+					printf("\nISP Verify failed");
+					temp = 0; 
+					bReadRC =ReadFile(hCom, (char *)&temp, 8,&iBytesRead,NULL); 
+					printf(" with error code = %d\n",temp);
+					return (0);
+				}
+				if(ret[0] == '.')
+				{
+					printf(".");
+					//return (0);
+				}
+				}
+			}	
 		}
 		//fclose(fp);
 		/*

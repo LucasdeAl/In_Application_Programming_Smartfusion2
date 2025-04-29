@@ -99,6 +99,7 @@ int main()
 
       /* start the handshake with the host */
       START_HANDSHAKE:
+      g_isp_operation_busy = 1;
            while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )))
               ;
            if(rx_buff[0] == 'h')
@@ -154,25 +155,17 @@ int main()
                tamanho[3] = (uint8_t)((g_file_size >> 24) & 0xFF);
 
                FLASH_program(0, tamanho ,4);
-               /*
-               while(1){
-               //FLASH_program(addr_size, tamanho ,4);
 
-               FLASH_read(addr_size, rx_buff ,5);
-               FLASH_read(0x10000, rx_buff ,5);
-               program_data_load();//zera o buffer
-               FLASH_read(0x20000, rx_buff ,5);
-               FLASH_read(addr_size, rx_buff ,5);
-
-               }
-               */
                while((status = write_bitstream_on_flash(g_page_buffer, &addr_bitstream) == true));
                if (status == false)
                {
                    MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"q",1);
-                   return 0;
+                   goto START_HANDSHAKE;
                }else
-               MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"p",1);
+               {
+                   MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"p",1);
+                   goto START_HANDSHAKE;
+               }
                break;
 
            case '1':
@@ -191,18 +184,31 @@ int main()
                   delay(80000);
 
                   //status=MSS_SYS_initiate_iap(MSS_SYS_PROG_AUTHENTICATE, bitstream_spi_addr);
-                  //status = MSS_SYS_start_isp(MSS_SYS_PROG_AUTHENTICATE,page_read_handler,isp_completion_handler);
-                  status = MSS_SYS_start_isp(MSS_SYS_PROG_PROGRAM,page_read_handler,isp_completion_handler);
-                  delay(0xFFFFFFFF);
+                  status = MSS_SYS_start_isp(MSS_SYS_PROG_AUTHENTICATE,page_read_handler,isp_completion_handler);
+
+                  while (g_isp_operation_busy == 1)
+                  {
+                      // Espera o ISP terminar
+                  }
+
+                  goto START_HANDSHAKE;
 
 
 
               }else if (rx_buff[0] =='2')
 
               {
-                  MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"\n\r");
-                  MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"IAP program started.. wait..\n\r");
+                  MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"g",1);
                   delay(80000);
+
+                  status = MSS_SYS_start_isp(MSS_SYS_PROG_PROGRAM,page_read_handler,isp_completion_handler);
+                  while (g_isp_operation_busy == 1)
+                  {
+                      // Espera o ISP terminar
+                  }
+
+                  goto START_HANDSHAKE;
+
                   //copy_image_to_ram();
                   //remap_user_code_eSRAM_0();
 
@@ -210,11 +216,16 @@ int main()
               else if (rx_buff[0] =='3')
               {
 
-                  MSS_UART_polled_tx_string(gp_my_uart,(const uint8_t * )"\n\rIAP Verify started...wait \n\r");
+                  MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"k",1);
                   delay(100000);
 
-                  //status=MSS_SYS_initiate_iap(MSS_SYS_PROG_VERIFY, bitstream_spi_addr);
+                  status = MSS_SYS_start_isp(MSS_SYS_PROG_VERIFY,page_read_handler,isp_completion_handler);
+                  while (g_isp_operation_busy == 1)
+                  {
+                      // Espera o ISP terminar
+                  }
 
+                  goto START_HANDSHAKE;
                   /*
                   p_addr_value_pair = g_m2s_serdes_0_config;
                   nb_of_cfg_pairs = SERDES_0_CFG_NB_OF_PAIRS;
@@ -256,13 +267,15 @@ void isp_completion_handler(uint32_t value)// usado so quando acaba o ISP
   {
 
       MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"p",1);
-
+      g_isp_operation_busy = 0;
 
   }
   else
   {
       MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"q",1);
       MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )&value,8);
+      g_isp_operation_busy = 0;
+
   }
 }
 
