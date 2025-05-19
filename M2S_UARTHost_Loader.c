@@ -29,7 +29,7 @@ DWORD iBytesWritten;
 DWORD iBytesRead;
 
 
-#define MAX_BUFFER_SIZE 1024
+#define MAX_BUFFER_SIZE 2048
 
 // Função para ler uma string da porta serial
 int ReadStringFromSerial(HANDLE hCom, char *buffer, int bufferSize) {
