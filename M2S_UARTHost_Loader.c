@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
     if(argc < 4)
     {
         printf("Usage for M2S_UARTHost_Loader: M2S_UARTHost_Loader.exe filename comportnumber\n");
-        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin IAP\n");
+        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin ISP\n");
         return 0;
     }
     strcpy(Action_code,argv[3]);
@@ -118,7 +118,7 @@ int main(int argc, char *argv[])
     if( Action_code[0] != '0' && Action_code[0] != '1' &&  Action_code[0] != '2')
     {
         printf("Usage for M2S_UARTHost_Loader: M2S_UARTHost_Loader.exe filename comportnumber\n");
-        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin IAP\n");
+        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin ISP\n");
         return 0;
     }
 
