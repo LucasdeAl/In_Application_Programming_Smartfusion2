@@ -19,6 +19,7 @@ C_DEPS :=
 SUBDIRS := \
 CMSIS/startup_gcc \
 CMSIS \
+drivers/mss_gpio \
 drivers/mss_hpdma \
 drivers/mss_nvm \
 drivers/mss_spi \

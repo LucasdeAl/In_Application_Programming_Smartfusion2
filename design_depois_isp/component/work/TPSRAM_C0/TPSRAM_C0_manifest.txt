@@ -1,0 +1,12 @@
+Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)
+
+Date      :  Mon Apr 14 11:37:07 2025
+Project   :  C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005
+Component :  TPSRAM_C0
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/Lucas/Documents/Nascerr/teste_flash_ext_m2s005/component/work/TPSRAM_C0/TPSRAM_C0_0/TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v
+    C:/Users/Lucas/Documents/Nascerr/teste_flash_ext_m2s005/component/work/TPSRAM_C0/TPSRAM_C0.v
+

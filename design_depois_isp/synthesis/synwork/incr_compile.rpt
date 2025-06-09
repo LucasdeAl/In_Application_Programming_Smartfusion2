@@ -1,0 +1,103 @@
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09M
+Install: C:\Microchip\Libero_SoC_v2024.1\SynplifyPro
+OS: Windows 10 or later
+Hostname: DESKTOP-V6FS948
+
+Implementation : synthesis
+Synopsys HDL compiler and linker, Version comp202309synp1, Build 146R, Built Jan  4 2024 08:15:03, @
+
+Modified Files: 1
+FID:  path (prevtimestamp, timestamp)
+58       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\fpga_top_design.sv (2025-05-30 18:41:38, 2025-06-02 12:54:42)
+
+*******************************************************************
+Modules that may have changed as a result of file changes: 4
+MID:  lib.cell.view
+33       work.fpga_top_design.verilog may have changed because the following files changed:
+                        C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\fpga_top_design.sv (2025-05-30 18:41:38, 2025-06-02 12:54:42) <-- (module definition)
+34       work.hamming_decoder.verilog may have changed because the following files changed:
+                        C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\fpga_top_design.sv (2025-05-30 18:41:38, 2025-06-02 12:54:42) <-- (may instantiate this module)
+35       work.hamming_encoder.verilog may have changed because the following files changed:
+                        C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\fpga_top_design.sv (2025-05-30 18:41:38, 2025-06-02 12:54:42) <-- (may instantiate this module)
+36       work.hamming_top_design.verilog may have changed because the following files changed:
+                        C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\fpga_top_design.sv (2025-05-30 18:41:38, 2025-06-02 12:54:42) <-- (may instantiate this module)
+
+*******************************************************************
+Unmodified files: 34
+FID:  path (timestamp)
+0        C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\lib\generic\smartfusion2.v (2024-01-04 13:11:02)
+1        C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\lib\vlog\hypermods.v (2024-01-04 13:04:40)
+2        C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\lib\vlog\scemi_objects.v (2024-01-04 13:04:40)
+3        C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\lib\vlog\scemi_pipes.svh (2024-01-04 13:04:40)
+4        C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\lib\vlog\umr_capim.v (2024-01-04 13:08:34)
+33       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite.v (2024-09-10 15:44:31)
+34       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_addrdec.v (2024-09-10 15:44:31)
+35       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_defaultslavesm.v (2024-09-10 15:44:31)
+36       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v (2024-09-10 15:44:31)
+37       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_matrix4x16.v (2024-09-10 15:44:31)
+38       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v (2024-09-10 15:44:31)
+39       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_slavestage.v (2024-09-10 15:44:31)
+40       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreMemCtrl\2.2.106\rtl\vlog\core\corememctrl.v (2024-09-10 16:18:15)
+41       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp.v (2024-09-10 15:44:31)
+42       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp_pcie_hotreset.v (2024-09-10 15:44:31)
+43       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\SgCore\OSC\2.0.101\osc_comps.v (2024-09-10 15:44:32)
+44       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\Actel\SgCore\TAMPER\2.1.300\tamper_comps.v (2025-04-08 14:44:39)
+45       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\CoreMemCtrl_C0\CoreMemCtrl_C0.v (2025-05-30 17:44:48)
+46       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v (2025-04-14 11:39:58)
+47       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\TAMPER_C0\TAMPER_C0.v (2025-04-14 11:33:03)
+48       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\TAMPER_C0\TAMPER_C0_0\TAMPER_C0_TAMPER_C0_0_TAMPER.v (2025-04-14 11:33:03)
+49       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\TPSRAM_C0\TPSRAM_C0.v (2025-04-14 11:37:07)
+50       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\TPSRAM_C0\TPSRAM_C0_0\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v (2025-04-14 11:37:07)
+51       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\teste\teste.v (2025-05-30 18:53:31)
+52       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\teste_sb\CCC_0\teste_sb_CCC_0_FCCC.v (2025-05-30 18:50:03)
+53       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\teste_sb\FABOSC_0\teste_sb_FABOSC_0_OSC.v (2025-05-30 18:50:04)
+54       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\teste_sb\teste_sb.v (2025-05-30 18:50:04)
+55       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\teste_sb_MSS\teste_sb_MSS.v (2025-05-30 18:50:00)
+56       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\component\work\teste_sb_MSS\teste_sb_MSS_syn.v (2025-05-30 18:50:00)
+57       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\Ram_interface.v (2025-04-14 11:35:45)
+59       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\hamming_decoder.sv (2025-05-30 18:40:45)
+60       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\hamming_encoder.sv (2025-05-30 18:40:45)
+61       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\hamming_top_design.sv (2025-05-30 18:41:55)
+62       C:\Users\Lucas\Documents\Nascerr\design_depois_isp\hdl\led_blink.v (2025-04-28 17:28:41)
+
+*******************************************************************
+Unchanged modules: 31
+MID:  lib.cell.view
+24       COREAHBLITE_LIB.COREAHBLITE_ADDRDEC.verilog
+25       COREAHBLITE_LIB.COREAHBLITE_DEFAULTSLAVESM.verilog
+26       COREAHBLITE_LIB.COREAHBLITE_MASTERSTAGE.verilog
+27       COREAHBLITE_LIB.COREAHBLITE_MATRIX4X16.verilog
+28       COREAHBLITE_LIB.COREAHBLITE_SLAVEARBITER.verilog
+29       COREAHBLITE_LIB.COREAHBLITE_SLAVESTAGE.verilog
+30       COREAHBLITE_LIB.CoreAHBLite.verilog
+31       COREMEMCTRL_LIB.CoreMemCtrl.verilog
+32       work.CoreMemCtrl_C0.verilog
+0        work.CoreResetP.verilog
+14       work.Dev_Restart_after_IAP_blk.verilog
+1        work.MSS_005.verilog
+2        work.RCOSC_1MHZ.verilog
+3        work.RCOSC_1MHZ_FAB.verilog
+4        work.RCOSC_25_50MHZ.verilog
+5        work.RCOSC_25_50MHZ_FAB.verilog
+15       work.Ram_intferface.verilog
+16       work.TAMPER.verilog
+17       work.TAMPER_C0.verilog
+18       work.TAMPER_C0_TAMPER_C0_0_TAMPER.verilog
+19       work.TPSRAM_C0.verilog
+20       work.TPSRAM_C0_TPSRAM_C0_0_TPSRAM.verilog
+6        work.XTLOSC.verilog
+7        work.XTLOSC_FAB.verilog
+8        work.coreresetp_pcie_hotreset.verilog
+21       work.led_blink.verilog
+9        work.teste.verilog
+10       work.teste_sb.verilog
+11       work.teste_sb_CCC_0_FCCC.verilog
+12       work.teste_sb_FABOSC_0_OSC.verilog
+13       work.teste_sb_MSS.verilog

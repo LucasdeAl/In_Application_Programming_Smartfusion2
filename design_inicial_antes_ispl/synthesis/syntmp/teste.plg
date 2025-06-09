@@ -1,0 +1,22 @@
+@P:  Worst Slack : -4.596
+@P:  teste_sb_CCC_0_FCCC|GL0_net_inferred_clock - Estimated Frequency : 68.5 MHz
+@P:  teste_sb_CCC_0_FCCC|GL0_net_inferred_clock - Requested Frequency : 100.0 MHz
+@P:  teste_sb_CCC_0_FCCC|GL0_net_inferred_clock - Estimated Period : 14.596
+@P:  teste_sb_CCC_0_FCCC|GL0_net_inferred_clock - Requested Period : 10.000
+@P:  teste_sb_CCC_0_FCCC|GL0_net_inferred_clock - Slack : -4.596
+@P:  teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock - Estimated Frequency : NA
+@P:  teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock - Requested Frequency : 100.0 MHz
+@P:  teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock - Estimated Period : NA
+@P:  teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock - Requested Period : 10.000
+@P:  teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock - Slack : NA
+@P:  System - Estimated Frequency : NA
+@P:  System - Requested Frequency : 100.0 MHz
+@P:  System - Estimated Period : NA
+@P:  System - Requested Period : 10.000
+@P:  System - Slack : NA
+@P: teste Part : m2s005vf400std
+@P: teste Register bits  : 193 
+@P: teste DSP Blocks  : 0
+@P: teste I/O primitives : 38
+@P: teste RAM1K18 :  1
+@P:  CPU Time : 0h:00m:04s

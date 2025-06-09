@@ -1,0 +1,449 @@
+<html><body><samp><pre>
+<!@TC:1748639184>
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09M
+Install: C:\Microchip\Libero_SoC_v2024.1\SynplifyPro
+OS: Windows 10 or later
+Hostname: DESKTOP-V6FS948
+
+Implementation : synthesis
+
+#### START OF AREA REPORT #####[
+
+Part:			M2S005VF400STD (Microchip)
+
+---------------------------------------------------------------------
+########   Utilization report for  Top level view:   teste   ########
+=====================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      193                100 %                
+=================================================
+Total SEQUENTIAL ELEMENTS in the block teste:	193 (21.07 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+CFG           599                100 %                
+ARI1          37                 100 %                
+BLACK BOX     5                  100 %                
+======================================================
+Total COMBINATIONAL LOGIC in the block teste:	641 (69.98 % Utilization)
+
+
+MEMORY ELEMENTS
+Name        Total elements     Utilization     Notes
+----------------------------------------------------
+RAM1K18     1                  100 %                
+====================================================
+Total MEMORY ELEMENTS in the block teste:	1 (0.11 % Utilization)
+
+
+GLOBAL BUFFERS
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+GLOBAL     3                  100 %                
+===================================================
+Total GLOBAL BUFFERS in the block teste:	3 (0.33 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+IO       38                 100 %                
+=================================================
+Total IO PADS in the block teste:	38 (4.15 % Utilization)
+
+--------------------------------------------------------------------
+########   Utilization report for  cell:   CoreMemCtrl_C0   ########
+Instance path:   teste.CoreMemCtrl_C0                               
+====================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      77                 39.9 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block teste.CoreMemCtrl_C0:	77 (8.41 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      347                57.9 %               
+ARI1     2                  5.41 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block teste.CoreMemCtrl_C0:	349 (38.10 % Utilization)
+
+--------------------------------------------------------------------
+########   Utilization report for  cell:   CoreMemCtrl_Z1   ########
+Instance path:   CoreMemCtrl_C0.CoreMemCtrl_Z1                      
+====================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      77                 39.9 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block CoreMemCtrl_C0.CoreMemCtrl_Z1:	77 (8.41 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      347                57.9 %               
+ARI1     2                  5.41 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block CoreMemCtrl_C0.CoreMemCtrl_Z1:	349 (38.10 % Utilization)
+
+-------------------------------------------------------------------------------
+########   Utilization report for  cell:   Dev_Restart_after_IAP_blk   ########
+Instance path:   teste.Dev_Restart_after_IAP_blk                               
+===============================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      64                 33.2 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block teste.Dev_Restart_after_IAP_blk:	64 (6.99 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+CFG           49                 8.18 %               
+ARI1          35                 94.6 %               
+BLACK BOX     1                  20 %                 
+======================================================
+Total COMBINATIONAL LOGIC in the block teste.Dev_Restart_after_IAP_blk:	85 (9.28 % Utilization)
+
+
+MEMORY ELEMENTS
+Name        Total elements     Utilization     Notes
+----------------------------------------------------
+RAM1K18     1                  100 %                
+====================================================
+Total MEMORY ELEMENTS in the block teste.Dev_Restart_after_IAP_blk:	1 (0.11 % Utilization)
+
+--------------------------------------------------------------------
+########   Utilization report for  cell:   Ram_intferface   ########
+Instance path:   Dev_Restart_after_IAP_blk.Ram_intferface           
+====================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      64                 33.2 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block Dev_Restart_after_IAP_blk.Ram_intferface:	64 (6.99 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      49                 8.18 %               
+ARI1     35                 94.6 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block Dev_Restart_after_IAP_blk.Ram_intferface:	84 (9.17 % Utilization)
+
+---------------------------------------------------------------
+########   Utilization report for  cell:   TAMPER_C0   ########
+Instance path:   Dev_Restart_after_IAP_blk.TAMPER_C0           
+===============================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+BLACK BOX     1                  20 %                 
+======================================================
+Total COMBINATIONAL LOGIC in the block Dev_Restart_after_IAP_blk.TAMPER_C0:	1 (0.11 % Utilization)
+
+----------------------------------------------------------------------------------
+########   Utilization report for  cell:   TAMPER_C0_TAMPER_C0_0_TAMPER   ########
+Instance path:   TAMPER_C0.TAMPER_C0_TAMPER_C0_0_TAMPER                           
+==================================================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+BLACK BOX     1                  20 %                 
+======================================================
+Total COMBINATIONAL LOGIC in the block TAMPER_C0.TAMPER_C0_TAMPER_C0_0_TAMPER:	1 (0.11 % Utilization)
+
+---------------------------------------------------------------
+########   Utilization report for  cell:   TPSRAM_C0   ########
+Instance path:   Dev_Restart_after_IAP_blk.TPSRAM_C0           
+===============================================================
+
+MEMORY ELEMENTS
+Name        Total elements     Utilization     Notes
+----------------------------------------------------
+RAM1K18     1                  100 %                
+====================================================
+Total MEMORY ELEMENTS in the block Dev_Restart_after_IAP_blk.TPSRAM_C0:	1 (0.11 % Utilization)
+
+----------------------------------------------------------------------------------
+########   Utilization report for  cell:   TPSRAM_C0_TPSRAM_C0_0_TPSRAM   ########
+Instance path:   TPSRAM_C0.TPSRAM_C0_TPSRAM_C0_0_TPSRAM                           
+==================================================================================
+
+MEMORY ELEMENTS
+Name        Total elements     Utilization     Notes
+----------------------------------------------------
+RAM1K18     1                  100 %                
+====================================================
+Total MEMORY ELEMENTS in the block TPSRAM_C0.TPSRAM_C0_TPSRAM_C0_0_TPSRAM:	1 (0.11 % Utilization)
+
+--------------------------------------------------------------
+########   Utilization report for  cell:   teste_sb   ########
+Instance path:   teste.teste_sb                               
+==============================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      52                 26.9 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block teste.teste_sb:	52 (5.68 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+CFG           178                29.7 %               
+BLACK BOX     4                  80 %                 
+======================================================
+Total COMBINATIONAL LOGIC in the block teste.teste_sb:	182 (19.87 % Utilization)
+
+
+GLOBAL BUFFERS
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+GLOBAL     3                  100 %                
+===================================================
+Total GLOBAL BUFFERS in the block teste.teste_sb:	3 (0.33 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+IO       4                  10.5 %               
+=================================================
+Total IO PADS in the block teste.teste_sb:	4 (0.44 % Utilization)
+
+--------------------------------------------------------------------
+########   Utilization report for  cell:   CoreAHBLite_Z5   ########
+Instance path:   teste_sb.CoreAHBLite_Z5                            
+====================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      43                 22.3 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block teste_sb.CoreAHBLite_Z5:	43 (4.69 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      175                29.2 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block teste_sb.CoreAHBLite_Z5:	175 (19.10 % Utilization)
+
+---------------------------------------------------------------------------------------------
+########   Utilization report for  cell:   COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s   ########
+Instance path:   CoreAHBLite_Z5.COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s                      
+=============================================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      43                 22.3 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block CoreAHBLite_Z5.COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s:	43 (4.69 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      175                29.2 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block CoreAHBLite_Z5.COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s:	175 (19.10 % Utilization)
+
+-------------------------------------------------------------------------------------------------
+########   Utilization report for  cell:   COREAHBLITE_MASTERSTAGE_2_1_0_1_0s_0_1_0   ########   
+Instance path:   COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s.COREAHBLITE_MASTERSTAGE_2_1_0_1_0s_0_1_0
+=================================================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      39                 20.2 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s.COREAHBLITE_MASTERSTAGE_2_1_0_1_0s_0_1_0:	39 (4.26 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      83                 13.9 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s.COREAHBLITE_MASTERSTAGE_2_1_0_1_0s_0_1_0:	83 (9.06 % Utilization)
+
+---------------------------------------------------------------------------------------------
+########   Utilization report for  cell:   COREAHBLITE_DEFAULTSLAVESM_0s_0_1_0   ########    
+Instance path:   COREAHBLITE_MASTERSTAGE_2_1_0_1_0s_0_1_0.COREAHBLITE_DEFAULTSLAVESM_0s_0_1_0
+=============================================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      1                  0.5180 %             
+=================================================
+Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MASTERSTAGE_2_1_0_1_0s_0_1_0.COREAHBLITE_DEFAULTSLAVESM_0s_0_1_0:	1 (0.11 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      5                  0.8350 %             
+=================================================
+Total COMBINATIONAL LOGIC in the block COREAHBLITE_MASTERSTAGE_2_1_0_1_0s_0_1_0.COREAHBLITE_DEFAULTSLAVESM_0s_0_1_0:	5 (0.55 % Utilization)
+
+----------------------------------------------------------------------------------------
+########   Utilization report for  cell:   COREAHBLITE_SLAVESTAGE_0s_0_0_1   ########   
+Instance path:   COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s.COREAHBLITE_SLAVESTAGE_0s_0_0_1
+========================================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      4                  2.07 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s.COREAHBLITE_SLAVESTAGE_0s_0_0_1:	4 (0.44 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      92                 15.4 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block COREAHBLITE_MATRIX4X16_2_1_0_1_0_0_0_0s.COREAHBLITE_SLAVESTAGE_0s_0_0_1:	92 (10.04 % Utilization)
+
+-----------------------------------------------------------------------------------
+########   Utilization report for  cell:   COREAHBLITE_SLAVEARBITER_Z4_0   ########
+Instance path:   COREAHBLITE_SLAVESTAGE_0s_0_0_1.COREAHBLITE_SLAVEARBITER_Z4_0     
+===================================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      3                  1.55 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block COREAHBLITE_SLAVESTAGE_0s_0_0_1.COREAHBLITE_SLAVEARBITER_Z4_0:	3 (0.33 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      35                 5.84 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block COREAHBLITE_SLAVESTAGE_0s_0_0_1.COREAHBLITE_SLAVEARBITER_Z4_0:	35 (3.82 % Utilization)
+
+-------------------------------------------------------------------
+########   Utilization report for  cell:   CoreResetP_Z6   ########
+Instance path:   teste_sb.CoreResetP_Z6                            
+===================================================================
+
+SEQUENTIAL ELEMENTS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+SLE      9                  4.66 %               
+=================================================
+Total SEQUENTIAL ELEMENTS in the block teste_sb.CoreResetP_Z6:	9 (0.98 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+CFG      2                  0.3340 %             
+=================================================
+Total COMBINATIONAL LOGIC in the block teste_sb.CoreResetP_Z6:	2 (0.22 % Utilization)
+
+
+GLOBAL BUFFERS
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+GLOBAL     1                  33.3 %               
+===================================================
+Total GLOBAL BUFFERS in the block teste_sb.CoreResetP_Z6:	1 (0.11 % Utilization)
+
+-------------------------------------------------------------------------
+########   Utilization report for  cell:   teste_sb_CCC_0_FCCC   ########
+Instance path:   teste_sb.teste_sb_CCC_0_FCCC                            
+=========================================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+CFG           1                  0.1670 %             
+BLACK BOX     1                  20 %                 
+======================================================
+Total COMBINATIONAL LOGIC in the block teste_sb.teste_sb_CCC_0_FCCC:	2 (0.22 % Utilization)
+
+
+GLOBAL BUFFERS
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+GLOBAL     1                  33.3 %               
+===================================================
+Total GLOBAL BUFFERS in the block teste_sb.teste_sb_CCC_0_FCCC:	1 (0.11 % Utilization)
+
+---------------------------------------------------------------------------
+########   Utilization report for  cell:   teste_sb_FABOSC_0_OSC   ########
+Instance path:   teste_sb.teste_sb_FABOSC_0_OSC                            
+===========================================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+BLACK BOX     1                  20 %                 
+======================================================
+Total COMBINATIONAL LOGIC in the block teste_sb.teste_sb_FABOSC_0_OSC:	1 (0.11 % Utilization)
+
+------------------------------------------------------------------
+########   Utilization report for  cell:   teste_sb_MSS   ########
+Instance path:   teste_sb.teste_sb_MSS                            
+==================================================================
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+BLACK BOX     1                  20 %                 
+======================================================
+Total COMBINATIONAL LOGIC in the block teste_sb.teste_sb_MSS:	1 (0.11 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+IO       4                  10.5 %               
+=================================================
+Total IO PADS in the block teste_sb.teste_sb_MSS:	4 (0.44 % Utilization)
+
+
+##### END OF AREA REPORT #####]
+
+
+</pre></samp></body></html>

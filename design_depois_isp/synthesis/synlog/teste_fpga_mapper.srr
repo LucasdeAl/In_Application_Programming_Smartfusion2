@@ -1,0 +1,819 @@
+# Mon Jun  2 12:55:43 2025
+
+
+Copyright (C) 1994-2023 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: V-2023.09M
+Install: C:\Microchip\Libero_SoC_v2024.1\SynplifyPro
+OS: Windows 10 or later
+Hostname: DESKTOP-V6FS948
+
+Implementation : synthesis
+Synopsys Microchip Technology Mapper, Version map202309act, Build 044R, Built Jan  4 2024 08:30:58, @
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 184MB peak: 184MB)
+
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF667 |Clock conversion disabled. (Command "set_option -fix_gated_and_generated_clocks 0" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 186MB peak: 199MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 186MB peak: 199MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 188MB peak: 199MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 190MB peak: 199MB)
+
+
+Vector Gate Optimization Enabled: Optimizing  Partial Hanging Logic. 
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 254MB peak: 254MB)
+
+@N: MO111 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\work\teste_sb\fabosc_0\teste_sb_fabosc_0_osc.v":20:7:20:16|Tristate driver XTLOSC_O2F (in view: work.teste_sb_FABOSC_0_OSC(verilog)) on net XTLOSC_O2F (in view: work.teste_sb_FABOSC_0_OSC(verilog)) has its enable tied to GND.
+@N: MO111 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\work\teste_sb\fabosc_0\teste_sb_fabosc_0_osc.v":19:7:19:16|Tristate driver XTLOSC_CCC (in view: work.teste_sb_FABOSC_0_OSC(verilog)) on net XTLOSC_CCC (in view: work.teste_sb_FABOSC_0_OSC(verilog)) has its enable tied to GND.
+@N: MO111 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\work\teste_sb\fabosc_0\teste_sb_fabosc_0_osc.v":18:7:18:20|Tristate driver RCOSC_1MHZ_O2F (in view: work.teste_sb_FABOSC_0_OSC(verilog)) on net RCOSC_1MHZ_O2F (in view: work.teste_sb_FABOSC_0_OSC(verilog)) has its enable tied to GND.
+@N: MO111 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\work\teste_sb\fabosc_0\teste_sb_fabosc_0_osc.v":17:7:17:20|Tristate driver RCOSC_1MHZ_CCC (in view: work.teste_sb_FABOSC_0_OSC(verilog)) on net RCOSC_1MHZ_CCC (in view: work.teste_sb_FABOSC_0_OSC(verilog)) has its enable tied to GND.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":963:4:963:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif3_spll_lock_q1 because it is equivalent to instance teste_sb_0.CORERESETP_0.CONFIG2_DONE_q1. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":946:4:946:9|Removing sequential instance teste_sb_0.CORERESETP_0.CONFIG2_DONE_q1 because it is equivalent to instance teste_sb_0.CORERESETP_0.CONFIG1_DONE_q1. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":946:4:946:9|Removing sequential instance teste_sb_0.CORERESETP_0.CONFIG2_DONE_clk_base because it is equivalent to instance teste_sb_0.CORERESETP_0.sdif3_spll_lock_q2. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":929:4:929:9|Removing sequential instance teste_sb_0.CORERESETP_0.CONFIG1_DONE_clk_base because it is equivalent to instance teste_sb_0.CORERESETP_0.sdif3_spll_lock_q2. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: BZ173 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\corememctrl\2.2.106\rtl\vlog\core\corememctrl.v":950:6:950:9|ROM pipeline_rd (in view: COREMEMCTRL_LIB.CoreMemCtrl_Z1(verilog)) mapped in logic.
+@N: MO106 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\corememctrl\2.2.106\rtl\vlog\core\corememctrl.v":950:6:950:9|Found ROM pipeline_rd (in view: COREMEMCTRL_LIB.CoreMemCtrl_Z1(verilog)) with 11 words by 1 bit.
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 258MB peak: 258MB)
+
+Encoding state machine MemCntlState[9:0] (in view: COREMEMCTRL_LIB.CoreMemCtrl_Z1(verilog))
+original code -> new code
+   0000 -> 0000000001
+   0001 -> 0000000010
+   0010 -> 0000000100
+   0011 -> 0000001000
+   0100 -> 0000010000
+   0101 -> 0000100000
+   0110 -> 0001000000
+   0111 -> 0010000000
+   1001 -> 0100000000
+   1010 -> 1000000000
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\corememctrl\2.2.106\rtl\vlog\core\corememctrl.v":1678:3:1678:8|Removing sequential instance CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.ssram_read_buzy_next because it is equivalent to instance CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.pipeline_rd_d1. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavestage.v":79:4:79:9|Removing sequential instance masterDataInProg[3] (in view: COREAHBLITE_LIB.COREAHBLITE_SLAVESTAGE_0s_0_0_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavestage.v":79:4:79:9|Removing sequential instance masterDataInProg[2] (in view: COREAHBLITE_LIB.COREAHBLITE_SLAVESTAGE_0s_0_0_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavestage.v":79:4:79:9|Removing sequential instance masterDataInProg[1] (in view: COREAHBLITE_LIB.COREAHBLITE_SLAVESTAGE_0s_0_0_1(verilog)) of type view:PrimLib.dffr(prim) because it does not drive other instances.
+Encoding state machine arbRegSMCurrentState[15:0] (in view: COREAHBLITE_LIB.COREAHBLITE_SLAVEARBITER_Z4_0(verilog))
+original code -> new code
+   0000 -> 0000000000000001
+   0001 -> 0000000000000010
+   0010 -> 0000000000000100
+   0011 -> 0000000000001000
+   0100 -> 0000000000010000
+   0101 -> 0000000000100000
+   0110 -> 0000000001000000
+   0111 -> 0000000010000000
+   1000 -> 0000000100000000
+   1001 -> 0000001000000000
+   1010 -> 0000010000000000
+   1011 -> 0000100000000000
+   1100 -> 0001000000000000
+   1101 -> 0010000000000000
+   1110 -> 0100000000000000
+   1111 -> 1000000000000000
+Encoding state machine sm0_state[6:0] (in view: work.CoreResetP_Z6(verilog))
+original code -> new code
+   000 -> 0000001
+   001 -> 0000010
+   010 -> 0000100
+   011 -> 0001000
+   100 -> 0010000
+   101 -> 0100000
+   110 -> 1000000
+@N: MO231 :"c:\users\lucas\documents\nascerr\design_depois_isp\hdl\ram_interface.v":61:0:61:5|Found counter in view:work.Ram_intferface(verilog) instance next_data[7:0] 
+@N: MO231 :"c:\users\lucas\documents\nascerr\design_depois_isp\hdl\ram_interface.v":61:0:61:5|Found counter in view:work.Ram_intferface(verilog) instance expected_data[7:0] 
+@N: MO231 :"c:\users\lucas\documents\nascerr\design_depois_isp\hdl\ram_interface.v":61:0:61:5|Found counter in view:work.Ram_intferface(verilog) instance counter[15:0] 
+
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 261MB peak: 261MB)
+
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.INIT_DONE_int (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_state[6] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[13] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[14] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[15] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[16] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[17] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[18] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[19] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[20] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[21] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[22] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[23] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[28] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[29] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[30] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v":163:0:163:5|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[31] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\corememctrl\2.2.106\rtl\vlog\core\corememctrl.v":403:3:403:8|Removing sequential instance CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.HsizeReg[2] (in view: work.teste(verilog)) because it does not drive other instances.
+
+Finished factoring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 267MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+NConnInternalConnection caching is on
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[7] because it is equivalent to instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[3] because it is equivalent to instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[15] because it is equivalent to instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[11]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[14] because it is equivalent to instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[6] because it is equivalent to instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[2] because it is equivalent to instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[10]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[10] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[11] (in view: work.teste(verilog)) because it does not drive other instances.
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 267MB peak: 267MB)
+
+@W: BN132 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[9] because it is equivalent to instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[5]. To keep the instance, apply constraint syn_preserve=1 on the instance.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreahblite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v":449:4:449:9|Removing sequential instance teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState[5] (in view: work.teste(verilog)) because it does not drive other instances.
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 268MB peak: 268MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 268MB peak: 268MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 268MB peak: 268MB)
+
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1549:4:1549:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif2_core (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1549:4:1549:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif2_core (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1517:4:1517:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif1_core (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1517:4:1517:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif1_core (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1485:4:1485:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif0_core (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1485:4:1485:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif0_core (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif3_core_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif3_core_q1 (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif2_core_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif2_core_q1 (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif1_core_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif1_core_q1 (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif0_core_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif0_core_q1 (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.ddr_settled_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Boundary register teste_sb_0.CORERESETP_0.ddr_settled_q1 (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":963:4:963:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif3_spll_lock_q2 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":929:4:929:9|Removing sequential instance teste_sb_0.CORERESETP_0.CONFIG1_DONE_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":856:4:856:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_areset_n_rcosc_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":856:4:856:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_areset_n_rcosc (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":755:4:755:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_areset_n_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":755:4:755:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_areset_n_clk_base (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif3_core_clk_base (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif2_core_clk_base (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif1_core_clk_base (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif0_core_clk_base (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1646:4:1646:9|Removing sequential instance teste_sb_0.CORERESETP_0.ddr_settled_clk_base (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1613:4:1613:9|Removing sequential instance teste_sb_0.CORERESETP_0.ddr_settled (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1613:4:1613:9|Boundary register teste_sb_0.CORERESETP_0.ddr_settled (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1581:4:1581:9|Removing sequential instance teste_sb_0.CORERESETP_0.release_sdif3_core (in view: work.teste(verilog)) because it does not drive other instances.
+@A: BN291 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1581:4:1581:9|Boundary register teste_sb_0.CORERESETP_0.release_sdif3_core (in view: work.teste(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":912:4:912:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif3_areset_n_rcosc_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":912:4:912:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif3_areset_n_rcosc (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":898:4:898:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif2_areset_n_rcosc_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":898:4:898:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif2_areset_n_rcosc (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":884:4:884:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif1_areset_n_rcosc_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":884:4:884:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif1_areset_n_rcosc (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":870:4:870:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif0_areset_n_rcosc_q1 (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":870:4:870:9|Removing sequential instance teste_sb_0.CORERESETP_0.sdif0_areset_n_rcosc (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_state[4] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_state[3] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_state[2] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_state[1] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_state[0] (in view: work.teste(verilog)) because it does not drive other instances.
+@N: BN362 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\coreresetp\7.1.100\rtl\vlog\core\coreresetp.v":1089:4:1089:9|Removing sequential instance teste_sb_0.CORERESETP_0.sm0_state[5] (in view: work.teste(verilog)) because it does not drive other instances.
+
+Finished preparing to map (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 268MB peak: 268MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:02s; Memory used current: 290MB peak: 290MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:02s		   -12.09ns		 716 /       217
+   2		0h:00m:02s		   -12.09ns		 708 /       217
+   3		0h:00m:02s		   -12.09ns		 707 /       217
+@N: FX271 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\actel\directcore\corememctrl\2.2.106\rtl\vlog\core\corememctrl.v":403:3:403:8|Replicating instance CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.HsizeReg[1] (in view: work.teste(verilog)) with 11 loads 1 time to improve timing.
+Timing driven replication report
+Added 1 Registers via timing driven replication
+Added 1 LUTs via timing driven replication
+
+   4		0h:00m:03s		   -11.52ns		 716 /       218
+   5		0h:00m:03s		   -11.33ns		 720 /       218
+   6		0h:00m:03s		   -11.27ns		 722 /       218
+   7		0h:00m:03s		   -11.22ns		 721 /       218
+
+
+   8		0h:00m:03s		   -11.22ns		 719 /       218
+@N: FP130 |Promoting Net teste_sb_0.POWER_ON_RESET_N on CLKINT  I_545 
+@N: FP130 |Promoting Net teste_sb_0.CORERESETP_0.MSS_HPMS_READY_int on CLKINT  I_546 
+@N: FP130 |Promoting Net led_blink_0.reg_counter[20] on CLKINT  I_547 
+
+Added 0 Buffers
+Added 0 Cells via replication
+	Added 0 Sequential Cells via replication
+	Added 0 Combinational Cells via replication
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 291MB peak: 291MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 291MB peak: 292MB)
+
+
+Starting CDBProcessSetClockGroups... (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 291MB peak: 292MB)
+
+
+Finished with CDBProcessSetClockGroups (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 291MB peak: 292MB)
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:03s; Memory used current: 240MB peak: 292MB)
+
+Writing Analyst data base C:\Users\Lucas\Documents\Nascerr\design_depois_isp\synthesis\synwork\teste_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 290MB peak: 292MB)
+
+Writing Verilog Simulation files
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@W: BW156 :|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
+@W: BW156 :|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
+@W: BW156 :|Option "-name" of set_clock_groups cannot be forward-annotated; there is no equivalent option in your place-and-route tool.
+
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 291MB peak: 292MB)
+
+
+Finished Writing Netlists (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 291MB peak: 292MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 289MB peak: 292MB)
+
+@W: MT246 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\work\tamper_c0\tamper_c0_0\tamper_c0_tamper_c0_0_tamper.v":31:11:31:21|Blackbox TAMPER is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@W: MT246 :"c:\users\lucas\documents\nascerr\design_depois_isp\component\work\teste_sb\ccc_0\teste_sb_ccc_0_fccc.v":20:36:20:43|Blackbox CCC is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results)
+@W: MT420 |Found inferred clock teste_sb_CCC_0_FCCC|GL0_net_inferred_clock with period 10.00ns. Please declare a user-defined clock on net teste_sb_0.CCC_0.GL0_net.
+@W: MT420 |Found inferred clock teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock with period 10.00ns. Please declare a user-defined clock on net teste_sb_0.FABOSC_0.FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC.
+@W: MT420 |Found inferred clock led_blink|reg_counter_inferred_clock[20] with period 10.00ns. Please declare a user-defined clock on net led_blink_0.reg_counter_0[20].
+
+
+##### START OF TIMING REPORT #####[
+# Timing report written on Mon Jun  2 12:55:48 2025
+#
+
+
+Top view:               teste
+Requested Frequency:    100.0 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    C:\Users\Lucas\Documents\Nascerr\design_depois_isp\designer\teste\synthesis.fdc
+                       
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: -4.276
+
+                                                            Requested     Estimated     Requested     Estimated                Clock        Clock          
+Starting Clock                                              Frequency     Frequency     Period        Period        Slack      Type         Group          
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+led_blink|reg_counter_inferred_clock[20]                    100.0 MHz     546.7 MHz     10.000        1.829         8.171      inferred     (multiple)     
+teste_sb_CCC_0_FCCC|GL0_net_inferred_clock                  100.0 MHz     70.0 MHz      10.000        14.276        -4.276     inferred     (multiple)     
+teste_sb_FABOSC_0_OSC|RCOSC_25_50MHZ_CCC_inferred_clock     100.0 MHz     NA            10.000        NA            NA         inferred     (multiple)     
+System                                                      100.0 MHz     NA            10.000        NA            NA         system       system_clkgroup
+===========================================================================================================================================================
+Estimated period and frequency reported as NA means no slack depends directly on the clock waveform
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                                                                  |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting                                    Ending                                      |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste_sb_CCC_0_FCCC|GL0_net_inferred_clock  System                                      |  10.000      8.775   |  No paths    -      |  No paths    -      |  No paths    -     
+teste_sb_CCC_0_FCCC|GL0_net_inferred_clock  teste_sb_CCC_0_FCCC|GL0_net_inferred_clock  |  10.000      -4.276  |  No paths    -      |  5.000       1.532  |  5.000       -1.094
+led_blink|reg_counter_inferred_clock[20]    led_blink|reg_counter_inferred_clock[20]    |  10.000      8.171   |  No paths    -      |  No paths    -      |  No paths    -     
+================================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: led_blink|reg_counter_inferred_clock[20]
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                Starting                                                                          Arrival          
+Instance                        Reference                                    Type     Pin     Net                 Time        Slack
+                                Clock                                                                                              
+-----------------------------------------------------------------------------------------------------------------------------------
+led_blink_0.john_counter[3]     led_blink|reg_counter_inferred_clock[20]     SLE      Q       john_counter[3]     0.108       8.171
+led_blink_0.john_counter[0]     led_blink|reg_counter_inferred_clock[20]     SLE      Q       john_counter[0]     0.087       9.160
+led_blink_0.john_counter[1]     led_blink|reg_counter_inferred_clock[20]     SLE      Q       john_counter[1]     0.087       9.160
+led_blink_0.john_counter[2]     led_blink|reg_counter_inferred_clock[20]     SLE      Q       john_counter[2]     0.087       9.160
+===================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                Starting                                                                            Required          
+Instance                        Reference                                    Type     Pin     Net                   Time         Slack
+                                Clock                                                                                                 
+--------------------------------------------------------------------------------------------------------------------------------------
+led_blink_0.john_counter[0]     led_blink|reg_counter_inferred_clock[20]     SLE      D       john_counter_i[3]     9.745        8.171
+led_blink_0.john_counter[1]     led_blink|reg_counter_inferred_clock[20]     SLE      D       john_counter[0]       9.745        9.160
+led_blink_0.john_counter[2]     led_blink|reg_counter_inferred_clock[20]     SLE      D       john_counter[1]       9.745        9.160
+led_blink_0.john_counter[3]     led_blink|reg_counter_inferred_clock[20]     SLE      D       john_counter[2]       9.745        9.160
+======================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      1.574
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 8.171
+
+    Number of logic level(s):                1
+    Starting point:                          led_blink_0.john_counter[3] / Q
+    Ending point:                            led_blink_0.john_counter[0] / D
+    The start point is clocked by            led_blink|reg_counter_inferred_clock[20] [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+    The end   point is clocked by            led_blink|reg_counter_inferred_clock[20] [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                    Pin      Pin               Arrival     No. of    
+Name                                     Type     Name     Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------
+led_blink_0.john_counter[3]              SLE      Q        Out     0.108     0.108 f     -         
+john_counter[3]                          Net      -        -       0.248     -           1         
+led_blink_0.john_counter_RNIQDN55[3]     CFG1     A        In      -         0.357 f     -         
+led_blink_0.john_counter_RNIQDN55[3]     CFG1     Y        Out     0.100     0.457 r     -         
+john_counter_i[3]                        Net      -        -       1.117     -           2         
+led_blink_0.john_counter[0]              SLE      D        In      -         1.574 r     -         
+===================================================================================================
+Total path delay (propagation time + setup) of 1.829 is 0.464(25.3%) logic and 1.366(74.7%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+
+====================================
+Detailed Report for Clock: teste_sb_CCC_0_FCCC|GL0_net_inferred_clock
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                                                       Starting                                                                                                                        Arrival           
+Instance                                                               Reference                                      Type        Pin                Net                                               Time        Slack 
+                                                                       Clock                                                                                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                               teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_005     F_HM0_ADDR[27]     teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[27]     3.574       -4.276
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                               teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_005     F_HM0_ADDR[26]     teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[26]     3.511       -4.016
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                               teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_005     F_HM0_ADDR[24]     teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[24]     3.756       -3.417
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                               teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_005     F_HM0_TRANS1       teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HTRANS[1]     3.424       -3.160
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                               teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     MSS_005     F_HM0_ADDR[25]     teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[25]     3.545       -3.072
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.masterRegAddrSel     teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE         Q                  masterRegAddrSel                                  0.108       -1.464
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.genblk8\.iSRAMWEN                    teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE         Q                  SRAMWEN_c                                         0.108       -1.094
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[27]         teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE         Q                  regHADDR[27]                                      0.087       -0.580
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.regHADDR[26]         teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE         Q                  regHADDR[26]                                      0.087       -0.383
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.HsizeReg[0]                          teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE         Q                  HsizeReg[0]                                       0.108       -0.044
+=========================================================================================================================================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                                           Starting                                                                                   Required           
+Instance                                                   Reference                                      Type     Pin     Net                        Time         Slack 
+                                                           Clock                                                                                                         
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready                  teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       iHready_3                  9.745        -4.276
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.CurrentWait[1]           teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       NextWait_4[1]              9.825        -3.692
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.CurrentWait[2]           teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       NextWait_4[2]              9.825        -3.692
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.CurrentWait[3]           teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       NextWait_4[3]              9.825        -3.692
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.CurrentWait[4]           teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       NextWait_4[4]              9.825        -3.692
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.CurrentWait[0]           teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       NextWait_4[0]              9.745        -3.434
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.trans_split_count[0]     teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       trans_split_count_3[0]     9.745        -3.195
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.trans_split_count[1]     teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       trans_split_count_3[1]     9.745        -3.195
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.MemCntlState[4]          teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       MemCntlState_ns[4]         9.745        -3.022
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.SelHaddrReg              teste_sb_CCC_0_FCCC|GL0_net_inferred_clock     SLE      D       N_42_0_i                   9.745        -2.758
+=========================================================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      14.021
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -4.276
+
+    Number of logic level(s):                11
+    Starting point:                          teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[27]
+    Ending point:                            CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready / D
+    The start point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                                                   Pin                Pin               Arrival      No. of    
+Name                                                                                                 Type        Name               Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                                                             MSS_005     F_HM0_ADDR[27]     Out     3.574     3.574 r      -         
+teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[27]                                                        Net         -                  -       0.497     -            2         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        B                  In      -         4.071 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        Y                  Out     0.165     4.235 r      -         
+M0GATEDHADDR[27]                                                                                     Net         -                  -       1.135     -            15        
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        A                  In      -         5.371 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        Y                  Out     0.100     5.471 f      -         
+SADDRSEL_2[1]                                                                                        Net         -                  -       0.896     -            6         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        D                  In      -         6.367 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        Y                  Out     0.288     6.654 f      -         
+m0s0AddrSel                                                                                          Net         -                  -       0.815     -            5         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        D                  In      -         7.469 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        Y                  Out     0.288     7.757 f      -         
+masterAddrInProg[0]                                                                                  Net         -                  -       1.206     -            23        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        B                  In      -         8.962 f      -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        Y                  Out     0.164     9.127 f      -         
+Valid                                                                                                Net         -                  -       1.309     -            34        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3_RNO[1]                                     CFG4        D                  In      -         10.436 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3_RNO[1]                                     CFG4        Y                  Out     0.288     10.723 f     -         
+WSCounterLoadVal_2_sqmuxa_2                                                                          Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3[1]                                         CFG4        D                  In      -         10.972 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3[1]                                         CFG4        Y                  Out     0.288     11.259 f     -         
+WSCounterLoadVal_1_iv_3[1]                                                                           Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        D                  In      -         11.508 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        Y                  Out     0.288     11.796 f     -         
+WSCounterLoadVal_1_iv_5[1]                                                                           Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        B                  In      -         12.044 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        Y                  Out     0.164     12.208 f     -         
+WSCounterLoadVal_1[1]                                                                                Net         -                  -       0.896     -            6         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_15_a1                                                    CFG4        B                  In      -         13.104 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_15_a1                                                    CFG4        Y                  Out     0.148     13.252 r     -         
+iHready_3_15_a1                                                                                      Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        D                  In      -         13.501 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        Y                  Out     0.271     13.772 r     -         
+iHready_3                                                                                            Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready                                                            SLE         D                  In      -         14.021 r     -         
+=============================================================================================================================================================================
+Total path delay (propagation time + setup) of 14.276 is 6.281(44.0%) logic and 7.995(56.0%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      13.991
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -4.246
+
+    Number of logic level(s):                11
+    Starting point:                          teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[27]
+    Ending point:                            CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready / D
+    The start point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                                                   Pin                Pin               Arrival      No. of    
+Name                                                                                                 Type        Name               Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                                                             MSS_005     F_HM0_ADDR[27]     Out     3.574     3.574 r      -         
+teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[27]                                                        Net         -                  -       0.497     -            2         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        B                  In      -         4.071 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        Y                  Out     0.165     4.235 r      -         
+M0GATEDHADDR[27]                                                                                     Net         -                  -       1.135     -            15        
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        A                  In      -         5.371 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        Y                  Out     0.100     5.471 f      -         
+SADDRSEL_2[1]                                                                                        Net         -                  -       0.896     -            6         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        D                  In      -         6.367 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        Y                  Out     0.288     6.654 f      -         
+m0s0AddrSel                                                                                          Net         -                  -       0.815     -            5         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        D                  In      -         7.469 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        Y                  Out     0.288     7.757 f      -         
+masterAddrInProg[0]                                                                                  Net         -                  -       1.206     -            23        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        B                  In      -         8.962 f      -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        Y                  Out     0.164     9.127 f      -         
+Valid                                                                                                Net         -                  -       1.309     -            34        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_sqmuxa_2_0_a2_1_RNITBIRF                        CFG4        D                  In      -         10.436 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_sqmuxa_2_0_a2_1_RNITBIRF                        CFG4        Y                  Out     0.288     10.723 f     -         
+trans_split_reset_2_sqmuxa                                                                           Net         -                  -       0.497     -            2         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5_RNO[1]                                     CFG2        A                  In      -         11.220 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5_RNO[1]                                     CFG2        Y                  Out     0.087     11.307 f     -         
+WSCounterLoadVal_3_sqmuxa_2                                                                          Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        C                  In      -         11.556 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        Y                  Out     0.210     11.765 f     -         
+WSCounterLoadVal_1_iv_5[1]                                                                           Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        B                  In      -         12.014 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        Y                  Out     0.164     12.178 f     -         
+WSCounterLoadVal_1[1]                                                                                Net         -                  -       0.896     -            6         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_15_a1                                                    CFG4        B                  In      -         13.074 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_15_a1                                                    CFG4        Y                  Out     0.148     13.222 r     -         
+iHready_3_15_a1                                                                                      Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        D                  In      -         13.471 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        Y                  Out     0.271     13.742 r     -         
+iHready_3                                                                                            Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready                                                            SLE         D                  In      -         13.991 r     -         
+=============================================================================================================================================================================
+Total path delay (propagation time + setup) of 14.246 is 6.002(42.1%) logic and 8.244(57.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      13.953
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -4.208
+
+    Number of logic level(s):                11
+    Starting point:                          teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[27]
+    Ending point:                            CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready / D
+    The start point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                                                   Pin                Pin               Arrival      No. of    
+Name                                                                                                 Type        Name               Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                                                             MSS_005     F_HM0_ADDR[27]     Out     3.574     3.574 r      -         
+teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[27]                                                        Net         -                  -       0.497     -            2         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        B                  In      -         4.071 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        Y                  Out     0.165     4.235 r      -         
+M0GATEDHADDR[27]                                                                                     Net         -                  -       1.135     -            15        
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        A                  In      -         5.371 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        Y                  Out     0.100     5.471 f      -         
+SADDRSEL_2[1]                                                                                        Net         -                  -       0.896     -            6         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        D                  In      -         6.367 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        Y                  Out     0.288     6.654 f      -         
+m0s0AddrSel                                                                                          Net         -                  -       0.815     -            5         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        D                  In      -         7.469 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        Y                  Out     0.288     7.757 f      -         
+masterAddrInProg[0]                                                                                  Net         -                  -       1.206     -            23        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        B                  In      -         8.962 f      -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        Y                  Out     0.164     9.127 f      -         
+Valid                                                                                                Net         -                  -       1.309     -            34        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3_RNO[1]                                     CFG4        D                  In      -         10.436 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3_RNO[1]                                     CFG4        Y                  Out     0.288     10.723 f     -         
+WSCounterLoadVal_2_sqmuxa_2                                                                          Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3[1]                                         CFG4        D                  In      -         10.972 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_3[1]                                         CFG4        Y                  Out     0.288     11.259 f     -         
+WSCounterLoadVal_1_iv_3[1]                                                                           Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        D                  In      -         11.508 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        Y                  Out     0.288     11.796 f     -         
+WSCounterLoadVal_1_iv_5[1]                                                                           Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        B                  In      -         12.044 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        Y                  Out     0.164     12.208 f     -         
+WSCounterLoadVal_1[1]                                                                                Net         -                  -       0.896     -            6         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_12                                                       CFG4        B                  In      -         13.104 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_12                                                       CFG4        Y                  Out     0.148     13.252 r     -         
+iHready_3_14                                                                                         Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        C                  In      -         13.501 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        Y                  Out     0.203     13.704 r     -         
+iHready_3                                                                                            Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready                                                            SLE         D                  In      -         13.953 r     -         
+=============================================================================================================================================================================
+Total path delay (propagation time + setup) of 14.208 is 6.213(43.7%) logic and 7.995(56.3%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 4: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      13.922
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -4.178
+
+    Number of logic level(s):                11
+    Starting point:                          teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[27]
+    Ending point:                            CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready / D
+    The start point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                                                   Pin                Pin               Arrival      No. of    
+Name                                                                                                 Type        Name               Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                                                             MSS_005     F_HM0_ADDR[27]     Out     3.574     3.574 r      -         
+teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[27]                                                        Net         -                  -       0.497     -            2         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        B                  In      -         4.071 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        Y                  Out     0.165     4.235 r      -         
+M0GATEDHADDR[27]                                                                                     Net         -                  -       1.135     -            15        
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        A                  In      -         5.371 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        Y                  Out     0.100     5.471 f      -         
+SADDRSEL_2[1]                                                                                        Net         -                  -       0.896     -            6         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        D                  In      -         6.367 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        Y                  Out     0.288     6.654 f      -         
+m0s0AddrSel                                                                                          Net         -                  -       0.815     -            5         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        D                  In      -         7.469 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        Y                  Out     0.288     7.757 f      -         
+masterAddrInProg[0]                                                                                  Net         -                  -       1.206     -            23        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        B                  In      -         8.962 f      -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        Y                  Out     0.164     9.127 f      -         
+Valid                                                                                                Net         -                  -       1.309     -            34        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_sqmuxa_2_0_a2_1_RNITBIRF                        CFG4        D                  In      -         10.436 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_sqmuxa_2_0_a2_1_RNITBIRF                        CFG4        Y                  Out     0.288     10.723 f     -         
+trans_split_reset_2_sqmuxa                                                                           Net         -                  -       0.497     -            2         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5_RNO[1]                                     CFG2        A                  In      -         11.220 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5_RNO[1]                                     CFG2        Y                  Out     0.087     11.307 f     -         
+WSCounterLoadVal_3_sqmuxa_2                                                                          Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        C                  In      -         11.556 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv_5[1]                                         CFG4        Y                  Out     0.210     11.765 f     -         
+WSCounterLoadVal_1_iv_5[1]                                                                           Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        B                  In      -         12.014 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.WSCounterLoadVal_1_iv[1]                                           CFG4        Y                  Out     0.164     12.178 f     -         
+WSCounterLoadVal_1[1]                                                                                Net         -                  -       0.896     -            6         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_12                                                       CFG4        B                  In      -         13.074 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_12                                                       CFG4        Y                  Out     0.148     13.222 r     -         
+iHready_3_14                                                                                         Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        C                  In      -         13.471 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        Y                  Out     0.203     13.674 r     -         
+iHready_3                                                                                            Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready                                                            SLE         D                  In      -         13.922 r     -         
+=============================================================================================================================================================================
+Total path delay (propagation time + setup) of 14.178 is 5.934(41.9%) logic and 8.244(58.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 5: 
+      Requested Period:                      10.000
+    - Setup time:                            0.255
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         9.745
+
+    - Propagation time:                      13.893
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -4.148
+
+    Number of logic level(s):                11
+    Starting point:                          teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST / F_HM0_ADDR[27]
+    Ending point:                            CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready / D
+    The start point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK_BASE
+    The end   point is clocked by            teste_sb_CCC_0_FCCC|GL0_net_inferred_clock [rising] (rise=0.000 fall=5.000 period=10.000) on pin CLK
+
+Instance / Net                                                                                                   Pin                Pin               Arrival      No. of    
+Name                                                                                                 Type        Name               Dir     Delay     Time         Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+teste_sb_0.teste_sb_MSS_0.MSS_ADLIB_INST                                                             MSS_005     F_HM0_ADDR[27]     Out     3.574     3.574 r      -         
+teste_sb_MSS_TMP_0_FIC_0_AHB_MASTER_HADDR[27]                                                        Net         -                  -       0.497     -            2         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        B                  In      -         4.071 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.PREGATEDHADDR[27]                                  CFG3        Y                  Out     0.165     4.235 r      -         
+M0GATEDHADDR[27]                                                                                     Net         -                  -       1.135     -            15        
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        A                  In      -         5.371 r      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL_2[1]                                      CFG2        Y                  Out     0.100     5.471 f      -         
+SADDRSEL_2[1]                                                                                        Net         -                  -       0.896     -            6         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        D                  In      -         6.367 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.masterstage_0.SADDRSEL[0]                                        CFG4        Y                  Out     0.288     6.654 f      -         
+m0s0AddrSel                                                                                          Net         -                  -       0.815     -            5         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        D                  In      -         7.469 f      -         
+teste_sb_0.CoreAHBLite_0.matrix4x16.slavestage_0.slave_arbiter.arbRegSMCurrentState_RNICVHJN[13]     CFG4        Y                  Out     0.288     7.757 f      -         
+masterAddrInProg[0]                                                                                  Net         -                  -       1.206     -            23        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        B                  In      -         8.962 f      -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.Valid_a0                                                           CFG4        Y                  Out     0.164     9.127 f      -         
+Valid                                                                                                Net         -                  -       1.309     -            34        
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.ssram_read_buzy_next_d_RNIFBHUH                                    CFG4        B                  In      -         10.436 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.ssram_read_buzy_next_d_RNIFBHUH                                    CFG4        Y                  Out     0.148     10.584 r     -         
+WSCounterLoadVal_4_sqmuxa                                                                            Net         -                  -       0.497     -            2         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.un1_LoadWSCounter_0_sqmuxa_0_0                                     CFG3        B                  In      -         11.081 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.un1_LoadWSCounter_0_sqmuxa_0_0                                     CFG3        Y                  Out     0.165     11.245 r     -         
+un1_LoadWSCounter_0_sqmuxa_i                                                                         Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.LoadWSCounter_u                                                    CFG4        B                  In      -         11.494 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.LoadWSCounter_u                                                    CFG4        Y                  Out     0.165     11.659 r     -         
+LoadWSCounter                                                                                        Net         -                  -       1.017     -            9         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.NextWait_4_0[0]                                                    CFG3        A                  In      -         12.676 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.NextWait_4_0[0]                                                    CFG3        Y                  Out     0.100     12.776 f     -         
+N_428                                                                                                Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_15_a1                                                    CFG4        A                  In      -         13.025 f     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3_15_a1                                                    CFG4        Y                  Out     0.100     13.125 r     -         
+iHready_3_15_a1                                                                                      Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        D                  In      -         13.373 r     -         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready_3                                                          CFG4        Y                  Out     0.271     13.645 r     -         
+iHready_3                                                                                            Net         -                  -       0.248     -            1         
+CoreMemCtrl_C0_0.CoreMemCtrl_C0_0.iHready                                                            SLE         D                  In      -         13.893 r     -         
+=============================================================================================================================================================================
+Total path delay (propagation time + setup) of 14.148 is 5.783(40.9%) logic and 8.365(59.1%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+
+Finished final timing analysis (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 289MB peak: 292MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:04s; Memory used current: 289MB peak: 292MB)
+
+---------------------------------------
+Resource Usage Report for teste 
+
+Mapping to part: m2s005vf400std
+Cell usage:
+CCC             1 use
+CLKINT          4 uses
+MSS_005         1 use
+RCOSC_25_50MHZ  1 use
+SYSRESET        1 use
+TAMPER          1 use
+CFG1           6 uses
+CFG2           131 uses
+CFG3           156 uses
+CFG4           321 uses
+
+Carry cells:
+ARI1            75 uses - used for arithmetic functions
+ARI1            12 uses - used for Wide-Mux implementation
+Total ARI1      87 uses
+
+
+Sequential Cells: 
+SLE            218 uses
+
+DSP Blocks:    0 of 11 (0%)
+
+I/O ports: 43
+I/O primitives: 42
+BIBUF          18 uses
+INBUF          2 uses
+OUTBUF         21 uses
+TRIBUFF        1 use
+
+
+Global Clock Buffers: 4
+
+RAM/ROM usage summary
+Total Block RAMs (RAM1K18) : 1 of 10 (10%)
+
+Total LUTs:    701
+
+Extra resources required for RAM and MACC interface logic during P&R:
+
+RAM64x18 Interface Logic : SLEs = 0; LUTs = 0;
+RAM1K18  Interface Logic : SLEs = 36; LUTs = 36;
+MACC     Interface Logic : SLEs = 0; LUTs = 0;
+
+Total number of SLEs after P&R:  218 + 0 + 36 + 0 = 254;
+Total number of LUTs after P&R:  701 + 0 + 36 + 0 = 737;
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:05s; CPU Time elapsed 0h:00m:05s; Memory used current: 130MB peak: 292MB)
+
+Process took 0h:00m:05s realtime, 0h:00m:05s cputime
+# Mon Jun  2 12:55:49 2025
+
+###########################################################]

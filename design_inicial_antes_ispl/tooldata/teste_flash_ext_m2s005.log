@@ -1,0 +1,16 @@
+Project Name: teste_flash_ext_m2s005
+Location: C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005
+Description: 
+Preferred HDL Type: Verilog
+
+#-----------------------------------------------------
+                  Device Details
+#-----------------------------------------------------
+
+Part Number    : M2S005-TQ144
+Family         : SmartFusion2
+Die            : M2S005
+Package        : 144 TQ
+Speed          : STD
+Core Voltage   : 1.2
+Range          : COM

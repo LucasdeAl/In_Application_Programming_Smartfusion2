@@ -6,6 +6,8 @@
 #include "mss_spi.h"
 #include "winbondflash.h"
 #include <stdbool.h>
+#include "mss_gpio.h"
+#include "CMSIS/system_m2sxxx.h"
 #define BUFFER_SIZE 2048
 
 //*&************************************************************
@@ -39,6 +41,7 @@ uint32_t addr = 0;
 uint32_t addr_bitstream = 0x10000;
 //***********************************************************
 
+void ecc_test();
 void delay(volatile uint32_t n)
 {
     while(n)
@@ -92,12 +95,17 @@ int main()
 
 
       MSS_SYS_init(MSS_SYS_NO_EVENT_HANDLER);
+      MSS_GPIO_init();
+      MSS_GPIO_config( MSS_GPIO_0 , MSS_GPIO_OUTPUT_MODE );
 
       //FLASH_init();
       //uint8_t rx_buffer[2049];
       //FLASH_read(0x20000, rx_buffer, 2049);
 
       /* start the handshake with the host */
+
+
+
       START_HANDSHAKE:
       g_isp_operation_busy = 1;
            while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 )))
@@ -141,6 +149,7 @@ int main()
            g_file_size = atoi((const char*)rx_buff);
 
            MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"a",1);
+
 
            switch(g_mode){
 
@@ -256,6 +265,10 @@ int main()
               //
               //}
               break;
+
+           case '2':
+           ecc_test();
+           break;
            }
 
 }
@@ -268,6 +281,7 @@ void isp_completion_handler(uint32_t value)// usado so quando acaba o ISP
 
       MSS_UART_polled_tx(gp_my_uart,(const uint8_t * )"p",1);
       g_isp_operation_busy = 0;
+      ecc_test();
 
   }
   else
@@ -500,5 +514,72 @@ void dummy_isp_completion_handler
 
     g_isp_operation_busy = 0;
 
+}
+
+
+
+void ecc_test()
+{
+    uint16_t *ptr = (uint16_t *) 0x50000000U;
+    uint16_t data_read;
+    uint8_t rx_buff[8];
+    uint8_t data_uart;
+
+    //escreve dados aleatorios nos primeiros 1000 endereços
+    //ativa ECC se houver
+    MSS_GPIO_set_output(MSS_GPIO_0, 1);
+    for (int i = 0; i < 1000; i++)
+    {
+
+
+        *ptr = rand() % 0xFF; //numeros de 0 até 255
+        data_uart = (uint8_t) 0xFF & *ptr;
+        while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 ))); //aguarda o sinal
+        if(*rx_buff == 'h')
+            MSS_UART_polled_tx(gp_my_uart,&data_uart,1);
+        rx_buff[0] = 0; //limpa o buffer
+         ptr++;
+
+    }
+
+    ptr = (uint16_t *)0x50000000U;
+    int posicao;
+    int bin;
+    int erros;
+    // aplica slices de 0 até 1 erros aleatorios em posições aleatórias
+    //desativa ECC se houver
+    MSS_GPIO_set_output(MSS_GPIO_0, 0);
+    for (int i = 0; i < 1000; i++)
+    {
+
+        data_read = *ptr;
+        erros = rand() % 2;
+
+        bin = (0b1<<erros)-1;
+        posicao = rand() % (8-erros+1); //posição aleatoria entre o bit 0 ao 7
+
+        data_read = data_read^(bin<<posicao);
+        *ptr = data_read;
+        ptr++;
+
+
+    }
+
+    ptr = (uint16_t *)0x50000000U;
+    //ativa ECC se houver
+    MSS_GPIO_set_output(MSS_GPIO_0, 1);
+    for (int i = 0; i < 1000; i++)
+    {
+        data_read = *ptr;
+        data_uart = (uint8_t) 0xFF & data_read;
+
+        while(!(UART_Polled_Rx ( gp_my_uart, rx_buff, 1 ))); //aguarda o sinal
+        if(*rx_buff == 'h')
+            MSS_UART_polled_tx(gp_my_uart,&data_uart,1);
+        rx_buff[0] = 0; //limpa o buffer
+
+        ptr++;
+
+    }
 }
 

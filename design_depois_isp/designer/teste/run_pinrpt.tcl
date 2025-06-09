@@ -1,0 +1,10 @@
+DESIGN=teste
+DESDIR=C:\Users\Lucas\Documents\Nascerr\design_depois_isp\designer\teste
+TARGET_DIR=C:\Users\Lucas\Documents\Nascerr\design_depois_isp\designer\teste
+FAM=SmartFusion2
+DIE=PA4M500
+PACKAGE=tq144
+PINRPT_BY_NAME=1
+PINRPT_BY_NUMBER=1
+BANK_REPORT=1
+IOREG_REPORT=1

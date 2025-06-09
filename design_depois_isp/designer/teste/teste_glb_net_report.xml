@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet href="rptstyle.xsl" type="text/xsl" ?>
+<doc>
+<title>Global Net Report</title>
+<text>Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)</text>
+<text>Date: Mon Jun  2 12:55:58 2025
+</text>
+<section>
+<name>Global Nets Information</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> GB Location </cell>
+ <cell> Net Name </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>GB[2] </cell>
+ <cell>(220, 30)</cell>
+ <cell>teste_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
+ <cell>217</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>GB[3] </cell>
+ <cell>(221, 30)</cell>
+ <cell>teste_sb_0/SYSRESET_POR_RNI89HK7/U0_YNn_GSouth</cell>
+ <cell>168</cell>
+</row>
+<row>
+ <cell>3</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 30)</cell>
+ <cell>teste_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNINO5F3/U0_YNn_GSouth</cell>
+ <cell>43</cell>
+</row>
+<row>
+ <cell>4</cell>
+ <cell>GB[0] </cell>
+ <cell>(218, 30)</cell>
+ <cell>led_blink_0/reg_counter_inferred_clock_RNIH1594[20]/U0_YNn_GSouth</cell>
+ <cell>4</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>I/O to GB Connections</name>
+<text>(none)</text>
+</section>
+<section>
+<name>Fabric to GB Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell> To </cell>
+ <cell> Net Name </cell>
+ <cell> Net Type </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>Dev_Restart_after_IAP_blk_0/TAMPER_C0_0/TAMPER_C0_0/TAMPER_INST/INST_SYSRESET_FF_TAMPER_RSTATUS_IP:POWER_ON_RESET_N</cell>
+ <cell>(396, 8)</cell>
+ <cell>GB[3] </cell>
+ <cell>teste_sb_0/SYSRESET_POR_Z</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>teste_sb_0/CORERESETP_0/MSS_HPMS_READY_int:Q</cell>
+ <cell>(324, 34)</cell>
+ <cell>GB[1] </cell>
+ <cell>teste_sb_0/CORERESETP_0/MSS_HPMS_READY_int_0</cell>
+ <cell>ROUTED</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>3</cell>
+ <cell>led_blink_0/reg_counter[20]:Q</cell>
+ <cell>(105, 7)</cell>
+ <cell>GB[0] </cell>
+ <cell>led_blink_0/reg_counter_0[20]</cell>
+ <cell>ROUTED</cell>
+ <cell>2</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>CCC to GB Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell>Pin Swapped for Back Annotation Only</cell>
+ <cell> To </cell>
+ <cell> Net Name </cell>
+ <cell> Net Type </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>teste_sb_0/CCC_0/CCC_INST/INST_CCC_IP:GL0</cell>
+ <cell>CCC-NE1 (390, 44)</cell>
+ <cell>GL0 =&gt; GL2</cell>
+ <cell>GB[2] </cell>
+ <cell>teste_sb_0/CCC_0/GL0_net</cell>
+ <cell>HARDWIRED</cell>
+ <cell>1</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>CCC Input Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell> To (Pin Swapped for Back Annotation Only) </cell>
+ <cell> CCC Location </cell>
+ <cell> Net Name </cell>
+ <cell> Net Type </cell>
+ <cell> Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>teste_sb_0/FABOSC_0/I_RCOSC_25_50MHZ:CLKOUT</cell>
+ <cell>(396, 44)</cell>
+ <cell>teste_sb_0/CCC_0/CCC_INST/INST_CCC_IP:RCOSC_25_50MHZ</cell>
+ <cell>CCC-NE1 (390, 44)</cell>
+ <cell>teste_sb_0/FABOSC_0_RCOSC_25_50MHZ_CCC_OUT_RCOSC_25_50MHZ_CCC</cell>
+ <cell>HARDWIRED</cell>
+ <cell>1</cell>
+</row>
+</table>
+<text></text>
+</section>
+<section>
+<name>Local Nets to RGB Connections</name>
+<text>(none)</text>
+</section>
+<section>
+<name>Global Nets to RGB Connections</name>
+<table>
+<header>
+ <cell/>
+ <cell> From </cell>
+ <cell> From Location </cell>
+ <cell> Net Name </cell>
+ <cell> Fanout </cell>
+ <cell> </cell>
+ <cell> RGB Location </cell>
+ <cell> RGB Fanout </cell>
+</header>
+<row>
+ <cell>1</cell>
+ <cell>GB[2] </cell>
+ <cell>(220, 30)</cell>
+ <cell>teste_sb_0/CCC_0/GL0_INST/U0_YNn</cell>
+ <cell>217</cell>
+ <cell>1</cell>
+ <cell>(218, 33)</cell>
+ <cell>5</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(218, 42)</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(218, 45)</cell>
+ <cell>2</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4</cell>
+ <cell>(218, 54)</cell>
+ <cell>1</cell>
+</row>
+<row>
+ <cell>2</cell>
+ <cell>GB[3] </cell>
+ <cell>(221, 30)</cell>
+ <cell>teste_sb_0/SYSRESET_POR_RNI89HK7/U0_YNn_GSouth</cell>
+ <cell>168</cell>
+ <cell>1</cell>
+ <cell>(219, 3)</cell>
+ <cell>22</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(219, 6)</cell>
+ <cell>19</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(219, 9)</cell>
+ <cell>29</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>4</cell>
+ <cell>(219, 12)</cell>
+ <cell>35</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>5</cell>
+ <cell>(219, 15)</cell>
+ <cell>23</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>6</cell>
+ <cell>(219, 18)</cell>
+ <cell>26</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>7</cell>
+ <cell>(219, 21)</cell>
+ <cell>14</cell>
+</row>
+<row>
+ <cell>3</cell>
+ <cell>GB[1] </cell>
+ <cell>(219, 30)</cell>
+ <cell>teste_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNINO5F3/U0_YNn_GSouth</cell>
+ <cell>43</cell>
+ <cell>1</cell>
+ <cell>(220, 12)</cell>
+ <cell>13</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>2</cell>
+ <cell>(220, 15)</cell>
+ <cell>13</cell>
+</row>
+<row>
+ <cell> </cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell></cell>
+ <cell>3</cell>
+ <cell>(220, 18)</cell>
+ <cell>17</cell>
+</row>
+<row>
+ <cell>4</cell>
+ <cell>GB[0] </cell>
+ <cell>(218, 30)</cell>
+ <cell>led_blink_0/reg_counter_inferred_clock_RNIH1594[20]/U0_YNn_GSouth</cell>
+ <cell>4</cell>
+ <cell> </cell>
+ <cell>(220, 3)</cell>
+ <cell>4</cell>
+</row>
+</table>
+<text></text>
+</section>
+</doc>

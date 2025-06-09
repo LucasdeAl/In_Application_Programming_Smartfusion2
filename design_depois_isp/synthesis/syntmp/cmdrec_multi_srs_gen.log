@@ -1,0 +1,7 @@
+C:\Microchip\Libero_SoC_v2024.1\SynplifyPro\bin64\syn_nfilter.exe  -link  -top  teste  -multisrs  C:\Users\Lucas\Documents\Nascerr\design_depois_isp\synthesis\synwork\teste_comp.srs  -osyn  C:\Users\Lucas\Documents\Nascerr\design_depois_isp\synthesis\synwork\teste_mult.srs  -log  C:\Users\Lucas\Documents\Nascerr\design_depois_isp\synthesis\synlog\teste_multi_srs_gen.srr 
+relcom:..\..\..\..\..\..\..\Microchip\Libero_SoC_v2024.1\SynplifyPro\bin64\syn_nfilter.exe -link -top teste -multisrs ..\synwork\teste_comp.srs -osyn ..\synwork\teste_mult.srs -log ..\synlog\teste_multi_srs_gen.srr
+rc:0 success:1 runtime:0
+file:..\synwork\teste_comp.srs|io:i|time:1748879740|size:156985|exec:0|csum:54385D247709D6987651C7B309A23C99
+file:..\synwork\teste_mult.srs|io:o|time:1748879741|size:5892|exec:0|csum:
+file:..\synlog\teste_multi_srs_gen.srr|io:o|time:1748879741|size:1175|exec:0|csum:
+file:..\..\..\..\..\..\..\microchip\libero_soc_v2024.1\synplifypro\bin64\syn_nfilter.exe|io:i|time:1704385664|size:10549248|exec:1|csum:0A08FED8FB1594556EFD70D403F152B0

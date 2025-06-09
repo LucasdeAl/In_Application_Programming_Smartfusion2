@@ -1,0 +1,193 @@
+Resource Report
+Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)
+Date: Mon Jun  2 12:55:52 2025
+
+Device Selection
++--------------------------------+----------------+
+| Family                         | SmartFusion2   |
+| Device                         | M2S005         |
+| Package                        | 144 TQ         |
+| Speed Grade                    | STD            |
+| Temp                           | 0:25:85        |
+| Voltage                        | 1.26:1.20:1.14 |
+| Core Voltage                   | 1.2V           |
+| Ramp Rate                      | 100ms Minimum  |
+| System Controller Suspend Mode | No             |
+| PLL Supply Voltage             | 2.5V           |
+| Default I/O technology         | LVCMOS 2.5V    |
+| Restrict Probe Pins            | No             |
+| Restrict SPI Pins              | No             |
++--------------------------------+----------------+
+
+Source Files
++---------+-----------------------------------------------------------------------+
+| Topcell | teste                                                                 |
+| Format  | Verilog                                                               |
+| Source  | C:\Users\Lucas\Documents\Nascerr\design_depois_isp\synthesis\teste.vm |
++---------+-----------------------------------------------------------------------+
+
+Options
++----------------------------------------------------+-------+
+| Enable Single Event Transient mitigation           | false |
+| Enable Design Separation Methodology               | false |
+| Limit the number of high fanout nets to display to | 10    |
++----------------------------------------------------+-------+
+
+Resource Usage
++---------------------------+------+-------+------------+
+| Type                      | Used | Total | Percentage |
++---------------------------+------+-------+------------+
+| 4LUT                      | 738  | 6060  | 12.18      |
+| DFF                       | 254  | 6060  | 4.19       |
+| I/O Register              | 0    | 252   | 0.00       |
+| User I/O                  | 42   | 84    | 50.00      |
+| -- Single-ended I/O       | 42   | 84    | 50.00      |
+| -- Differential I/O Pairs | 0    | 38    | 0.00       |
+| RAM64x18                  | 0    | 11    | 0.00       |
+| RAM1K18                   | 1    | 10    | 10.00      |
+| MACC                      | 0    | 11    | 0.00       |
+| Chip Globals              | 4    | 8     | 50.00      |
+| CCC                       | 1    | 2     | 50.00      |
+| RCOSC_25_50MHZ            | 1    | 1     | 100.00     |
+| RCOSC_1MHZ                | 0    | 1     | 0.00       |
+| XTLOSC                    | 0    | 1     | 0.00       |
+| MSS                       | 1    | 1     | 100.00     |
++---------------------------+------+-------+------------+
+
+Detailed Logic Resource Usage
++--------------------------+------+-----+
+| Type                     | 4LUT | DFF |
++--------------------------+------+-----+
+| Fabric Logic             | 702  | 218 |
+| RAM64x18 Interface Logic | 0    | 0   |
+| RAM1K18 Interface Logic  | 36   | 36  |
+| MACC Interface Logic     | 0    | 0   |
+| Total Used               | 738  | 254 |
++--------------------------+------+-----+
+
+MSS Resource Usage
++---------------+------+-------+
+| Type          | Used | Total |
++---------------+------+-------+
+| Cortex-M3*    | 1    | 1     |
+| eNVM (128KB)* | 1    | 1     |
+| eSRAM*        | 2    | 2     |
+| TIMER*        | 2    | 2     |
+| CAN           | 0    | 1     |
+| SPI           | 1    | 2     |
+| I2C           | 0    | 2     |
+| UART          | 1    | 2     |
+| USB           | 0    | 1     |
+| MAC           | 0    | 1     |
+| MDDR          | 0    | 1     |
+| HPDMA         | 1    | 1     |
+| PDMA          | 1    | 1     |
++---------------+------+-------+
+
+* These resources are always marked as used when you are using the MSS
+
+Detailed Carry Chains Resource Usage
++--------+------+
+| Length | Used |
+| 2      | 6    |
+| 9      | 2    |
+| 17     | 1    |
+| 20     | 1    |
+| 21     | 1    |
+| Total  | 11   |
++--------+------+
+
+I/O Function
++-------------------------------+--------------+-------------+-----------------+
+| Type                          | w/o register | w/ register | w/ DDR register |
++-------------------------------+--------------+-------------+-----------------+
+| Input I/O                     | 2            | 0           | 0               |
+| Output I/O                    | 22           | 0           | 0               |
+| Bidirectional I/O             | 18           | 0           | 0               |
+| Differential Input I/O Pairs  | 0            | 0           | 0               |
+| Differential Output I/O Pairs | 0            | 0           | 0               |
++-------------------------------+--------------+-------------+-----------------+
+
+I/O Technology
++--------------+--------+------+-------+--------+---------------+
+| I/O Standard | Vddi   | Vref | Input | Output | Bidirectional |
++--------------+--------+------+-------+--------+---------------+
+| LVCMOS25     |  2.50v |  N/A |  2    |  22    |  18           |
++--------------+--------+------+-------+--------+---------------+
+
+Nets assigned to chip global resources
++--------+---------+---------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                |
++--------+---------+---------------------------------------------------------------------+
+| 217    | INT_NET | Net   : teste_sb_0_FIC_0_CLK                                        |
+|        |         | Driver: teste_sb_0/CCC_0/GL0_INST/U0_RGB1                           |
+|        |         | Source: NETLIST                                                     |
+| 168    | INT_NET | Net   : teste_sb_0_POWER_ON_RESET_N                                 |
+|        |         | Driver: teste_sb_0/SYSRESET_POR_RNI89HK7/U0_RGB1                    |
+|        |         | Source: NETLIST                                                     |
+| 43     | INT_NET | Net   : teste_sb_0/MSS_HPMS_READY_int                               |
+|        |         | Driver: teste_sb_0/CORERESETP_0/MSS_HPMS_READY_int_RNINO5F3/U0_RGB1 |
+|        |         | Source: NETLIST                                                     |
+| 4      | INT_NET | Net   : led_blink_0/reg_counter_Z[20]                               |
+|        |         | Driver: led_blink_0/reg_counter_inferred_clock_RNIH1594[20]/U0_RGB1 |
+|        |         | Source: NETLIST                                                     |
++--------+---------+---------------------------------------------------------------------+
+
+Nets assigned to row global resources
++--------+------+------+
+| Fanout | Type | Name |
++--------+------+------+
++--------+------+------+
+
+High fanout nets
++--------+---------+------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                         |
++--------+---------+------------------------------------------------------------------------------+
+| 67     | INT_NET | Net   : CoreMemCtrl_C0_0_CoreMemCtrl_C0_0_iFLASHCSN                          |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/iFLASHCSN                          |
+| 39     | INT_NET | Net   : teste_sb_0_CoreAHBLite_0_matrix4x16_slavestage_0_masterDataInProg[0] |
+|        |         | Driver: teste_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/masterDataInProg[0] |
+| 36     | INT_NET | Net   : mcu_fpga_io_1                                                        |
+|        |         | Driver: fpga_top_design_0/mcu_fpga_io_1                                      |
+| 35     | INT_NET | Net   : teste_sb_0_GPIO_0_M2F                                                |
+|        |         | Driver: teste_sb_0/teste_sb_MSS_0/MSS_ADLIB_INST                             |
+| 34     | INT_NET | Net   : CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/Valid                              |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/Valid_a0                           |
+| 31     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter                 |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[0]  |
+| 26     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data           |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[2]  |
+| 25     | INT_NET | Net   : CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/MEMDATAOut_sn_N_13_mux             |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/MEMDATAOut_sn_m9                   |
+| 25     | INT_NET | Net   : CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/N_330_i                            |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/MemCntlState_ns_i_o4_0_RNIUD3MP[7] |
+| 24     | INT_NET | Net   : teste_sb_0_CoreAHBLite_0_matrix4x16_masterstage_0_masterRegAddrSel   |
+|        |         | Driver: teste_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/masterRegAddrSel   |
++--------+---------+------------------------------------------------------------------------------+
+
+High fanout nets (through buffer trees)
++--------+---------+------------------------------------------------------------------------------+
+| Fanout | Type    | Name                                                                         |
++--------+---------+------------------------------------------------------------------------------+
+| 67     | INT_NET | Net   : CoreMemCtrl_C0_0_CoreMemCtrl_C0_0_iFLASHCSN                          |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/iFLASHCSN                          |
+| 39     | INT_NET | Net   : teste_sb_0_CoreAHBLite_0_matrix4x16_slavestage_0_masterDataInProg[0] |
+|        |         | Driver: teste_sb_0/CoreAHBLite_0/matrix4x16/slavestage_0/masterDataInProg[0] |
+| 36     | INT_NET | Net   : mcu_fpga_io_1                                                        |
+|        |         | Driver: fpga_top_design_0/mcu_fpga_io_1                                      |
+| 35     | INT_NET | Net   : teste_sb_0_GPIO_0_M2F                                                |
+|        |         | Driver: teste_sb_0/teste_sb_MSS_0/MSS_ADLIB_INST                             |
+| 34     | INT_NET | Net   : CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/Valid                              |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/Valid_a0                           |
+| 31     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/counter                 |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[0]  |
+| 26     | INT_NET | Net   : Dev_Restart_after_IAP_blk_0/Ram_intferface_0/expected_data           |
+|        |         | Driver: Dev_Restart_after_IAP_blk_0/Ram_intferface_0/state_tpsram_access[2]  |
+| 25     | INT_NET | Net   : CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/MEMDATAOut_sn_N_13_mux             |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/MEMDATAOut_sn_m9                   |
+| 25     | INT_NET | Net   : CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/N_330_i                            |
+|        |         | Driver: CoreMemCtrl_C0_0/CoreMemCtrl_C0_0/MemCntlState_ns_i_o4_0_RNIUD3MP[7] |
+| 24     | INT_NET | Net   : teste_sb_0_CoreAHBLite_0_matrix4x16_masterstage_0_masterRegAddrSel   |
+|        |         | Driver: teste_sb_0/CoreAHBLite_0/matrix4x16/masterstage_0/masterRegAddrSel   |
++--------+---------+------------------------------------------------------------------------------+
+

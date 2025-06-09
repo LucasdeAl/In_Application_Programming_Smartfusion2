@@ -1,0 +1,14 @@
+Software Version: 2024.1.0.3
+Opened 'C:\Users\Lucas\Documents\Nascerr\design_depois_isp\designer\teste\teste_fp\teste.pro'
+PDB file 'C:\Users\Lucas\Documents\Nascerr\design_depois_isp\designer\teste\teste.pdb' has been loaded successfully.
+DESIGN : teste;  CHECKSUM : 67E8;  PDB_VERSION : 1.9
+Info: Programming Interface selected is JTAG.
+Info: Design version will be programmed to 0 with this bitstream.
+File/Folder 'C:\Microchip\SoftConsole-v2021.1\extras\workspace.examples\github\In_Application_Programming_Smartfusion2\isp_ecc.spi' will be overwritten.
+Successfully exported SPI master file: 'C:\Microchip\SoftConsole-v2021.1\extras\workspace.examples\github\In_Application_Programming_Smartfusion2\isp_ecc.spi'; file programs Fabric.
+Fabric component bitstream digest: 5e6b9e0f769c22400640f129b29b044c328b8a47051122c0a8b94c00666ec92f
+Entire bitstream digest: cac6a9f4e8b03aae0a5e902f3e2e0aba8d4ab8d6d6bb64da9f3d76b297853ffc
+Finished: Mon Jun 02 13:00:19 2025 (Elapsed time 00:00:02)
+
+Project saved.
+Project closed.

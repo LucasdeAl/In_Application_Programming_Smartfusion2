@@ -1,0 +1,15 @@
+Microchip Technology Inc. - Microchip Libero Software Release v2024.1 (Version 2024.1.0.3)
+
+Date      :  Fri May 30 18:53:32 2025
+Project   :  C:\Users\Lucas\Documents\Nascerr\design_depois_isp
+Component :  teste
+Family    :  SmartFusion2
+
+
+HDL source files for all Synthesis and Simulation tools:
+    C:/Users/Lucas/Documents/Nascerr/design_depois_isp/component/work/teste/teste.v
+
+Stimulus files for all Simulation tools:
+    C:/Users/Lucas/Documents/Nascerr/design_depois_isp/component/work/teste/subsystem.bfm
+    C:/Users/Lucas/Documents/Nascerr/design_depois_isp/component/work/teste/subsystem.bfm
+

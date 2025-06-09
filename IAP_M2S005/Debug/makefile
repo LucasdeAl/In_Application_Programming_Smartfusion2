@@ -17,6 +17,7 @@ RM := rm -rf
 -include drivers/mss_spi/subdir.mk
 -include drivers/mss_nvm/subdir.mk
 -include drivers/mss_hpdma/subdir.mk
+-include drivers/mss_gpio/subdir.mk
 -include CMSIS/startup_gcc/subdir.mk
 -include CMSIS/subdir.mk
 -include subdir.mk

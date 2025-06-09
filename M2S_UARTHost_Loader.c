@@ -29,7 +29,8 @@ BOOL bReadRC;
 DWORD iBytesWritten;
 DWORD iBytesRead;
 
-#define MAX_BUFFER_SIZE 2048
+#define TOTAL_BYTES 2000
+#define SPLIT_POINT 1000
 
 // Função para medir o tempo de execução (usando DWORD/GetTickCount)
 void measure_time(const char* operation_name, DWORD start_time) {
@@ -109,16 +110,16 @@ int main(int argc, char *argv[])
     if(argc < 4)
     {
         printf("Usage for M2S_UARTHost_Loader: M2S_UARTHost_Loader.exe filename comportnumber\n");
-        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin ISP\n");
+        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin ISP; mode = 2 -> ecc experiment\n");
         return 0;
     }
     strcpy(Action_code,argv[3]);
     printf("mode = %s\n",Action_code);
 
-    if( Action_code[0] != '0' && Action_code[0] != '1' &&  Action_code[0] != '2')
+    if( Action_code[0] != '0' && Action_code[0] != '1' &&  Action_code[0] != '2' &&  Action_code[0] != '3')
     {
         printf("Usage for M2S_UARTHost_Loader: M2S_UARTHost_Loader.exe filename comportnumber\n");
-        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin ISP\n");
+        printf("Modes : mode = 0 -> write on flash ; mode = 1 -> begin ISP; mode = 2 -> ecc experiment\n");
         return 0;
     }
 
@@ -480,5 +481,39 @@ int main(int argc, char *argv[])
                 }
             }
         }
+        else if(Action_code[0] == '2')
+        {
+                FILE *file1, *file2;
+    char buffer[TOTAL_BYTES];
+    int count = 0;
+
+    // Recebendo 2000 bytes da serial
+    while (count < TOTAL_BYTES) {
+        SerialPutc(hCom, 'h');
+        buffer[count] = SerialGetc(hCom);
+        count++;
     }
+
+    // Grava os primeiros 1000 bytes em parte1.bin
+    file1 = fopen("parte1.bin", "wb");
+    if (file1 == NULL) {
+        perror("Erro ao abrir parte1.bin");
+        return 1;
+    }
+    fwrite(buffer, 1, SPLIT_POINT, file1);
+    fclose(file1);
+
+    // Grava os segundos 1000 bytes em parte2.bin
+    file2 = fopen("parte2.bin", "wb");
+    if (file2 == NULL) {
+        perror("Erro ao abrir parte2.bin");
+        return 1;
+    }
+    fwrite(buffer + SPLIT_POINT, 1, TOTAL_BYTES - SPLIT_POINT, file2);
+    fclose(file2);
+
+    printf("Arquivos binários separados com sucesso.\n");
+
+    }
+}
 }

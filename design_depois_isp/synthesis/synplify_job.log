@@ -1,0 +1,85 @@
+{
+"Synplify Pro (R) Job Log" : {
+	"Date" : "12:55:49    02-Jun-2025",
+	"Working Directory" : "C:/Users/Lucas/Documents/Nascerr/design_depois_isp/synthesis",
+	"Install" : "C:/Microchip/Libero_SoC_v2024.1/SynplifyPro"
+},
+"synthesis" :{
+   "Job Flow" : "Sequential",
+   "Start Time" : "12:55:32",
+   "Runtime" : "17s",
+   "Executable Run Time" : "16s",
+   "synthesis" : {
+      "Job Flow" : "Sequential",
+      "Start Time" : "12:55:32",
+      "Runtime" : "17s",
+      "Executable Run Time" : "16s",
+      "compile" : {
+         "Job Flow" : "Sequential",
+         "Start Time" : "12:55:32",
+         "Runtime" : "11s",
+         "Executable Run Time" : "10s",
+         "compile_flow" : {
+            "Job Flow" : "Sequential",
+            "Start Time" : "12:55:32",
+            "Runtime" : "09s",
+            "Executable Run Time" : "08s",
+            "compiler" : {
+               "executable" : "bin64/c_hdl.exe",
+               "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/design_depois_isp/synthesis",
+               "Run State" : "Complete",
+               "Return Code" : "0",
+               "Has Errors" : "no",
+               "Run Start Time" : "12:55:32",
+               "Run Time" : "09s",
+               "Exe Run Time" : "08s",
+               "Memory Usage" : "-",
+               "Up-to-date (run skipped)" : "no"
+            },
+            "multi_srs_gen" : {
+               "executable" : "bin64/syn_nfilter.exe",
+               "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/design_depois_isp/synthesis",
+               "Run State" : "Complete",
+               "Return Code" : "0",
+               "Has Errors" : "no",
+               "Run Start Time" : "12:55:41",
+               "Run Time" : "00s",
+               "Exe Run Time" : "00s",
+               "Memory Usage" : "-",
+               "Up-to-date (run skipped)" : "no"
+            }
+         },
+         "premap" : {
+            "executable" : "bin64/m_generic.exe",
+            "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/design_depois_isp/synthesis",
+            "Run State" : "Complete",
+            "Return Code" : "1",
+            "Has Errors" : "no",
+            "Run Start Time" : "12:55:41",
+            "Run Time" : "02s",
+            "Exe Run Time" : "02s",
+            "Memory Usage" : "-",
+            "Up-to-date (run skipped)" : "no"
+         }
+      },
+      "map" : {
+         "Job Flow" : "Sequential",
+         "Start Time" : "12:55:43",
+         "Runtime" : "06s",
+         "Executable Run Time" : "06s",
+         "fpga_mapper" : {
+            "executable" : "bin64/m_generic.exe",
+            "Run Directory" : "C:/Users/Lucas/Documents/Nascerr/design_depois_isp/synthesis",
+            "Run State" : "Complete",
+            "Return Code" : "1",
+            "Has Errors" : "no",
+            "Run Start Time" : "12:55:43",
+            "Run Time" : "06s",
+            "Exe Run Time" : "06s",
+            "Memory Usage" : "-",
+            "Up-to-date (run skipped)" : "no"
+         }
+      }
+   }
+}
+}

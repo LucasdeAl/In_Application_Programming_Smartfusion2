@@ -1,0 +1,140 @@
+#OPTIONS:"|-layerid|0|-orig_srs|C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\synthesis\\synwork\\teste_comp.srs|-top|teste|-prodtype|synplify_pro|-infer_seqShift|-primux|-dspmac|-pqdpadd|-fixsmult|-sdff_counter|-divnmod|-nram|-actel|-I|C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\synthesis\\|-I|C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib|-sysv|-devicelib|C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\generic\\smartfusion2.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|COREMEMCTRL_LIB|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|COREAHBLITE_LIB|-lib|work|-lib|work"
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\bin64\\c_ver.exe":1704385142
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\generic\\smartfusion2.v":1704384662
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\hypermods.v":1704384280
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\umr_capim.v":1704384514
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\scemi_objects.v":1704384280
+#CUR:"C:\\Microchip\\Libero_SoC_v2024.1\\SynplifyPro\\lib\\vlog\\scemi_pipes.svh":1704384280
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreMemCtrl\\2.2.106\\rtl\\vlog\\core\\corememctrl.v":1725995895
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\CoreMemCtrl_C0\\CoreMemCtrl_C0.v":1748637888
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\hdl\\Ram_interface.v":1744641345
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\SgCore\\TAMPER\\2.1.300\\tamper_comps.v":1744134279
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TAMPER_C0\\TAMPER_C0_0\\TAMPER_C0_TAMPER_C0_0_TAMPER.v":1744641183
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TAMPER_C0\\TAMPER_C0.v":1744641183
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TPSRAM_C0\\TPSRAM_C0_0\\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v":1744641427
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\TPSRAM_C0\\TPSRAM_C0.v":1744641427
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\Dev_Restart_after_IAP_blk\\Dev_Restart_after_IAP_blk.v":1744641598
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vlog\\core\\coreresetp_pcie_hotreset.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreResetP\\7.1.100\\rtl\\vlog\\core\\coreresetp.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb\\CCC_0\\teste_sb_CCC_0_FCCC.v":1748637475
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\SgCore\\OSC\\2.0.101\\osc_comps.v":1725993872
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb\\FABOSC_0\\teste_sb_FABOSC_0_OSC.v":1748637476
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb_MSS\\teste_sb_MSS_syn.v":1748637473
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb_MSS\\teste_sb_MSS.v":1748637473
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vlog\\core\\coreahblite_slavearbiter.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vlog\\core\\coreahblite_slavestage.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vlog\\core\\coreahblite_defaultslavesm.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vlog\\core\\coreahblite_addrdec.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vlog\\core\\coreahblite_masterstage.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vlog\\core\\coreahblite_matrix4x16.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\Actel\\DirectCore\\CoreAHBLite\\5.2.100\\rtl\\vlog\\core\\coreahblite.v":1725993871
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste_sb\\teste_sb.v":1748637476
+#CUR:"C:\\Users\\Lucas\\Documents\\Nascerr\\teste_flash_ext_m2s005\\component\\work\\teste\\teste.v":1748638363
+0			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreMemCtrl\2.2.106\rtl\vlog\core\corememctrl.v" verilog
+1			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\CoreMemCtrl_C0\CoreMemCtrl_C0.v" verilog
+2			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\hdl\Ram_interface.v" verilog
+3			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\TAMPER\2.1.300\tamper_comps.v" verilog
+4			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0_0\TAMPER_C0_TAMPER_C0_0_TAMPER.v" verilog
+5			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TAMPER_C0\TAMPER_C0.v" verilog
+6			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0_0\TPSRAM_C0_TPSRAM_C0_0_TPSRAM.v" verilog
+7			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\TPSRAM_C0\TPSRAM_C0.v" verilog
+8			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\Dev_Restart_after_IAP_blk\Dev_Restart_after_IAP_blk.v" verilog
+9			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp_pcie_hotreset.v" verilog
+10			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreResetP\7.1.100\rtl\vlog\core\coreresetp.v" verilog
+11			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\CCC_0\teste_sb_CCC_0_FCCC.v" verilog
+12			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\SgCore\OSC\2.0.101\osc_comps.v" verilog
+13			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\FABOSC_0\teste_sb_FABOSC_0_OSC.v" verilog
+14			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb_MSS\teste_sb_MSS_syn.v" verilog
+15			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb_MSS\teste_sb_MSS.v" verilog
+16			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_slavearbiter.v" verilog
+17			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_slavestage.v" verilog
+18			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_defaultslavesm.v" verilog
+19			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_addrdec.v" verilog
+20			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_masterstage.v" verilog
+21			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite_matrix4x16.v" verilog
+22			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\Actel\DirectCore\CoreAHBLite\5.2.100\rtl\vlog\core\coreahblite.v" verilog
+23			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste_sb\teste_sb.v" verilog
+24			"C:\Users\Lucas\Documents\Nascerr\teste_flash_ext_m2s005\component\work\teste\teste.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+1 0
+2 -1
+3 -1
+4 3
+5 4
+6 -1
+7 6
+8 7 5 2
+9 -1
+10 9
+11 -1
+12 -1
+13 12
+14 -1
+15 14
+16 -1
+17 16
+18 -1
+19 -1
+20 18 19
+21 17 20
+22 21
+23 15 13 10 22 11
+24 23 8 1
+#Dependency Lists(Users Of)
+0 1
+1 24
+2 8
+3 4
+4 5
+5 8
+6 7
+7 8
+8 24
+9 10
+10 23
+11 23
+12 13
+13 23
+14 15
+15 23
+16 17
+17 21
+18 20
+19 20
+20 21
+21 22
+22 23
+23 24
+24 -1
+#Design Unit to File Association
+module COREAHBLITE_LIB CoreAHBLite 22
+module COREAHBLITE_LIB COREAHBLITE_MATRIX4X16 21
+module COREAHBLITE_LIB COREAHBLITE_MASTERSTAGE 20
+module COREAHBLITE_LIB COREAHBLITE_ADDRDEC 19
+module COREAHBLITE_LIB COREAHBLITE_DEFAULTSLAVESM 18
+module COREAHBLITE_LIB COREAHBLITE_SLAVESTAGE 17
+module COREAHBLITE_LIB COREAHBLITE_SLAVEARBITER 16
+module COREMEMCTRL_LIB CoreMemCtrl 0
+module work teste 24
+module work teste_sb 23
+module work teste_sb_MSS 15
+module work MSS_005 14
+module work teste_sb_FABOSC_0_OSC 13
+module work XTLOSC_FAB 12
+module work RCOSC_25_50MHZ_FAB 12
+module work RCOSC_1MHZ_FAB 12
+module work XTLOSC 12
+module work RCOSC_25_50MHZ 12
+module work RCOSC_1MHZ 12
+module work teste_sb_CCC_0_FCCC 11
+module work CoreResetP 10
+module work coreresetp_pcie_hotreset 9
+module work Dev_Restart_after_IAP_blk 8
+module work TPSRAM_C0 7
+module work TPSRAM_C0_TPSRAM_C0_0_TPSRAM 6
+module work TAMPER_C0 5
+module work TAMPER_C0_TAMPER_C0_0_TAMPER 4
+module work TAMPER 3
+module work Ram_intferface 2
+module work CoreMemCtrl_C0 1
